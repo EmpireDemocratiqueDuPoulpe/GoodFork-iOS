@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84D1292126245FA300CF818D /* TheGoodForkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1292026245FA300CF818D /* TheGoodForkApp.swift */; };
+		84D1292326245FA300CF818D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1292226245FA300CF818D /* ContentView.swift */; };
+		84D1292526245FA800CF818D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D1292426245FA800CF818D /* Assets.xcassets */; };
+		84D1292826245FA800CF818D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D1292726245FA800CF818D /* Preview Assets.xcassets */; };
+		84D1293326245FA900CF818D /* TheGoodForkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1293226245FA900CF818D /* TheGoodForkTests.swift */; };
+		84D1293E26245FA900CF818D /* TheGoodForkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1293D26245FA900CF818D /* TheGoodForkUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84D1292F26245FA800CF818D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84D1291526245FA200CF818D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84D1291C26245FA200CF818D;
+			remoteInfo = TheGoodFork;
+		};
+		84D1293A26245FA900CF818D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84D1291526245FA200CF818D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84D1291C26245FA200CF818D;
+			remoteInfo = TheGoodFork;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		84D1291D26245FA200CF818D /* TheGoodFork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheGoodFork.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84D1292026245FA300CF818D /* TheGoodForkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGoodForkApp.swift; sourceTree = "<group>"; };
+		84D1292226245FA300CF818D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		84D1292426245FA800CF818D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84D1292726245FA800CF818D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		84D1292926245FA800CF818D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84D1292E26245FA800CF818D /* TheGoodForkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheGoodForkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84D1293226245FA900CF818D /* TheGoodForkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGoodForkTests.swift; sourceTree = "<group>"; };
+		84D1293426245FA900CF818D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84D1293926245FA900CF818D /* TheGoodForkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheGoodForkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84D1293D26245FA900CF818D /* TheGoodForkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGoodForkUITests.swift; sourceTree = "<group>"; };
+		84D1293F26245FA900CF818D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84D1291A26245FA200CF818D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84D1292B26245FA800CF818D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84D1293626245FA900CF818D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84D1291426245FA200CF818D = {
+			isa = PBXGroup;
+			children = (
+				84D1291F26245FA300CF818D /* TheGoodFork */,
+				84D1293126245FA800CF818D /* TheGoodForkTests */,
+				84D1293C26245FA900CF818D /* TheGoodForkUITests */,
+				84D1291E26245FA200CF818D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84D1291E26245FA200CF818D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84D1291D26245FA200CF818D /* TheGoodFork.app */,
+				84D1292E26245FA800CF818D /* TheGoodForkTests.xctest */,
+				84D1293926245FA900CF818D /* TheGoodForkUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84D1291F26245FA300CF818D /* TheGoodFork */ = {
+			isa = PBXGroup;
+			children = (
+				84D1292026245FA300CF818D /* TheGoodForkApp.swift */,
+				84D1292226245FA300CF818D /* ContentView.swift */,
+				84D1292426245FA800CF818D /* Assets.xcassets */,
+				84D1292926245FA800CF818D /* Info.plist */,
+				84D1292626245FA800CF818D /* Preview Content */,
+			);
+			path = TheGoodFork;
+			sourceTree = "<group>";
+		};
+		84D1292626245FA800CF818D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				84D1292726245FA800CF818D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		84D1293126245FA800CF818D /* TheGoodForkTests */ = {
+			isa = PBXGroup;
+			children = (
+				84D1293226245FA900CF818D /* TheGoodForkTests.swift */,
+				84D1293426245FA900CF818D /* Info.plist */,
+			);
+			path = TheGoodForkTests;
+			sourceTree = "<group>";
+		};
+		84D1293C26245FA900CF818D /* TheGoodForkUITests */ = {
+			isa = PBXGroup;
+			children = (
+				84D1293D26245FA900CF818D /* TheGoodForkUITests.swift */,
+				84D1293F26245FA900CF818D /* Info.plist */,
+			);
+			path = TheGoodForkUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84D1291C26245FA200CF818D /* TheGoodFork */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84D1294226245FA900CF818D /* Build configuration list for PBXNativeTarget "TheGoodFork" */;
+			buildPhases = (
+				84D1291926245FA200CF818D /* Sources */,
+				84D1291A26245FA200CF818D /* Frameworks */,
+				84D1291B26245FA200CF818D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TheGoodFork;
+			productName = TheGoodFork;
+			productReference = 84D1291D26245FA200CF818D /* TheGoodFork.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84D1292D26245FA800CF818D /* TheGoodForkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84D1294526245FA900CF818D /* Build configuration list for PBXNativeTarget "TheGoodForkTests" */;
+			buildPhases = (
+				84D1292A26245FA800CF818D /* Sources */,
+				84D1292B26245FA800CF818D /* Frameworks */,
+				84D1292C26245FA800CF818D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84D1293026245FA800CF818D /* PBXTargetDependency */,
+			);
+			name = TheGoodForkTests;
+			productName = TheGoodForkTests;
+			productReference = 84D1292E26245FA800CF818D /* TheGoodForkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		84D1293826245FA900CF818D /* TheGoodForkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84D1294826245FA900CF818D /* Build configuration list for PBXNativeTarget "TheGoodForkUITests" */;
+			buildPhases = (
+				84D1293526245FA900CF818D /* Sources */,
+				84D1293626245FA900CF818D /* Frameworks */,
+				84D1293726245FA900CF818D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84D1293B26245FA900CF818D /* PBXTargetDependency */,
+			);
+			name = TheGoodForkUITests;
+			productName = TheGoodForkUITests;
+			productReference = 84D1293926245FA900CF818D /* TheGoodForkUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84D1291526245FA200CF818D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					84D1291C26245FA200CF818D = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					84D1292D26245FA800CF818D = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 84D1291C26245FA200CF818D;
+					};
+					84D1293826245FA900CF818D = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 84D1291C26245FA200CF818D;
+					};
+				};
+			};
+			buildConfigurationList = 84D1291826245FA200CF818D /* Build configuration list for PBXProject "TheGoodFork" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84D1291426245FA200CF818D;
+			productRefGroup = 84D1291E26245FA200CF818D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84D1291C26245FA200CF818D /* TheGoodFork */,
+				84D1292D26245FA800CF818D /* TheGoodForkTests */,
+				84D1293826245FA900CF818D /* TheGoodForkUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84D1291B26245FA200CF818D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84D1292826245FA800CF818D /* Preview Assets.xcassets in Resources */,
+				84D1292526245FA800CF818D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84D1292C26245FA800CF818D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84D1293726245FA900CF818D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84D1291926245FA200CF818D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84D1292326245FA300CF818D /* ContentView.swift in Sources */,
+				84D1292126245FA300CF818D /* TheGoodForkApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84D1292A26245FA800CF818D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84D1293326245FA900CF818D /* TheGoodForkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84D1293526245FA900CF818D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84D1293E26245FA900CF818D /* TheGoodForkUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84D1293026245FA800CF818D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84D1291C26245FA200CF818D /* TheGoodFork */;
+			targetProxy = 84D1292F26245FA800CF818D /* PBXContainerItemProxy */;
+		};
+		84D1293B26245FA900CF818D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84D1291C26245FA200CF818D /* TheGoodFork */;
+			targetProxy = 84D1293A26245FA900CF818D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		84D1294026245FA900CF818D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84D1294126245FA900CF818D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84D1294326245FA900CF818D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"TheGoodFork/Preview Content\"";
+				DEVELOPMENT_TEAM = WKF44CB24U;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = TheGoodFork/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.TheGoodFork;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84D1294426245FA900CF818D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"TheGoodFork/Preview Content\"";
+				DEVELOPMENT_TEAM = WKF44CB24U;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = TheGoodFork/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.TheGoodFork;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		84D1294626245FA900CF818D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WKF44CB24U;
+				INFOPLIST_FILE = TheGoodForkTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.TheGoodForkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheGoodFork.app/TheGoodFork";
+			};
+			name = Debug;
+		};
+		84D1294726245FA900CF818D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WKF44CB24U;
+				INFOPLIST_FILE = TheGoodForkTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.TheGoodForkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheGoodFork.app/TheGoodFork";
+			};
+			name = Release;
+		};
+		84D1294926245FA900CF818D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WKF44CB24U;
+				INFOPLIST_FILE = TheGoodForkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.TheGoodForkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TheGoodFork;
+			};
+			name = Debug;
+		};
+		84D1294A26245FA900CF818D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WKF44CB24U;
+				INFOPLIST_FILE = TheGoodForkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.TheGoodForkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TheGoodFork;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84D1291826245FA200CF818D /* Build configuration list for PBXProject "TheGoodFork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84D1294026245FA900CF818D /* Debug */,
+				84D1294126245FA900CF818D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84D1294226245FA900CF818D /* Build configuration list for PBXNativeTarget "TheGoodFork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84D1294326245FA900CF818D /* Debug */,
+				84D1294426245FA900CF818D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84D1294526245FA900CF818D /* Build configuration list for PBXNativeTarget "TheGoodForkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84D1294626245FA900CF818D /* Debug */,
+				84D1294726245FA900CF818D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84D1294826245FA900CF818D /* Build configuration list for PBXNativeTarget "TheGoodForkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84D1294926245FA900CF818D /* Debug */,
+				84D1294A26245FA900CF818D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84D1291526245FA200CF818D /* Project object */;
+}
