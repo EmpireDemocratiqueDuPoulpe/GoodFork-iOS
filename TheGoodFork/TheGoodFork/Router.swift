@@ -9,5 +9,5 @@ import SwiftUI
 
 class Router: ObservableObject {
     
-    @Published var currentPage: Page = .inscription
+    @Published var currentPage: Page = .register
 }

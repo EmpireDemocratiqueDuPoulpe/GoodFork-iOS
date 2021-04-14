@@ -11,14 +11,14 @@ struct ConnexionView: View {
 
     @StateObject var router: Router
     
-    @State private var username: String = ""
+    @State private var email: String = ""
     @State private var password: String = ""
     
     var body: some View {
         switch router.currentPage {
-        case .inscription:
+        case .register:
             InscriptionView(router: router).navigationBarHidden(true)
-        case .connexion:
+        case .connection:
             VStack(alignment: .leading, spacing: 10) {
                 HStack (alignment: .center, spacing: 10) {
                     Spacer()
@@ -28,8 +28,8 @@ struct ConnexionView: View {
                     Spacer()
                 }
                 
-                Text("Username").font(.headline)
-                TextField(("Username"), text : $username)
+                Text("Email").font(.headline)
+                TextField(("Email"), text : $email)
                     .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
                     .padding(.bottom, 10)
                 
@@ -39,7 +39,7 @@ struct ConnexionView: View {
                     .padding(.bottom, 10)
                 
                 Button(action: {
-                    print("\(self.username) and \(self.password)")
+                    print("\(self.email) and \(self.password)")
                 }){
                     HStack{
                         Spacer()
@@ -50,11 +50,11 @@ struct ConnexionView: View {
                 }
                 
                 Button(action: {
-                    router.currentPage = .inscription
+                    router.currentPage = .register
                 }){
                     HStack{
                         Spacer()
-                        Text("Inscription").font(.headline).foregroundColor(.blue)
+                        Text("Register").font(.headline).foregroundColor(.blue)
                         Spacer()
                     }
                 }

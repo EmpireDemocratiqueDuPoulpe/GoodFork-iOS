@@ -51,7 +51,7 @@ struct InscriptionView: View {
             }){
                 HStack{
                     Spacer()
-                    Text("Inscription").font(.headline).foregroundColor(.white)
+                    Text("Register").font(.headline).foregroundColor(.white)
                     Spacer()
                 }.padding(.vertical, 10)
                 .background(Color.blue).cornerRadius(5.0).padding(.horizontal,  40)
@@ -59,11 +59,11 @@ struct InscriptionView: View {
             
             
             Button(action: {
-                router.currentPage = .connexion
+                router.currentPage = .connection
             }){
                 HStack{
                     Spacer()
-                    Text("Connexion").font(.headline).foregroundColor(.blue)
+                    Text("Connection").font(.headline).foregroundColor(.blue)
                     Spacer()
                 }
             }

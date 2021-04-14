@@ -8,6 +8,6 @@
 import Foundation
 
 enum Page {
-    case connexion
-    case inscription
+    case connection
+    case register
 }
