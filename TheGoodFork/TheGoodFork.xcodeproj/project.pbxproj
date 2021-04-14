@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		843DBEEE2627096E007B152E /* InscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DBEED2627096E007B152E /* InscriptionView.swift */; };
+		843DBEF326271906007B152E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DBEF226271906007B152E /* Helper.swift */; };
+		843DBEF826271C0A007B152E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DBEF726271C0A007B152E /* Router.swift */; };
 		84D1292126245FA300CF818D /* TheGoodForkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1292026245FA300CF818D /* TheGoodForkApp.swift */; };
 		84D1292326245FA300CF818D /* ConnexionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1292226245FA300CF818D /* ConnexionView.swift */; };
 		84D1292526245FA800CF818D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D1292426245FA800CF818D /* Assets.xcassets */; };
@@ -33,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		843DBEED2627096E007B152E /* InscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InscriptionView.swift; sourceTree = "<group>"; };
+		843DBEF226271906007B152E /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		843DBEF726271C0A007B152E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		84D1291D26245FA200CF818D /* TheGoodFork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheGoodFork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D1292026245FA300CF818D /* TheGoodForkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGoodForkApp.swift; sourceTree = "<group>"; };
 		84D1292226245FA300CF818D /* ConnexionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnexionView.swift; sourceTree = "<group>"; };
@@ -100,6 +106,9 @@
 				84D1292426245FA800CF818D /* Assets.xcassets */,
 				84D1292926245FA800CF818D /* Info.plist */,
 				84D1292626245FA800CF818D /* Preview Content */,
+				843DBEED2627096E007B152E /* InscriptionView.swift */,
+				843DBEF226271906007B152E /* Helper.swift */,
+				843DBEF726271C0A007B152E /* Router.swift */,
 			);
 			path = TheGoodFork;
 			sourceTree = "<group>";
@@ -261,6 +270,9 @@
 			files = (
 				84D1292326245FA300CF818D /* ConnexionView.swift in Sources */,
 				84D1292126245FA300CF818D /* TheGoodForkApp.swift in Sources */,
+				843DBEF826271C0A007B152E /* Router.swift in Sources */,
+				843DBEEE2627096E007B152E /* InscriptionView.swift in Sources */,
+				843DBEF326271906007B152E /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
