@@ -11,7 +11,7 @@ import SwiftUI
 struct TheGoodForkApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ConnexionView()
         }
     }
 }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		84D1292126245FA300CF818D /* TheGoodForkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1292026245FA300CF818D /* TheGoodForkApp.swift */; };
-		84D1292326245FA300CF818D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1292226245FA300CF818D /* ContentView.swift */; };
+		84D1292326245FA300CF818D /* ConnexionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1292226245FA300CF818D /* ConnexionView.swift */; };
 		84D1292526245FA800CF818D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D1292426245FA800CF818D /* Assets.xcassets */; };
 		84D1292826245FA800CF818D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D1292726245FA800CF818D /* Preview Assets.xcassets */; };
 		84D1293326245FA900CF818D /* TheGoodForkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1293226245FA900CF818D /* TheGoodForkTests.swift */; };
@@ -35,7 +35,7 @@
 /* Begin PBXFileReference section */
 		84D1291D26245FA200CF818D /* TheGoodFork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheGoodFork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D1292026245FA300CF818D /* TheGoodForkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGoodForkApp.swift; sourceTree = "<group>"; };
-		84D1292226245FA300CF818D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		84D1292226245FA300CF818D /* ConnexionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnexionView.swift; sourceTree = "<group>"; };
 		84D1292426245FA800CF818D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84D1292726245FA800CF818D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		84D1292926245FA800CF818D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				84D1292026245FA300CF818D /* TheGoodForkApp.swift */,
-				84D1292226245FA300CF818D /* ContentView.swift */,
+				84D1292226245FA300CF818D /* ConnexionView.swift */,
 				84D1292426245FA800CF818D /* Assets.xcassets */,
 				84D1292926245FA800CF818D /* Info.plist */,
 				84D1292626245FA800CF818D /* Preview Content */,
@@ -259,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84D1292326245FA300CF818D /* ContentView.swift in Sources */,
+				84D1292326245FA300CF818D /* ConnexionView.swift in Sources */,
 				84D1292126245FA300CF818D /* TheGoodForkApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
