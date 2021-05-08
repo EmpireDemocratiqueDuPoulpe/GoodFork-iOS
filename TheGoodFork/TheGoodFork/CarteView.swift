@@ -10,6 +10,7 @@ import UIKit
 
 
 struct CarteView: View {
+    let categories: [String] = ["Entrée", "Plat", "Dessert", "Boisson"]
     
     var body: some View {
             HStack (alignment: .center, spacing: 10) {
@@ -19,9 +20,18 @@ struct CarteView: View {
                     .frame(width: 150, height: 150)
                 Spacer()
             }
+        HStack{
+            ForEach(categories, id: \.self){ category in
+                Button(action: {}, label: {
+                    Text(category)
+                        .fontWeight(category == categories.first ? .bold : .regular)
+                        .padding(.horizontal, 6)
+                        .foregroundColor(category == categories.first ? Color(.label): .secondary)
+                })
+            }
         }
 }
-
+    }
 struct CarteView_Previews: PreviewProvider {
     static var previews: some View {
         CarteView()
