@@ -22,28 +22,42 @@ struct HomeView: View {
             Spacer()
         }
         Text("Bienvenue").font(.headline)
-        VStack {
+        HStack {
             Button(action: {
                 print("home")
             }){
-                HStack{
-                    Spacer()
-                    Text("Sur place").font(.headline).foregroundColor(.white)
-                    Spacer()
-                }.padding(.vertical, 10)
+                VStack{
+                    Image("logo-white")
+                        .resizable()
+                        .frame(width: 80, height: 80)
+                    Text("Sur place").font(.system(size: 16)).foregroundColor(.white)
+                }.padding(.horizontal,  22).padding(.vertical,  30)
                 .background(Color.blue)
             }
             Button(action: {
                 print("emporter")
             }){
-                HStack{
-                    Spacer()
-                    Text("A emporter").font(.headline).foregroundColor(.white)
-                    Spacer()
-                }.padding(.vertical, 10)
+                VStack{
+                    Image("logo-white")
+                        .resizable()
+                        .frame(width: 80, height: 80)
+                    Text("A emporter").font(.system(size: 16)).foregroundColor(.white)
+                }.padding(.horizontal,  22).padding(.vertical,  30)
                 .background(Color.blue)
             }
-        }.padding(.horizontal,  40)
+        }.padding(.horizontal,  30)
+            Button(action: {
+                print("carte")
+            }){
+                HStack{
+                    Image("logo-white")
+                        .resizable()
+                        .frame(width: 50, height: 50).padding(.horizontal,  20)
+                    Text("Carte").font(.system(size: 20)).foregroundColor(.white)
+                    Spacer()
+                }.padding(.vertical, 20)
+                .background(Color.blue)
+            }.padding(.horizontal,  30)
 
     }
 }
