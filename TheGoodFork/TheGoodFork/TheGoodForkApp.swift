@@ -14,7 +14,8 @@ struct TheGoodForkApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ConnexionView(router: router)
+            //ConnexionView(router: router)
+            AppView(router: router)
         }
     }
 }

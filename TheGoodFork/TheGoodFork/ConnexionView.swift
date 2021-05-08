@@ -15,10 +15,6 @@ struct ConnexionView: View {
     @State private var password: String = ""
     
     var body: some View {
-        switch router.currentPage {
-        case .register:
-            InscriptionView(router: router).navigationBarHidden(true)
-        case .connection:
             VStack(alignment: .leading, spacing: 10) {
                 HStack (alignment: .center, spacing: 10) {
                     Spacer()
@@ -60,8 +56,6 @@ struct ConnexionView: View {
                 }
             }.padding()
             .navigationBarHidden(true)
-        }
-
     }
 }
 
