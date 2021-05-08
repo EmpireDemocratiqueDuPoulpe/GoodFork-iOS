@@ -19,6 +19,8 @@ struct AppView: View {
             ConnexionView(router: router).navigationBarHidden(true)
         case .home:
             HomeView(router: router).navigationBarHidden(true)
+        case .carte:
+            CarteView()
         }
 
     }

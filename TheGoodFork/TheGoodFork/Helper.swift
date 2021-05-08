@@ -11,4 +11,5 @@ enum Page {
     case connection
     case register
     case home
+    case carte
 }
