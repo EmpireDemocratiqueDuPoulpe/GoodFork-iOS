@@ -11,6 +11,7 @@ import UIKit
 
 struct CarteView: View {
 
+    @Binding var filterByType: String
     
     let categories: [String] = ["Entrée", "Plat", "Dessert", "Boisson"]
     
@@ -27,20 +28,27 @@ struct CarteView: View {
             ForEach(categories, id: \.self){ category in
                 Button(action: {}, label: {
                     Text(category)
-                        .fontWeight(category == categories.first ? .bold : .regular)
+                        .fontWeight(category == filterByType ? .bold : .regular)
                         .padding(.horizontal, 6)
-                        .foregroundColor(category == categories.first ? Color(.label): .secondary)
+                        .foregroundColor(category == filterByType ? Color(.label): .secondary)
+                        .onTapGesture {
+                            filter(by: category)
+                        }
                 })
             }
         }
 
-                PlatGridView(layout: layout)
+                PlatGridView(filterByType: $filterByType , layout: layout, plats: plats)
             }
 }
+    func filter(by label: String) {
+        filterByType = label
     }
+    }
+
 struct CarteView_Previews: PreviewProvider {
     static var previews: some View {
-        CarteView()
+        CarteView(filterByType: Binding.constant("Entrée"))
     }
 }
 

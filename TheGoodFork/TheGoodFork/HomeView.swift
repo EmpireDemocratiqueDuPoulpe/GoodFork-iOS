@@ -14,10 +14,12 @@ struct HomeView: View {
     @StateObject var router: Router
     @State var selection: Int? = nil
     
+    @State private var filterByType = "Entrée"
+    
     var body: some View {
         NavigationView{
             VStack{
-                HStack (alignment: .center, spacing: 10) {
+                HStack {
                     Spacer()
                     Image("logo-white")
                         .resizable()
@@ -25,9 +27,11 @@ struct HomeView: View {
                     Spacer()
                 }
                 Text("Bienvenue").font(.headline)
+                
                 HStack {
+                    NavigationLink(destination: Text("Sur place"), tag: 3, selection: $selection){
                     Button(action: {
-                        print("home")
+                        self.selection = 3
                     }){
                         VStack{
                             Image("logo-white")
@@ -37,21 +41,28 @@ struct HomeView: View {
                         }.padding(.horizontal,  22).padding(.vertical,  30)
                         .background(Color.blue)
                     }
-                    Button(action: {
-                        print("emporter")
-                    }){
-                        VStack{
-                            Image("logo-white")
-                                .resizable()
-                                .frame(width: 80, height: 80)
-                            Text("A emporter").font(.system(size: 16)).foregroundColor(.white)
-                        }.padding(.horizontal,  22).padding(.vertical,  30)
-                        .background(Color.blue)
                     }
+                    
+                    NavigationLink(destination: Text("A emporter"), tag: 2, selection: $selection){
+                        Button(action: {
+                            self.selection = 2
+                        }){
+                            VStack{
+                                Image("logo-white")
+                                    .resizable()
+                                    .frame(width: 80, height: 80)
+                                Text("A emporter").font(.system(size: 16)).foregroundColor(.white)
+                            }.padding(.horizontal,  22).padding(.vertical,  30)
+                            .background(Color.blue)
+                        }
+                    }
+
+                    
+                    
                 }.padding(.horizontal,  30)
-                NavigationLink(destination: CarteView(), tag: 1, selection: $selection){
+                
+                NavigationLink(destination: CarteView(filterByType: $filterByType), tag: 1, selection: $selection){
                     Button(action: {
-                        print("tapped")
                         self.selection = 1
                     }){
                         HStack{

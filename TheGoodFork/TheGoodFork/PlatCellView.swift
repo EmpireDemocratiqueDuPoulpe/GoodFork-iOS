@@ -11,24 +11,24 @@ import UIKit
 
 struct PlatCellView: View {
 
+    let plat: Plat
     
     var body: some View {
             HStack{
-                Image("logo-white").resizable().aspectRatio(contentMode: .fit).frame(width: 60, height: 60)
                 Spacer()
-                Text("Pizza")
+                Text(plat.name)
                 Spacer()
-                Text("10€")
+                Text("\(plat.price)€")
                     .font(.body)
                     .bold()
-            }.padding([.top, .horizontal])
-            .background(Color(.secondarySystemBackground))
+            }.padding(.vertical, 30)
+            .background(Image(plat.image).resizable().blur(radius: 1).colorMultiply(Color(red: 1, green: 1, blue: 1, opacity: 0.4)))
             .foregroundColor(Color(.label))
-}
     }
+}
 struct PlatCellView_Previews: PreviewProvider {
     static var previews: some View {
-        PlatCellView()
+        PlatCellView(plat: Plat(price: 10, name: "pizza", image: "logo-white", type: "plat"))
     }
 }
 

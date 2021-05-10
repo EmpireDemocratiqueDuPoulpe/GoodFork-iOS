@@ -11,6 +11,8 @@ struct AppView: View {
 
     @StateObject var router: Router
 
+    @State private var filterByType = "Entrée"
+    
     var body: some View {
         switch router.currentPage {
         case .register:
@@ -20,7 +22,7 @@ struct AppView: View {
         case .home:
             HomeView(router: router).navigationBarHidden(true)
         case .carte:
-            CarteView()
+            CarteView(filterByType: $filterByType)
         }
 
     }
