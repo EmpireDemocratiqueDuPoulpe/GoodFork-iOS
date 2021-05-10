@@ -10,15 +10,19 @@ import UIKit
 
 
 struct CarteView: View {
+
+    
     let categories: [String] = ["Entrée", "Plat", "Dessert", "Boisson"]
     
+    let layout = [ GridItem(.adaptive(minimum: 180))]
+    
     var body: some View {
+        NavigationView {
+            ScrollView {
             HStack (alignment: .center, spacing: 10) {
-                Spacer()
                 Image("logo-white")
                     .resizable()
                     .frame(width: 150, height: 150)
-                Spacer()
             }
         HStack{
             ForEach(categories, id: \.self){ category in
@@ -28,6 +32,10 @@ struct CarteView: View {
                         .padding(.horizontal, 6)
                         .foregroundColor(category == categories.first ? Color(.label): .secondary)
                 })
+            }
+        }
+
+                PlatGridView(layout: layout)
             }
         }
 }
