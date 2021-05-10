@@ -17,7 +17,6 @@ struct CarteView: View {
     let layout = [ GridItem(.adaptive(minimum: 180))]
     
     var body: some View {
-        NavigationView {
             ScrollView {
             HStack (alignment: .center, spacing: 10) {
                 Image("logo-white")
@@ -37,7 +36,6 @@ struct CarteView: View {
 
                 PlatGridView(layout: layout)
             }
-        }
 }
     }
 struct CarteView_Previews: PreviewProvider {
