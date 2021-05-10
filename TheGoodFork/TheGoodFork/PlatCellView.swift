@@ -21,18 +21,6 @@ struct PlatCellView: View {
                 Text("\(plat.price)€")
                     .font(.body)
                     .bold()
-                Button(action: {
-                    print("delete")
-                }){
-                    Image(systemName: "minus.circle.fill").resizable()
-                        .frame(width: 32.0, height: 32.0).foregroundColor(.red)
-                }
-                Button(action: {
-                    print("add")
-                }){
-                    Image(systemName: "plus.circle.fill").resizable()
-                        .frame(width: 32.0, height: 32.0).foregroundColor(.green)
-                }
             }.padding(.vertical, 30)
             .background(Image(plat.image).resizable().blur(radius: 1).colorMultiply(Color(red: 1, green: 1, blue: 1, opacity: 0.4)))
             .foregroundColor(Color(.label))
