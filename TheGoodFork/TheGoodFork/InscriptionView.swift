@@ -9,6 +9,8 @@ import SwiftUI
 
 struct InscriptionView: View {
     
+    @EnvironmentObject var Api: Api
+    
     @StateObject var router: Router
     
     @State private var username: String = ""
@@ -47,7 +49,7 @@ struct InscriptionView: View {
                     .padding(.bottom, 10)
             
             Button(action: {
-                print("\(self.username) and \(self.password)")
+                Api.addUser(firstName: self.username, email: self.email, password1: self.password, password2: self.confirmPassword)
             }){
                 HStack{
                     Spacer()

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ConnexionView: View {
 
+    @EnvironmentObject var Api: Api
+
     @StateObject var router: Router
     
     @State private var email: String = ""
@@ -35,7 +37,10 @@ struct ConnexionView: View {
                     .padding(.bottom, 10)
                 
                 Button(action: {
-                    print("\(self.email) and \(self.password)")
+                    Api.login(email: self.email, password: self.password)
+                    if Api.token != nil{
+                        router.currentPage = .home
+                    }
                 }){
                     HStack{
                         Spacer()

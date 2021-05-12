@@ -12,6 +12,7 @@ import UIKit
 struct HomeView: View {
     
     @StateObject var router: Router
+    @State var username: String
     @State var selection: Int? = nil
     
     @State private var filterByType = "Entrée"
@@ -26,7 +27,7 @@ struct HomeView: View {
                         .frame(width: 150, height: 150)
                     Spacer()
                 }
-                Text("Bienvenue").font(.headline)
+                Text("Bienvenue \(self.username)").font(.headline)
                 
                 HStack {
                     NavigationLink(destination: Text("Sur place"), tag: 3, selection: $selection){
@@ -85,6 +86,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(router: Router())
+        HomeView(router: Router(), username: "Bla")
     }
 }

@@ -8,6 +8,5 @@
 import SwiftUI
 
 class Router: ObservableObject {
-    
-    @Published var currentPage: Page = .home
+    @Published var currentPage: Page = .connection
 }
