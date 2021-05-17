@@ -19,10 +19,14 @@ struct WaiterHomeView: View {
     var body: some View {
         NavigationView{
             VStack{
-
+                HStack {
+                    Image("logo-white")
+                        .resizable()
+                        .frame(width: 150, height: 150)
+                }
                 Text("Bienvenue \(self.username)").font(.headline)
                 
-                NavigationLink(destination: CarteView(filterByType: $filterByType), tag: 1, selection: $selection){
+                NavigationLink(destination: Text("Commande"), tag: 1, selection: $selection){
                     Button(action: {
                         self.selection = 1
                     }){
@@ -30,16 +34,62 @@ struct WaiterHomeView: View {
                             Image("logo-white")
                                 .resizable()
                                 .frame(width: 50, height: 50).padding(.horizontal,  20)
-                            Text("Carte").font(.system(size: 20)).foregroundColor(.white)
+                            Text("Commande").font(.system(size: 20)).foregroundColor(.white)
                             Spacer()
-                        }.padding(.vertical, 20)
+                        }.padding(.vertical, 10)
                         .background(Color.blue)
                     }.padding(.horizontal,  30)
                 }
+                
+                NavigationLink(destination: CarteView(filterByType: $filterByType), tag: 2, selection: $selection){
+                    Button(action: {
+                        self.selection = 2
+                    }){
+                        HStack{
+                            Image("logo-white")
+                                .resizable()
+                                .frame(width: 50, height: 50).padding(.horizontal,  20)
+                            Text("Carte").font(.system(size: 20)).foregroundColor(.white)
+                            Spacer()
+                        }.padding(.vertical, 10)
+                        .background(Color.blue)
+                    }.padding(.horizontal,  30)
+                }
+                
+                NavigationLink(destination: Text("Réservations"), tag: 3, selection: $selection){
+                    Button(action: {
+                        self.selection = 3
+                    }){
+                        HStack{
+                            Image("logo-white")
+                                .resizable()
+                                .frame(width: 50, height: 50).padding(.horizontal,  20)
+                            Text("Réservations").font(.system(size: 20)).foregroundColor(.white)
+                            Spacer()
+                        }.padding(.vertical, 10)
+                        .background(Color.blue)
+                    }.padding(.horizontal,  30)
+                }
+                
+                NavigationLink(destination: Text("Alerte"), tag: 4, selection: $selection){
+                    Button(action: {
+                        self.selection = 4
+                    }){
+                        HStack{
+                            Image("logo-white")
+                                .resizable()
+                                .frame(width: 50, height: 50).padding(.horizontal,  20)
+                            Text("Alerte").font(.system(size: 20)).foregroundColor(.white)
+                            Spacer()
+                        }.padding(.vertical, 5)
+                        .background(Color.blue)
+                    }.padding(.horizontal,  30)
+                }
+                
 
 
             }
-            }
+        }
         }
         
 }

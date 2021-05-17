@@ -21,7 +21,13 @@ struct AppView: View {
                 case .register:
                     HomeView(router: router, username: Api.user?.first_name ?? "").navigationBarHidden(true)
                 case .connection:
-                    WaiterHomeView(router: router, username: Api.user?.first_name ?? "").navigationBarHidden(true)
+                    switch Api.user?.role {
+                    case "customer":
+                        HomeView(router: router, username: Api.user?.first_name ?? "").navigationBarHidden(true)
+                    case "waiter":
+                        WaiterHomeView(router: router, username: Api.user?.first_name ?? "").navigationBarHidden(true)
+                    default:
+                        InscriptionView(router: router).navigationBarHidden(true)                    }
                 case .home:
                     switch Api.user?.role {
                     case "customer":
