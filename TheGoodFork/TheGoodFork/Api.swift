@@ -97,5 +97,6 @@ class Api: ObservableObject {
         if let encoded = try? encoder.encode(self.user){
             self.defaults.set(encoded, forKey: "User")
         }
+        print(self.user?.role ?? "test")
     }
 }

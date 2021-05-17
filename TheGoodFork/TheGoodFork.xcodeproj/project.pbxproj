@@ -10,6 +10,7 @@
 		840E837B2649301400CC609C /* PlatCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E837A2649301400CC609C /* PlatCellView.swift */; };
 		840E83802649332F00CC609C /* PlatGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E837F2649332F00CC609C /* PlatGridView.swift */; };
 		840E8385264950A700CC609C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E8384264950A700CC609C /* Data.swift */; };
+		841D6F1226528FFB005D87BC /* WaiterHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D6F1126528FFB005D87BC /* WaiterHomeView.swift */; };
 		843DBEEE2627096E007B152E /* InscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DBEED2627096E007B152E /* InscriptionView.swift */; };
 		843DBEF326271906007B152E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DBEF226271906007B152E /* Helper.swift */; };
 		843DBEF826271C0A007B152E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DBEF726271C0A007B152E /* Router.swift */; };
@@ -46,6 +47,7 @@
 		840E837A2649301400CC609C /* PlatCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatCellView.swift; sourceTree = "<group>"; };
 		840E837F2649332F00CC609C /* PlatGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatGridView.swift; sourceTree = "<group>"; };
 		840E8384264950A700CC609C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		841D6F1126528FFB005D87BC /* WaiterHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaiterHomeView.swift; sourceTree = "<group>"; };
 		843DBEED2627096E007B152E /* InscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InscriptionView.swift; sourceTree = "<group>"; };
 		843DBEF226271906007B152E /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		843DBEF726271C0A007B152E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				848818422646E7360043DCD9 /* CarteView.swift */,
 				840E837A2649301400CC609C /* PlatCellView.swift */,
 				840E837F2649332F00CC609C /* PlatGridView.swift */,
+				841D6F1126528FFB005D87BC /* WaiterHomeView.swift */,
 			);
 			path = TheGoodFork;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				84B562B1264A9DD90051E0E5 /* Api.swift in Sources */,
 				848818432646E7370043DCD9 /* CarteView.swift in Sources */,
 				840E837B2649301400CC609C /* PlatCellView.swift in Sources */,
+				841D6F1226528FFB005D87BC /* WaiterHomeView.swift in Sources */,
 				843DBEEE2627096E007B152E /* InscriptionView.swift in Sources */,
 				848818382646C8240043DCD9 /* AppView.swift in Sources */,
 				843DBEF326271906007B152E /* Helper.swift in Sources */,

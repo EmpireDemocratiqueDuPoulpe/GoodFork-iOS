@@ -21,22 +21,24 @@ struct AppView: View {
                 case .register:
                     HomeView(router: router, username: Api.user?.first_name ?? "").navigationBarHidden(true)
                 case .connection:
-                    HomeView(router: router, username: Api.user?.first_name ?? "").navigationBarHidden(true)
+                    WaiterHomeView(router: router, username: Api.user?.first_name ?? "").navigationBarHidden(true)
                 case .home:
-                    HomeView(router: router, username: Api.user?.first_name ?? "").navigationBarHidden(true)
-                case .carte:
-                    CarteView(filterByType: $filterByType)
+                    switch Api.user?.role {
+                    case "customer":
+                        HomeView(router: router, username: Api.user?.first_name ?? "").navigationBarHidden(true)
+                    case "waiter":
+                        WaiterHomeView(router: router, username: Api.user?.first_name ?? "").navigationBarHidden(true)
+                    default:
+                        InscriptionView(router: router).navigationBarHidden(true)                    }
             }
         }
-        else{
+        else {
             switch router.currentPage {
                 case .register:
                     InscriptionView(router: router).navigationBarHidden(true)
                 case .connection:
                     ConnexionView(router: router).navigationBarHidden(true)
                 case .home:
-                    ConnexionView(router: router).navigationBarHidden(true)
-                case .carte:
                     ConnexionView(router: router).navigationBarHidden(true)
             }
         }

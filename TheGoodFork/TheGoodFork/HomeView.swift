@@ -28,7 +28,7 @@ struct HomeView: View {
                     Spacer()
                 }
                 Text("Bienvenue \(self.username)").font(.headline)
-                
+
                 HStack {
                     NavigationLink(destination: Text("Sur place"), tag: 3, selection: $selection){
                     Button(action: {
