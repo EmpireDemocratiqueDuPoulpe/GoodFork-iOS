@@ -22,7 +22,7 @@ let plats = [
     Plat(price: 5, name: "eau", image: "nourriture", type: "Boisson"),
     Plat(price: 10, name: "hamburger", image: "logo-white", type: "Plat"),
     Plat(price: 15, name: "titamisu", image: "logo-white", type: "Dessert"),
-    Plat(price: 20, name: "salade", image: "nourriture", type: "Entrée"),
+    Plat(price: 20, name: "Salade", image: "nourriture", type: "Entrée"),
     Plat(price: 5, name: "bière", image: "logo-white", type: "Boisson"),
     Plat(price: 10, name: "bla", image: "logo-white", type: "Plat"),
     Plat(price: 15, name: "bli", image: "logo-white", type: "Dessert"),

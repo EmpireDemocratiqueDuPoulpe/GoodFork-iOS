@@ -10,6 +10,7 @@
 		840E837B2649301400CC609C /* PlatCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E837A2649301400CC609C /* PlatCellView.swift */; };
 		840E83802649332F00CC609C /* PlatGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E837F2649332F00CC609C /* PlatGridView.swift */; };
 		840E8385264950A700CC609C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E8384264950A700CC609C /* Data.swift */; };
+		8418704E2653DCB40090D4CF /* PlatDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418704D2653DCB40090D4CF /* PlatDetailView.swift */; };
 		841D6F1226528FFB005D87BC /* WaiterHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D6F1126528FFB005D87BC /* WaiterHomeView.swift */; };
 		843DBEEE2627096E007B152E /* InscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DBEED2627096E007B152E /* InscriptionView.swift */; };
 		843DBEF326271906007B152E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DBEF226271906007B152E /* Helper.swift */; };
@@ -47,6 +48,7 @@
 		840E837A2649301400CC609C /* PlatCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatCellView.swift; sourceTree = "<group>"; };
 		840E837F2649332F00CC609C /* PlatGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatGridView.swift; sourceTree = "<group>"; };
 		840E8384264950A700CC609C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		8418704D2653DCB40090D4CF /* PlatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatDetailView.swift; sourceTree = "<group>"; };
 		841D6F1126528FFB005D87BC /* WaiterHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaiterHomeView.swift; sourceTree = "<group>"; };
 		843DBEED2627096E007B152E /* InscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InscriptionView.swift; sourceTree = "<group>"; };
 		843DBEF226271906007B152E /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				840E837A2649301400CC609C /* PlatCellView.swift */,
 				840E837F2649332F00CC609C /* PlatGridView.swift */,
 				841D6F1126528FFB005D87BC /* WaiterHomeView.swift */,
+				8418704D2653DCB40090D4CF /* PlatDetailView.swift */,
 			);
 			path = TheGoodFork;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8418704E2653DCB40090D4CF /* PlatDetailView.swift in Sources */,
 				84D1292326245FA300CF818D /* ConnexionView.swift in Sources */,
 				84D1292126245FA300CF818D /* TheGoodForkApp.swift in Sources */,
 				843DBEF826271C0A007B152E /* Router.swift in Sources */,

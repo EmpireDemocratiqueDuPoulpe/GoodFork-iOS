@@ -20,7 +20,7 @@ struct PlatGridView: View {
         LazyVGrid(columns: layout){
                 ForEach(plats.filter {$0.type.contains(filterByType)}, id: \.name) { plat in
                     NavigationLink(
-                        destination: Text("Destination"),
+                        destination: PlatDetailView(plat: plat),
                         label: {
                             PlatCellView(plat: plat)
                         }).padding(.horizontal,  10)
