@@ -26,7 +26,7 @@ struct WaiterHomeView: View {
                 }
                 Text("Bienvenue \(self.username)").font(.headline)
                 
-                NavigationLink(destination: Text("Commande"), tag: 1, selection: $selection){
+                NavigationLink(destination: CommandView(filterByType: $filterByType), tag: 1, selection: $selection){
                     Button(action: {
                         self.selection = 1
                     }){
