@@ -36,7 +36,7 @@ struct CommandView: View {
                 })
             }
         }
-                PlatGridView(filterByType: $filterByType , layout: layout, plats: plats)
+                CommandPlatGridView(filterByType: $filterByType , layout: layout, plats: plats)
             }
 }
     func filter(by label: String) {

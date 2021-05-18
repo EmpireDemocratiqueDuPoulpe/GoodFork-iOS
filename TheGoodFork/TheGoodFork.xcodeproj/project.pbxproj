@@ -12,6 +12,8 @@
 		840E8385264950A700CC609C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E8384264950A700CC609C /* Data.swift */; };
 		8418704E2653DCB40090D4CF /* PlatDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418704D2653DCB40090D4CF /* PlatDetailView.swift */; };
 		841870532653F2950090D4CF /* CommandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841870522653F2950090D4CF /* CommandView.swift */; };
+		841870662654034C0090D4CF /* CommandPlatGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841870652654034C0090D4CF /* CommandPlatGridView.swift */; };
+		8418706E2654042A0090D4CF /* CommandPlatCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418706D2654042A0090D4CF /* CommandPlatCellView.swift */; };
 		841D6F1226528FFB005D87BC /* WaiterHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D6F1126528FFB005D87BC /* WaiterHomeView.swift */; };
 		843DBEEE2627096E007B152E /* InscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DBEED2627096E007B152E /* InscriptionView.swift */; };
 		843DBEF326271906007B152E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DBEF226271906007B152E /* Helper.swift */; };
@@ -51,6 +53,8 @@
 		840E8384264950A700CC609C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		8418704D2653DCB40090D4CF /* PlatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatDetailView.swift; sourceTree = "<group>"; };
 		841870522653F2950090D4CF /* CommandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandView.swift; sourceTree = "<group>"; };
+		841870652654034C0090D4CF /* CommandPlatGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandPlatGridView.swift; sourceTree = "<group>"; };
+		8418706D2654042A0090D4CF /* CommandPlatCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandPlatCellView.swift; sourceTree = "<group>"; };
 		841D6F1126528FFB005D87BC /* WaiterHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaiterHomeView.swift; sourceTree = "<group>"; };
 		843DBEED2627096E007B152E /* InscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InscriptionView.swift; sourceTree = "<group>"; };
 		843DBEF226271906007B152E /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				841870522653F2950090D4CF /* CommandView.swift */,
+				841870652654034C0090D4CF /* CommandPlatGridView.swift */,
+				8418706D2654042A0090D4CF /* CommandPlatCellView.swift */,
 			);
 			name = command;
 			sourceTree = "<group>";
@@ -149,20 +155,20 @@
 		84D1291F26245FA300CF818D /* TheGoodFork */ = {
 			isa = PBXGroup;
 			children = (
-				841870582653FE6B0090D4CF /* carte */,
-				84D1292026245FA300CF818D /* TheGoodForkApp.swift */,
-				84D1292226245FA300CF818D /* ConnexionView.swift */,
-				84B562B0264A9DD90051E0E5 /* Api.swift */,
-				84D1292426245FA800CF818D /* Assets.xcassets */,
-				840E8384264950A700CC609C /* Data.swift */,
 				84D1292926245FA800CF818D /* Info.plist */,
-				84D1292626245FA800CF818D /* Preview Content */,
-				843DBEED2627096E007B152E /* InscriptionView.swift */,
-				843DBEF226271906007B152E /* Helper.swift */,
-				843DBEF726271C0A007B152E /* Router.swift */,
-				8418705C2653FEF80090D4CF /* home */,
+				84B562B0264A9DD90051E0E5 /* Api.swift */,
 				848818372646C8240043DCD9 /* AppView.swift */,
+				84D1292226245FA300CF818D /* ConnexionView.swift */,
+				840E8384264950A700CC609C /* Data.swift */,
+				843DBEF226271906007B152E /* Helper.swift */,
+				843DBEED2627096E007B152E /* InscriptionView.swift */,
+				843DBEF726271C0A007B152E /* Router.swift */,
+				84D1292026245FA300CF818D /* TheGoodForkApp.swift */,
+				84D1292426245FA800CF818D /* Assets.xcassets */,
+				841870582653FE6B0090D4CF /* carte */,
 				84187064265400230090D4CF /* command */,
+				8418705C2653FEF80090D4CF /* home */,
+				84D1292626245FA800CF818D /* Preview Content */,
 			);
 			path = TheGoodFork;
 			sourceTree = "<group>";
@@ -327,11 +333,13 @@
 				84D1292126245FA300CF818D /* TheGoodForkApp.swift in Sources */,
 				843DBEF826271C0A007B152E /* Router.swift in Sources */,
 				840E83802649332F00CC609C /* PlatGridView.swift in Sources */,
+				841870662654034C0090D4CF /* CommandPlatGridView.swift in Sources */,
 				840E8385264950A700CC609C /* Data.swift in Sources */,
 				848818332646C22E0043DCD9 /* HomeView.swift in Sources */,
 				84B562B1264A9DD90051E0E5 /* Api.swift in Sources */,
 				841870532653F2950090D4CF /* CommandView.swift in Sources */,
 				848818432646E7370043DCD9 /* CarteView.swift in Sources */,
+				8418706E2654042A0090D4CF /* CommandPlatCellView.swift in Sources */,
 				840E837B2649301400CC609C /* PlatCellView.swift in Sources */,
 				841D6F1226528FFB005D87BC /* WaiterHomeView.swift in Sources */,
 				843DBEEE2627096E007B152E /* InscriptionView.swift in Sources */,
