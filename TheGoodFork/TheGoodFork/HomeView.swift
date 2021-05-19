@@ -15,7 +15,7 @@ struct HomeView: View {
     @State var username: String
     @State var selection: Int? = nil
     
-    @State private var filterByType = "Entrée"
+    @State private var filterByType = "entrée"
     
     var body: some View {
         NavigationView{

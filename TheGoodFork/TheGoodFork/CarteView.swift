@@ -10,10 +10,11 @@ import UIKit
 
 
 struct CarteView: View {
-
+    @EnvironmentObject var Api: Api
+    
     @Binding var filterByType: String
     
-    let categories: [String] = ["Entrée", "Plat", "Dessert", "Boisson"]
+    let categories: [String] = ["entrée", "plat", "dessert", "boisson"]
     
     let layout = [ GridItem(.adaptive(minimum: 180))]
     
@@ -38,7 +39,7 @@ struct CarteView: View {
             }
         }
 
-                PlatGridView(filterByType: $filterByType , layout: layout, plats: plats)
+                PlatGridView(filterByType: $filterByType , layout: layout, plats: Api.recettes!)
             }
 }
     func filter(by label: String) {

@@ -23,10 +23,35 @@ struct Base: Codable {
     var fields: Array<String>?
 }
 
+struct Menu: Codable {
+    var menus: [Recette]
+}
+
+struct Recette: Codable {
+    var menu_id: Int
+    var name: String
+    var type: String
+    var type_id: Int
+    var image_path: String
+    var description: String
+    var ingredients: [Ingredient]
+}
+
+struct Ingredient: Codable {
+    var ingredient_id: Int
+    var stock_id: Int
+    var name: String
+    var units: Int
+    var units_unit: String
+    var units_unit_id: Int
+}
+
 class Api: ObservableObject {
     @Published var user: User?
     @Published var token: String?
+    @Published var recettes: [Recette]?
     init(){
+        self.getCarte()
         if self.defaults.string(forKey: "Token") == nil && self.defaults.object(forKey: "User") == nil{
             self.token = nil
             self.user = nil
@@ -57,7 +82,18 @@ class Api: ObservableObject {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         URLSession.shared.dataTask(with: request) {(data, response, error) in
-            print(data ?? "test")
+            do {
+                if let data = data {
+                    let base = try JSONDecoder().decode(Base.self, from: data)
+                    DispatchQueue.main.async {
+                        self.user = base.user
+                        self.token = base.token
+                        self.saveUser()
+                    }
+                }
+            } catch {
+                print(error)
+            }
         }.resume()
                 }
     
@@ -90,6 +126,32 @@ class Api: ObservableObject {
 
             }.resume()
         }
+    
+    func getCarte(){
+        guard let url = URL(string: "http://3.134.79.46:8080/api/menus/all") else { return }
+        
+        
+
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+            URLSession.shared.dataTask(with: request) {(data, response, error) in
+                do {
+                    if let data = data {
+                        let menu = try JSONDecoder().decode(Menu.self, from: data)
+                        DispatchQueue.main.async {
+                            self.recettes = menu.menus
+                        }
+                    }
+                } catch {
+                    print(error)
+                }
+
+            }.resume()
+        }
+    
     
     func saveUser(){
         self.defaults.set(self.token, forKey: "Token")

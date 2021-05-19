@@ -9,10 +9,11 @@ import SwiftUI
 import UIKit
 
 struct CommandView: View {
+    @EnvironmentObject var Api: Api
 
     @Binding var filterByType: String
     
-    let categories: [String] = ["Entrée", "Plat", "Dessert", "Boisson"]
+    let categories: [String] = ["entrée", "plat", "dessert", "boisson"]
     
     let layout = [ GridItem(.adaptive(minimum: 180))]
     
@@ -36,7 +37,7 @@ struct CommandView: View {
                 })
             }
         }
-                CommandPlatGridView(filterByType: $filterByType , layout: layout, plats: plats)
+                CommandPlatGridView(filterByType: $filterByType , layout: layout, plats: Api.recettes!)
             }
 }
     func filter(by label: String) {

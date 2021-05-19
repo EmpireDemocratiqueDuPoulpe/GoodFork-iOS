@@ -62,7 +62,9 @@ struct InscriptionView: View {
             
             Button(action: {
                 Api.addUser(lastName: self.lastName, firstName: self.firstName, email: self.email, password1: self.password, password2: self.confirmPassword)
-                router.currentPage = .connection
+                if Api.token != nil{
+                    router.currentPage = .home
+                }
             }){
                 HStack{
                     Spacer()

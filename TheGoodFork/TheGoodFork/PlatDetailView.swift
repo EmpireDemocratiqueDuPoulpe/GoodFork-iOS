@@ -11,24 +11,21 @@ import UIKit
 
 struct PlatDetailView: View {
 
-    let plat: Plat
+    let plat: Recette
     
     var body: some View {
-        VStack{
+        VStack {
             HStack {
-                Image(plat.image)
+                Image(plat.image_path)
                     .resizable()
                     .scaledToFill()
                     .frame(width: 200, height: 200)
                     .clipped()
             }
-            HStack{
+            HStack {
                 Text(plat.name).font(.headline)
                 Spacer()
-                Text("\(plat.price)€")
-                    .font(.body)
-                    .bold()
-
+                //Text("\(plat.price)€").font(.body).bold()
             }
             VStack(alignment: .leading,  spacing: 10){
                 Spacer()
@@ -37,15 +34,9 @@ struct PlatDetailView: View {
                 Spacer()
                 List {
                     Section(header: Text("Composition")) {
-                        Text("Merguez")
-                        Text("Semoule")
-                        Text("Tomates")
-                        Text("Merguez")
-                        Text("Semoule")
-                        Text("Tomates")
-                        Text("Merguez")
-                        Text("Semoule")
-                        Text("Tomates")
+                        ForEach(plat.ingredients, id: \.ingredient_id) { ingredient in
+                                Text("\(ingredient.name)")
+                            }
                     }
                 }
                 .listStyle(GroupedListStyle())
@@ -58,6 +49,6 @@ struct PlatDetailView: View {
 }
 struct PlatDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PlatCellView(plat: Plat(price: 10, name: "pizza", image: "logo-white", type: "plat"))
+        PlatCellView(plat: Recette(menu_id: 1, name: "Pizza", type: "dessert", type_id: 2, image_path: "xx", description: "ddd", ingredients: [Ingredient(ingredient_id: 1, stock_id: 1, name: "saucisse", units: 1, units_unit: "g", units_unit_id: 1)]))
     }
 }
