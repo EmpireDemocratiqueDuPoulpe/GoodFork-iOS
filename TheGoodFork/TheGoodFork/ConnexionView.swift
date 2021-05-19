@@ -30,11 +30,13 @@ struct ConnexionView: View {
                 TextField(("Email"), text : $email)
                     .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
                     .padding(.bottom, 10)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 
-                Text("Password").font(.headline)
-                SecureField("Password", text : $password)
+                Text("Mot de passe").font(.headline)
+                SecureField("Mot de passe", text : $password)
                     .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
                     .padding(.bottom, 10)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 
                 Button(action: {
                     Api.login(email: self.email, password: self.password)
@@ -44,7 +46,7 @@ struct ConnexionView: View {
                 }){
                     HStack{
                         Spacer()
-                        Text("Login").font(.headline).foregroundColor(.white)
+                        Text("Connexion").font(.headline).foregroundColor(.white)
                         Spacer()
                     }.padding(.vertical, 10)
                     .background(Color.blue).cornerRadius(5.0).padding(.horizontal,  40)
@@ -55,7 +57,7 @@ struct ConnexionView: View {
                 }){
                     HStack{
                         Spacer()
-                        Text("Register").font(.headline).foregroundColor(.blue)
+                        Text("Inscription").font(.headline).foregroundColor(.blue)
                         Spacer()
                     }
                 }

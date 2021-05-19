@@ -23,20 +23,18 @@ struct CommandPlatCellView: View {
                     .font(.body)
                     .bold()
                 
-                Button(action: {
-                    if self.count > 0 {
-                        self.count -= 1
-                    }
-                }){
-                    Image(systemName: "minus.circle.fill").resizable()
-                        .frame(width: 32.0, height: 32.0).foregroundColor(.red)
-                }
+
                 if self.count > 0 {
+                    Button(action: {
+                            self.count -= 1
+                    }){
+                        Image(systemName: "minus.circle.fill").resizable()
+                            .frame(width: 32.0, height: 32.0).foregroundColor(.red)
+                    }
                     Text("\(self.count)")
                 }
                 Button(action: {
                     self.count += 1
-                    print("add")
                 }){
                     Image(systemName: "plus.circle.fill").resizable()
                         .frame(width: 32.0, height: 32.0).foregroundColor(.green)

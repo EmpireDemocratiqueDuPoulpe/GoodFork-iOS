@@ -43,10 +43,10 @@ class Api: ObservableObject {
 
     let defaults = UserDefaults.standard
 
-    func addUser(firstName: String, email: String, password1: String, password2: String){
+    func addUser(lastName: String, firstName: String, email: String, password1: String, password2: String){
         guard let url = URL(string: "http://3.134.79.46:8080/api/users") else { return }
         
-        let body: [String: String] = ["first_name": firstName, "email": email, "password1": password1, "password2": password2]
+        let body: [String: String] = ["last_name": lastName, "first_name": firstName, "email": email, "password1": password1, "password2": password2]
                 
         let finalBody = try! JSONSerialization.data(withJSONObject: body)
         

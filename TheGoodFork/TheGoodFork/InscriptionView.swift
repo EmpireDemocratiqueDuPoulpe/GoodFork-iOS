@@ -13,7 +13,8 @@ struct InscriptionView: View {
     
     @StateObject var router: Router
     
-    @State private var username: String = ""
+    @State private var firstName: String = ""
+    @State private var lastName: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var confirmPassword: String = ""
@@ -27,33 +28,45 @@ struct InscriptionView: View {
             Spacer()
         }
         ScrollView {
-        VStack(alignment: .leading, spacing: 10) {
-                Text("Username").font(.headline)
-                TextField(("Username"), text : $username)
+        VStack(alignment: .leading, spacing: 5) {
+                Text("Nom").font(.headline)
+                TextField(("Nom"), text : $lastName)
                     .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
                     .padding(.bottom, 10)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                
+                Text("Prénom").font(.headline)
+                TextField(("Prénom"), text : $firstName)
+                    .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+                    .padding(.bottom, 10)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 
                 Text("Email").font(.headline)
                 TextField(("Email"), text : $email)
                     .cornerRadius(3.0)
                     .padding(.bottom, 10)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 
-                Text("Password").font(.headline)
-                SecureField("Password", text : $password)
+                Text("Mot de passe").font(.headline)
+                SecureField("Mot de passe", text : $password)
                     .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
                     .padding(.bottom, 10)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 
-                Text("Confirm password").font(.headline)
-                SecureField("Confirm password", text : $confirmPassword)
+                Text("Confirmation du mot de passe").font(.headline)
+                SecureField("Mot de passe", text : $confirmPassword)
                     .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
                     .padding(.bottom, 10)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                }.padding()
             
             Button(action: {
-                Api.addUser(firstName: self.username, email: self.email, password1: self.password, password2: self.confirmPassword)
+                Api.addUser(lastName: self.lastName, firstName: self.firstName, email: self.email, password1: self.password, password2: self.confirmPassword)
+                router.currentPage = .connection
             }){
                 HStack{
                     Spacer()
-                    Text("Register").font(.headline).foregroundColor(.white)
+                    Text("Inscription").font(.headline).foregroundColor(.white)
                     Spacer()
                 }.padding(.vertical, 10)
                 .background(Color.blue).cornerRadius(5.0).padding(.horizontal,  40)
@@ -65,13 +78,12 @@ struct InscriptionView: View {
             }){
                 HStack{
                     Spacer()
-                    Text("Connection").font(.headline).foregroundColor(.blue)
+                    Text("Connexion").font(.headline).foregroundColor(.blue)
                     Spacer()
                 }
             }
 
-        }.padding()
-        .navigationBarHidden(true)
+
         }
     }
 }

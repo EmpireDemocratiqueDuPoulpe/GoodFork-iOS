@@ -56,7 +56,7 @@ struct WaiterHomeView: View {
                     }.padding(.horizontal,  30)
                 }
                 
-                NavigationLink(destination: Text("Réservations"), tag: 3, selection: $selection){
+                NavigationLink(destination: ReservationView(), tag: 3, selection: $selection){
                     Button(action: {
                         self.selection = 3
                     }){

@@ -30,7 +30,7 @@ struct HomeView: View {
                 Text("Bienvenue \(self.username)").font(.headline)
 
                 HStack {
-                    NavigationLink(destination: Text("Sur place"), tag: 3, selection: $selection){
+                    NavigationLink(destination: CommandView(filterByType: $filterByType), tag: 3, selection: $selection){
                     Button(action: {
                         self.selection = 3
                     }){
