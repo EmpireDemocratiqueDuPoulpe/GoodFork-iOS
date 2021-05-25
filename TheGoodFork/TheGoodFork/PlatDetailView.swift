@@ -16,7 +16,7 @@ struct PlatDetailView: View {
     var body: some View {
         VStack {
             HStack {
-                Image(plat.image_path)
+                Image(uiImage: "http://3.134.79.46:8080/images/\(plat.image_path)".load())
                     .resizable()
                     .scaledToFill()
                     .frame(width: 200, height: 200)
@@ -25,7 +25,7 @@ struct PlatDetailView: View {
             HStack {
                 Text(plat.name).font(.headline)
                 Spacer()
-                //Text("\(plat.price)€").font(.body).bold()
+                Text("\(plat.price)€").font(.body).bold()
             }
             VStack(alignment: .leading,  spacing: 10){
                 Spacer()
@@ -49,6 +49,6 @@ struct PlatDetailView: View {
 }
 struct PlatDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PlatCellView(plat: Recette(menu_id: 1, name: "Pizza", type: "dessert", type_id: 2, image_path: "xx", description: "ddd", ingredients: [Ingredient(ingredient_id: 1, stock_id: 1, name: "saucisse", units: 1, units_unit: "g", units_unit_id: 1)]))
+        PlatCellView(plat: Recette(menu_id: 1, name: "Pizza", type: "dessert", type_id: 2, image_path: "xx", description: "ddd", price: 2, ingredients: [Ingredient(ingredient_id: 1, stock_id: 1, name: "saucisse", units: 1, units_unit: "g", units_unit_id: 1)]))
     }
 }

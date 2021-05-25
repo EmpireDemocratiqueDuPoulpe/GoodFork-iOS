@@ -34,6 +34,6 @@ struct CommandPlatGridView_Previews: PreviewProvider {
     static var previews: some View {
         CommandPlatGridView(filterByType: Binding.constant("plat"), layout: [
             GridItem(.adaptive(minimum: 180))
-        ], plats: [Recette(menu_id: 1, name: "Pizza", type: "dessert", type_id: 2, image_path: "xx", description: "ddd", ingredients: [Ingredient(ingredient_id: 1, stock_id: 1, name: "saucisse", units: 1, units_unit: "g", units_unit_id: 1)])])
+        ], plats: [Recette(menu_id: 1, name: "Pizza", type: "dessert", type_id: 2, image_path: "xx", description: "ddd", price: 2, ingredients: [Ingredient(ingredient_id: 1, stock_id: 1, name: "saucisse", units: 1, units_unit: "g", units_unit_id: 1)])])
     }
 }

@@ -10,6 +10,8 @@ import UIKit
 
 struct ReservationView: View {
     
+    @EnvironmentObject var Api: Api
+    
     @State private var name: String = ""
     
     @State private var numOfPeople = "0"
@@ -60,6 +62,7 @@ struct ReservationView: View {
             
             Button(action: {
                 print("Bom: \(self.name) date: \(self.date) personnes: \(self.numOfPeople)")
+                Api.addBooking(userId: Api.user?.user_id ?? 0, time: self.date, clientsNb: Int(self.numOfPeople) ?? 0)
             }){
                 HStack{
                     Spacer()

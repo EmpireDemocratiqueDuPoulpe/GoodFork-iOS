@@ -31,7 +31,7 @@ struct WaiterHomeView: View {
                         self.selection = 1
                     }){
                         HStack{
-                            Image("logo-white")
+                            Image("orders_w")
                                 .resizable()
                                 .frame(width: 50, height: 50).padding(.horizontal,  20)
                             Text("Commande").font(.system(size: 20)).foregroundColor(.white)
@@ -46,7 +46,7 @@ struct WaiterHomeView: View {
                         self.selection = 2
                     }){
                         HStack{
-                            Image("logo-white")
+                            Image("menu_w")
                                 .resizable()
                                 .frame(width: 50, height: 50).padding(.horizontal,  20)
                             Text("Carte").font(.system(size: 20)).foregroundColor(.white)
@@ -61,7 +61,7 @@ struct WaiterHomeView: View {
                         self.selection = 3
                     }){
                         HStack{
-                            Image("logo-white")
+                            Image("on_the_spot_w")
                                 .resizable()
                                 .frame(width: 50, height: 50).padding(.horizontal,  20)
                             Text("Réservations").font(.system(size: 20)).foregroundColor(.white)
@@ -76,7 +76,7 @@ struct WaiterHomeView: View {
                         self.selection = 4
                     }){
                         HStack{
-                            Image("logo-white")
+                            Image("alert_w")
                                 .resizable()
                                 .frame(width: 50, height: 50).padding(.horizontal,  20)
                             Text("Alerte").font(.system(size: 20)).foregroundColor(.white)

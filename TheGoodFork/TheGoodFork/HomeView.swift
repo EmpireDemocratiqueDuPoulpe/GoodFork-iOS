@@ -35,7 +35,7 @@ struct HomeView: View {
                         self.selection = 3
                     }){
                         VStack{
-                            Image("logo-white")
+                            Image("booking_w")
                                 .resizable()
                                 .frame(width: 80, height: 80)
                             Text("Sur place").font(.system(size: 16)).foregroundColor(.white)
@@ -67,7 +67,7 @@ struct HomeView: View {
                         self.selection = 1
                     }){
                         HStack{
-                            Image("logo-white")
+                            Image("menu_w")
                                 .resizable()
                                 .frame(width: 50, height: 50).padding(.horizontal,  20)
                             Text("Carte").font(.system(size: 20)).foregroundColor(.white)

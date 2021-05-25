@@ -34,6 +34,7 @@ struct Recette: Codable {
     var type_id: Int
     var image_path: String
     var description: String
+    var price: Int
     var ingredients: [Ingredient]
 }
 
@@ -45,6 +46,7 @@ struct Ingredient: Codable {
     var units_unit: String
     var units_unit_id: Int
 }
+
 
 class Api: ObservableObject {
     @Published var user: User?
@@ -129,8 +131,6 @@ class Api: ObservableObject {
     
     func getCarte(){
         guard let url = URL(string: "http://3.134.79.46:8080/api/menus/all") else { return }
-        
-        
 
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
@@ -151,6 +151,33 @@ class Api: ObservableObject {
 
             }.resume()
         }
+    
+    
+    func addBooking(userId: Int, time: Date, clientsNb: Int){
+        guard let url = URL(string: "http://3.134.79.46:8080/api/bookings") else { return }
+        print(time)
+        let format = DateFormatter()
+        format.dateFormat = "YYYY-MM-dd hh:mm"
+        let body: [String: Any] = ["user_id": userId, "time": format.string(from: time), "clients_nb": clientsNb]
+                
+        let finalBody = try! JSONSerialization.data(withJSONObject: body)
+        print("ICI", body)
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = finalBody
+        
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        URLSession.shared.dataTask(with: request) {(data, response, error) in
+            do {
+                if let data = data {
+                    print(response)
+                }
+            } catch {
+                print(error)
+            }
+        }.resume()
+                }
     
     
     func saveUser(){
