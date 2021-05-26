@@ -54,17 +54,12 @@ class Api: ObservableObject {
     @Published var recettes: [Recette]?
     init(){
         self.getCarte()
-        if self.defaults.string(forKey: "Token") == nil && self.defaults.object(forKey: "User") == nil{
+        if self.defaults.string(forKey: "Token") == nil {
             self.token = nil
             self.user = nil
         }else{
-            if let savedUser = self.defaults.object(forKey: "User") as? Data {
-                let decoder = JSONDecoder()
-                if let loadedUser = try? decoder.decode(User.self, from: savedUser) {
-                    self.user = loadedUser
-                }
-            }
             self.token = self.defaults.string(forKey: "Token")
+            self.loginToken(token: self.token!)
         }
     }
 
@@ -128,6 +123,33 @@ class Api: ObservableObject {
 
             }.resume()
         }
+    func loginToken(token: String){
+        guard let url = URL(string: "http://3.134.79.46:8080/api/users/login/token") else { return }
+        
+        let body: [String: String] = ["token": token]
+        
+            let finalBody = try! JSONSerialization.data(withJSONObject: body)
+
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.httpBody = finalBody
+
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+            URLSession.shared.dataTask(with: request) {(data, response, error) in
+                do {
+                    if let data = data {
+                        let base = try JSONDecoder().decode(Base.self, from: data)
+                        DispatchQueue.main.async {
+                            self.user = base.user
+                        }
+                    }
+                } catch {
+                    print(error)
+                }
+
+            }.resume()
+        }
     
     func getCarte(){
         guard let url = URL(string: "http://3.134.79.46:8080/api/menus/all") else { return }
@@ -182,10 +204,5 @@ class Api: ObservableObject {
     
     func saveUser(){
         self.defaults.set(self.token, forKey: "Token")
-        let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(self.user){
-            self.defaults.set(encoded, forKey: "User")
-        }
-        print(self.user?.role ?? "test")
     }
 }
