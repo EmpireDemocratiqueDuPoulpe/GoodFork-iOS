@@ -11,7 +11,7 @@ import UIKit
 struct WaiterHomeView: View {
     
     @StateObject var router: Router
-    @State var username: String
+    @State var user: User
     @State var selection: Int? = nil
     
     @State private var filterByType = "entrée"
@@ -24,9 +24,9 @@ struct WaiterHomeView: View {
                         .resizable()
                         .frame(width: 150, height: 150)
                 }
-                Text("Bienvenue \(self.username)").font(.headline)
+                Text("Bienvenue \(self.user.first_name)").font(.headline)
                 
-                NavigationLink(destination: CommandView(filterByType: $filterByType), tag: 1, selection: $selection){
+                NavigationLink(destination: CommandView(filterByType: $filterByType).environmentObject(Command(userId: self.user.user_id, role: self.user.role, first_name: self.user.first_name, last_name: self.user.last_name, email: self.user.email)), tag: 1, selection: $selection){
                     Button(action: {
                         self.selection = 1
                     }){
@@ -96,6 +96,6 @@ struct WaiterHomeView: View {
 
 struct WaiterHomeView_Previews: PreviewProvider {
     static var previews: some View {
-        WaiterHomeView(router: Router(), username: "Bla")
+        WaiterHomeView(router: Router(), user: User(user_id: 0, role: "waiter", first_name: "test", last_name: "test", email: "test@gmail.com"))
     }
 }

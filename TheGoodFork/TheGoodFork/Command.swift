@@ -11,17 +11,21 @@ struct ContentCommand: Codable{
     var user_id: Int
     var role: String
     var first_name: String
-    var last_name: String?
+    var last_name: String
     var email: String
+    var plats: [Int]
 }
 
 class Command: ObservableObject {
 
-    init(){
-
+    @Published var platList: ContentCommand
+    init(userId: Int, role: String, first_name: String, last_name: String, email: String){
+        self.platList = ContentCommand(user_id: userId, role: role, first_name: first_name, last_name: last_name, email: email, plats: [])
     }
-
-
-
+    
+    func addPlat(id: Int){
+        self.platList.plats.append(id)
+        print(self.platList.plats)
+    }
 }
 

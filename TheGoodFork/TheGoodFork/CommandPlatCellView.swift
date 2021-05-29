@@ -30,6 +30,8 @@ public extension String {
 
 struct CommandPlatCellView: View {
 
+    @EnvironmentObject var Command: Command
+    
     let plat: Recette
     @State var count: Int = 0
     
@@ -51,7 +53,7 @@ struct CommandPlatCellView: View {
                     Text("\(self.count)")
                 }
                 Button(action: {
-
+                    Command.addPlat(id: plat.menu_id)
                     self.count += 1
                 }){
                     Image(systemName: "plus.circle.fill").resizable()
