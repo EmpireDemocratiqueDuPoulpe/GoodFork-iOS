@@ -53,7 +53,7 @@ struct CommandPlatCellView: View {
                     Text("\(self.count)")
                 }
                 Button(action: {
-                    Command.addPlat(id: plat.menu_id)
+                    Command.addPlat(plat: Plat(id: plat.menu_id, name: plat.name, price: plat.price, type: plat.type))
                     self.count += 1
                 }){
                     Image(systemName: "plus.circle.fill").resizable()

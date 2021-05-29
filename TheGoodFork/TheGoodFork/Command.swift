@@ -13,8 +13,15 @@ struct ContentCommand: Codable{
     var first_name: String
     var last_name: String
     var email: String
-    var plats: [Int]
+    var plats: [Plat]
 }
+struct Plat: Codable{
+    var id: Int
+    var name: String
+    var price: Int
+    var type: String
+}
+
 
 class Command: ObservableObject {
 
@@ -23,8 +30,8 @@ class Command: ObservableObject {
         self.platList = ContentCommand(user_id: userId, role: role, first_name: first_name, last_name: last_name, email: email, plats: [])
     }
     
-    func addPlat(id: Int){
-        self.platList.plats.append(id)
+    func addPlat(plat: Plat){
+        self.platList.plats.append(plat)
         print(self.platList.plats)
     }
 }

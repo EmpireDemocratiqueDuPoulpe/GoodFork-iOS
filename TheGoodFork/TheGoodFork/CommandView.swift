@@ -11,12 +11,16 @@ import UIKit
 struct CommandView: View {
     @EnvironmentObject var Api: Api
 
+    @EnvironmentObject var Command: Command
+    
     @Binding var filterByType: String
     
     
     let categories: [String] = ["entrée", "plat", "dessert", "boisson"]
     
     let layout = [ GridItem(.adaptive(minimum: 180))]
+    
+    @State var selection: Int? = nil
     
     var body: some View {
             ScrollView {
@@ -25,6 +29,18 @@ struct CommandView: View {
                     .resizable()
                     .frame(width: 150, height: 150)
             }
+                if Command.platList.plats.count > 0 {
+                    NavigationLink(destination: RecapCommandView(CommandList: Command.platList.plats), tag: 1, selection: $selection){
+                        Button(action: {
+                            self.selection = 1
+                        }){
+                            HStack {
+                                Text("Passer commande").font(.system(size: 16)).foregroundColor(.white)
+                            }.padding()
+                            .background(Color.blue)
+                        }
+                        }
+                }
         HStack{
             ForEach(categories, id: \.self){ category in
                 Button(action: {}, label: {
@@ -39,7 +55,7 @@ struct CommandView: View {
             }
         }
                 CommandPlatGridView(filterByType: $filterByType , layout: layout, plats: Api.recettes!)
-            }
+                }
 }
     func filter(by label: String) {
         filterByType = label
