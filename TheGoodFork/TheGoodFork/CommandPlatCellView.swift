@@ -51,6 +51,7 @@ struct CommandPlatCellView: View {
                     Text("\(self.count)")
                 }
                 Button(action: {
+
                     self.count += 1
                 }){
                     Image(systemName: "plus.circle.fill").resizable()

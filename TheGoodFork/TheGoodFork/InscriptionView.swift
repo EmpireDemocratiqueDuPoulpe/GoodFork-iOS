@@ -12,6 +12,7 @@ struct InscriptionView: View {
     @EnvironmentObject var Api: Api
     
     @StateObject var router: Router
+    @State private var authFailed: Bool = false
     
     @State private var firstName: String = ""
     @State private var lastName: String = ""
@@ -60,10 +61,20 @@ struct InscriptionView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 }.padding()
             
+            if authFailed {
+                Text("\(Api.base?.error ?? "")")
+                    .offset(y: -10)
+                    .foregroundColor(.red)
+                    .padding()
+            }
+            
             Button(action: {
                 Api.addUser(lastName: self.lastName, firstName: self.firstName, email: self.email, password1: self.password, password2: self.confirmPassword)
                 if Api.token != nil{
                     router.currentPage = .home
+                }
+                else{
+                    self.authFailed = true
                 }
             }){
                 HStack{

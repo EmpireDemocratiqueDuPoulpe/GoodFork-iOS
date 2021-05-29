@@ -49,9 +49,11 @@ struct Ingredient: Codable {
 
 
 class Api: ObservableObject {
+    @Published var base: Base?
     @Published var user: User?
     @Published var token: String?
     @Published var recettes: [Recette]?
+    
     init(){
         self.getCarte()
         if self.defaults.string(forKey: "Token") == nil {
@@ -83,6 +85,7 @@ class Api: ObservableObject {
                 if let data = data {
                     let base = try JSONDecoder().decode(Base.self, from: data)
                     DispatchQueue.main.async {
+                        self.base = base
                         self.user = base.user
                         self.token = base.token
                         self.saveUser()
@@ -109,9 +112,11 @@ class Api: ObservableObject {
 
             URLSession.shared.dataTask(with: request) {(data, response, error) in
                 do {
+
                     if let data = data {
                         let base = try JSONDecoder().decode(Base.self, from: data)
                         DispatchQueue.main.async {
+                            self.base = base
                             self.user = base.user
                             self.token = base.token
                             self.saveUser()
@@ -201,7 +206,9 @@ class Api: ObservableObject {
         }.resume()
                 }
     
-    
+    func addCommand(com: [Int]){
+        print(com)
+    }
     func saveUser(){
         self.defaults.set(self.token, forKey: "Token")
     }

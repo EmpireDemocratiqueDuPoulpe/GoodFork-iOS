@@ -13,6 +13,7 @@ struct CommandView: View {
 
     @Binding var filterByType: String
     
+    
     let categories: [String] = ["entrée", "plat", "dessert", "boisson"]
     
     let layout = [ GridItem(.adaptive(minimum: 180))]
