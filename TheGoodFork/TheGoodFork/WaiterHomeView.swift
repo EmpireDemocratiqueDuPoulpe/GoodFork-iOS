@@ -26,7 +26,7 @@ struct WaiterHomeView: View {
                 }
                 Text("Bienvenue \(self.user.first_name)").font(.headline)
                 
-                NavigationLink(destination: CommandView(filterByType: $filterByType).environmentObject(Command(userId: self.user.user_id, role: self.user.role, first_name: self.user.first_name, last_name: self.user.last_name, email: self.user.email)), tag: 1, selection: $selection){
+                NavigationLink(destination: CommandView(filterByType: $filterByType).environmentObject(Command(userId: self.user.user_id, isTakeAway: false)), tag: 1, selection: $selection){
                     Button(action: {
                         self.selection = 1
                     }){

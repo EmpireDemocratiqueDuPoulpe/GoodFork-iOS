@@ -9,30 +9,52 @@ import Foundation
 
 struct ContentCommand: Codable{
     var user_id: Int
-    var role: String
-    var first_name: String
-    var last_name: String
-    var email: String
-    var plats: [Plat]
+    var menus: [Plat]
+    var  is_take_away: Bool
 }
 struct Plat: Codable{
-    var id: Int
+    var menu_id: Int
+    var price: Int
+}
+
+struct PlatInfos: Codable, Hashable{
     var name: String
     var price: Int
     var type: String
+    var count: Int
 }
-
 
 class Command: ObservableObject {
 
     @Published var platList: ContentCommand
-    init(userId: Int, role: String, first_name: String, last_name: String, email: String){
-        self.platList = ContentCommand(user_id: userId, role: role, first_name: first_name, last_name: last_name, email: email, plats: [])
+    @Published var commandPlat = [Int : PlatInfos]()
+    
+    init(userId: Int, isTakeAway: Bool){
+        self.platList = ContentCommand(user_id: userId, menus: [], is_take_away: isTakeAway)
     }
     
-    func addPlat(plat: Plat){
-        self.platList.plats.append(plat)
-        print(self.platList.plats)
+    func addPlat(id: Int, name: String, price: Int, type: String ){
+        self.platList.menus.append(Plat(menu_id: id, price: price))
+        print(self.platList)
+        var newCount: Int
+        if self.commandPlat[id] != nil{
+            newCount = self.commandPlat[id]!.count + 1
+        }
+        else {
+            newCount = 1
+        }
+        self.commandPlat.updateValue(PlatInfos(name: name, price: price, type: type, count: newCount), forKey: id)
+        print(commandPlat)
     }
+    func deletePlat(id: Int, name: String, price: Int, type: String ){
+        if self.commandPlat[id]!.count == 1{
+            self.commandPlat.removeValue(forKey: id)
+        }
+        else {
+            self.commandPlat.updateValue(PlatInfos(name: name, price: price, type: type, count: self.commandPlat[id]!.count-1), forKey: id)
+        }
+        print(commandPlat)
+    }
+    
 }
 

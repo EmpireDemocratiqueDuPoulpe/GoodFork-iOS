@@ -30,7 +30,7 @@ struct PlatDetailView: View {
             VStack(alignment: .leading,  spacing: 10){
                 Spacer()
                 Text("Description")
-                Text("Très bon").font(.footnote)
+                Text("\(plat.description)").font(.footnote)
                 Spacer()
                 List {
                     Section(header: Text("Composition")) {

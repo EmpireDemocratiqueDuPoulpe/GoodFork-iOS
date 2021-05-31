@@ -33,7 +33,6 @@ struct CommandPlatCellView: View {
     @EnvironmentObject var Command: Command
     
     let plat: Recette
-    @State var count: Int = 0
     
     var body: some View {
             HStack{
@@ -43,18 +42,17 @@ struct CommandPlatCellView: View {
                 Text("\(plat.price)€").font(.body).bold()
                 
 
-                if self.count > 0 {
+                if (Command.commandPlat[plat.menu_id] != nil) && Command.commandPlat[plat.menu_id]!.count > 0  {
                     Button(action: {
-                            self.count -= 1
+                        Command.deletePlat(id: plat.menu_id, name: plat.name, price: plat.price, type: plat.type)
                     }){
                         Image(systemName: "minus.circle.fill").resizable()
                             .frame(width: 32.0, height: 32.0).foregroundColor(.red)
                     }
-                    Text("\(self.count)")
+                    Text("\(Command.commandPlat[plat.menu_id]!.count)")
                 }
                 Button(action: {
-                    Command.addPlat(plat: Plat(id: plat.menu_id, name: plat.name, price: plat.price, type: plat.type))
-                    self.count += 1
+                    Command.addPlat(id: plat.menu_id, name: plat.name, price: plat.price, type: plat.type)
                 }){
                     Image(systemName: "plus.circle.fill").resizable()
                         .frame(width: 32.0, height: 32.0).foregroundColor(.green)

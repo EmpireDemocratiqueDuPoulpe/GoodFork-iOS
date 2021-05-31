@@ -20,11 +20,7 @@ struct CarteView: View {
     
     var body: some View {
             ScrollView {
-            HStack (alignment: .center, spacing: 10) {
-                Image("logo-white")
-                    .resizable()
-                    .frame(width: 150, height: 150)
-            }
+
         HStack{
             ForEach(categories, id: \.self){ category in
                 Button(action: {}, label: {

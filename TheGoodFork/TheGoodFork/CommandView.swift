@@ -24,18 +24,13 @@ struct CommandView: View {
     
     var body: some View {
             ScrollView {
-            HStack (alignment: .center, spacing: 10) {
-                Image("logo-white")
-                    .resizable()
-                    .frame(width: 150, height: 150)
-            }
-                if Command.platList.plats.count > 0 {
-                    NavigationLink(destination: RecapCommandView(CommandList: Command.platList.plats), tag: 1, selection: $selection){
+                if Command.platList.menus.count > 0 {
+                    NavigationLink(destination: RecapCommandView(), tag: 1, selection: $selection){
                         Button(action: {
                             self.selection = 1
                         }){
                             HStack {
-                                Text("Passer commande").font(.system(size: 16)).foregroundColor(.white)
+                                Text("Commander").font(.system(size: 16)).foregroundColor(.white)
                             }.padding()
                             .background(Color.blue)
                         }

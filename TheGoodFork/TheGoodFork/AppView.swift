@@ -19,11 +19,11 @@ struct AppView: View {
         if Api.token != nil{
             switch router.currentPage {
                 case .register:
-                    HomeView(router: router, username: Api.user?.first_name ?? "").navigationBarHidden(true)
+                    HomeView(router: router, user: Api.user ?? User(user_id: 0, role: "waiter", first_name: "test", last_name: "test", email: "test@gmail.com")).navigationBarHidden(true)
                 case .connection:
                     switch Api.user?.role {
                     case "customer":
-                        HomeView(router: router, username: Api.user?.first_name ?? "").navigationBarHidden(true)
+                        HomeView(router: router, user: Api.user ?? User(user_id: 0, role: "waiter", first_name: "test", last_name: "test", email: "test@gmail.com")).navigationBarHidden(true)
                     case "waiter":
                         WaiterHomeView(router: router, user: Api.user ?? User(user_id: 0, role: "waiter", first_name: "test", last_name: "test", email: "test@gmail.com")).navigationBarHidden(true)
                     default:
@@ -31,7 +31,7 @@ struct AppView: View {
                 case .home:
                     switch Api.user?.role {
                     case "customer":
-                        HomeView(router: router, username: Api.user?.first_name ?? "").navigationBarHidden(true)
+                        HomeView(router: router, user: Api.user ?? User(user_id: 0, role: "waiter", first_name: "test", last_name: "test", email: "test@gmail.com")).navigationBarHidden(true)
                     case "waiter":
                         WaiterHomeView(router: router, user: Api.user ?? User(user_id: 0, role: "waiter", first_name: "test", last_name: "test", email: "test@gmail.com")).navigationBarHidden(true)
                     default:

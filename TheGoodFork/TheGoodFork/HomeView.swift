@@ -12,8 +12,9 @@ import UIKit
 struct HomeView: View {
     
     @StateObject var router: Router
-    @State var username: String
     @State var selection: Int? = nil
+    
+    @State var user: User
     
     @State private var filterByType = "entrée"
     
@@ -27,10 +28,10 @@ struct HomeView: View {
                         .frame(width: 150, height: 150)
                     Spacer()
                 }
-                Text("Bienvenue \(self.username)").font(.headline)
+                Text("Bienvenue \(self.user.first_name)").font(.headline)
 
                 HStack {
-                    NavigationLink(destination: CommandView(filterByType: $filterByType), tag: 3, selection: $selection){
+                    NavigationLink(destination: CommandView(filterByType: $filterByType).environmentObject(Command(userId: self.user.user_id, isTakeAway: false)), tag: 3, selection: $selection){
                     Button(action: {
                         self.selection = 3
                     }){
@@ -44,7 +45,7 @@ struct HomeView: View {
                     }
                     }
                     
-                    NavigationLink(destination: Text("A emporter"), tag: 2, selection: $selection){
+                    NavigationLink(destination: CommandView(filterByType: $filterByType).environmentObject(Command(userId: self.user.user_id, isTakeAway: true)), tag: 2, selection: $selection){
                         Button(action: {
                             self.selection = 2
                         }){
@@ -86,6 +87,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(router: Router(), username: "Bla")
+        HomeView(router: Router(), user: User(user_id: 0, role: "waiter", first_name: "test", last_name: "test", email: "test@gmail.com"))
     }
 }

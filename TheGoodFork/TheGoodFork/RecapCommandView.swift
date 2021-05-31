@@ -11,7 +11,8 @@ import UIKit
 
 struct RecapCommandView: View {
 
-    @State var CommandList: [Plat]
+    @EnvironmentObject var Command: Command
+    
     
     var body: some View {
         ScrollView {
@@ -20,19 +21,12 @@ struct RecapCommandView: View {
                 .resizable()
                 .frame(width: 150, height: 150)
             }
-            VStack{
-                ForEach(CommandList, id: \.id) { plat in
-                        Text("\(plat.name)")
-                    }
-            }
-        }
-        
     }
 }
-
+}
 
 struct RecapCommandView_Previews: PreviewProvider {
     static var previews: some View {
-        RecapCommandView(CommandList: [Plat(id: 0, name: "test", price: 59, type: "boisson")])
+        RecapCommandView()
     }
 }

@@ -135,7 +135,6 @@
 				8450AC3026552F94006321C0 /* Command.swift */,
 				841870652654034C0090D4CF /* CommandPlatGridView.swift */,
 				8418706D2654042A0090D4CF /* CommandPlatCellView.swift */,
-				8420931A266283EE00CB9A47 /* RecapCommandView.swift */,
 			);
 			name = command;
 			sourceTree = "<group>";
@@ -163,6 +162,7 @@
 		84D1291F26245FA300CF818D /* TheGoodFork */ = {
 			isa = PBXGroup;
 			children = (
+				8420931A266283EE00CB9A47 /* RecapCommandView.swift */,
 				84D1292926245FA800CF818D /* Info.plist */,
 				84B562B0264A9DD90051E0E5 /* Api.swift */,
 				848818372646C8240043DCD9 /* AppView.swift */,
