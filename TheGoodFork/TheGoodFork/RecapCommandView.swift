@@ -21,8 +21,8 @@ struct RecapCommandView: View {
                 .resizable()
                 .frame(width: 150, height: 150)
             }
-            VStack{
-                Section(header: Text("Entrée")) {
+            VStack(alignment: .leading, spacing: 10){
+                Section(header: Text("Entrée").font(.headline)) {
                     ForEach(Array(Command.commandPlat.filter({ $0.value.type == "entrée"})), id: \.key) { value in
                             HStack{
                                 Text("\(value.value.name)")
@@ -31,7 +31,7 @@ struct RecapCommandView: View {
                             }
                         }
                         }
-                Section(header: Text("Plat")) {
+                Section(header: Text("Plat").font(.headline)) {
                 ForEach(Array(Command.commandPlat.filter({ $0.value.type == "plat"})), id: \.key) { value in
                         HStack{
                             Text("\(value.value.name)")
@@ -41,7 +41,7 @@ struct RecapCommandView: View {
                     }
                     }
                 
-                Section(header: Text("Dessert")) {
+                Section(header: Text("Dessert").font(.headline)) {
                 ForEach(Array(Command.commandPlat.filter({ $0.value.type == "dessert"})), id: \.key) { value in
                         HStack{
                             Text("\(value.value.name)")
@@ -50,7 +50,7 @@ struct RecapCommandView: View {
                         }
                     }
                     }
-                Section(header: Text("Boisson")) {
+                Section(header: Text("Boisson").font(.headline)) {
                 ForEach(Array(Command.commandPlat.filter({ $0.value.type == "boisson"})), id: \.key) { value in
                         HStack{
                             Text("\(value.value.name)")
@@ -59,7 +59,8 @@ struct RecapCommandView: View {
                         }
                     }
                     }
-            }
+                Text("Total : \(String(format: "%.2f", Command.total))€")
+            }.padding(.horizontal,  50)
 
     }
 }

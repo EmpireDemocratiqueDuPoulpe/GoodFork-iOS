@@ -33,13 +33,16 @@ class Command: ObservableObject {
 
     @Published var platList: ContentCommand
     @Published var commandPlat = [Int : PlatInfos]()
+    @Published var total: Float
     
     init(userId: Int, isTakeAway: Bool){
         self.platList = ContentCommand(user_id: userId, menus: [], is_take_away: isTakeAway)
+        self.total = 0
     }
     
     func addPlat(id: Int, name: String, price: Int, type: String ){
         self.platList.menus.append(Plat(menu_id: id, price: price))
+        self.total += Float(price)
         print(self.platList)
         var newCount: Int
         if self.commandPlat[id] != nil{
@@ -52,6 +55,7 @@ class Command: ObservableObject {
         print(commandPlat)
     }
     func deletePlat(id: Int, name: String, price: Int, type: String ){
+        self.total -= Float(price)
         if self.commandPlat[id]!.count == 1{
             self.commandPlat.removeValue(forKey: id)
         }
