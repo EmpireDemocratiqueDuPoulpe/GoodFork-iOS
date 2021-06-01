@@ -24,7 +24,6 @@ struct RecapCommandView: View {
             VStack{
                 Section(header: Text("Entrée")) {
                     ForEach(Array(Command.commandPlat.filter({ $0.value.type == "entrée"})), id: \.key) { value in
-
                             HStack{
                                 Text("\(value.value.name)")
                                 Text("x \(value.value.count)")

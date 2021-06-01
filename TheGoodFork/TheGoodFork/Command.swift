@@ -35,7 +35,6 @@ class Command: ObservableObject {
     @Published var commandPlat = [Int : PlatInfos]()
     
     init(userId: Int, isTakeAway: Bool){
-        print("NOOOOOOOO")
         self.platList = ContentCommand(user_id: userId, menus: [], is_take_away: isTakeAway)
     }
     
