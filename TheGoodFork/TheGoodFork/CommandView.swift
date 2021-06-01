@@ -25,7 +25,7 @@ struct CommandView: View {
     var body: some View {
             ScrollView {
                 if Command.platList.menus.count > 0 {
-                    NavigationLink(destination: RecapCommandView(), tag: 1, selection: $selection){
+                    NavigationLink(destination: RecapCommandView().environmentObject(self.Command), tag: 1, selection: $selection){
                         Button(action: {
                             self.selection = 1
                         }){

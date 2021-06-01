@@ -21,6 +21,47 @@ struct RecapCommandView: View {
                 .resizable()
                 .frame(width: 150, height: 150)
             }
+            VStack{
+                Section(header: Text("Entrée")) {
+                    ForEach(Array(Command.commandPlat.filter({ $0.value.type == "entrée"})), id: \.key) { value in
+
+                            HStack{
+                                Text("\(value.value.name)")
+                                Text("x \(value.value.count)")
+                                Text(" - \(value.value.price)€")
+                            }
+                        }
+                        }
+                Section(header: Text("Plat")) {
+                ForEach(Array(Command.commandPlat.filter({ $0.value.type == "plat"})), id: \.key) { value in
+                        HStack{
+                            Text("\(value.value.name)")
+                            Text("x \(value.value.count)")
+                            Text(" - \(value.value.price)€")
+                        }
+                    }
+                    }
+                
+                Section(header: Text("Dessert")) {
+                ForEach(Array(Command.commandPlat.filter({ $0.value.type == "dessert"})), id: \.key) { value in
+                        HStack{
+                            Text("\(value.value.name)")
+                            Text("x \(value.value.count)")
+                            Text(" - \(value.value.price)€")
+                        }
+                    }
+                    }
+                Section(header: Text("Boisson")) {
+                ForEach(Array(Command.commandPlat.filter({ $0.value.type == "boisson"})), id: \.key) { value in
+                        HStack{
+                            Text("\(value.value.name)")
+                            Text("x \(value.value.count)")
+                            Text(" - \(value.value.price)€")
+                        }
+                    }
+                    }
+            }
+
     }
 }
 }

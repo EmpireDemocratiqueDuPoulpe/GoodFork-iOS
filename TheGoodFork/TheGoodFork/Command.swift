@@ -17,12 +17,17 @@ struct Plat: Codable{
     var price: Int
 }
 
-struct PlatInfos: Codable, Hashable{
+struct PlatInfos: Codable, Identifiable{
+    var id: String {
+        get { return self.name }
+            set { self.name = newValue }
+        }
     var name: String
     var price: Int
     var type: String
     var count: Int
 }
+
 
 class Command: ObservableObject {
 
@@ -30,6 +35,7 @@ class Command: ObservableObject {
     @Published var commandPlat = [Int : PlatInfos]()
     
     init(userId: Int, isTakeAway: Bool){
+        print("NOOOOOOOO")
         self.platList = ContentCommand(user_id: userId, menus: [], is_take_away: isTakeAway)
     }
     
