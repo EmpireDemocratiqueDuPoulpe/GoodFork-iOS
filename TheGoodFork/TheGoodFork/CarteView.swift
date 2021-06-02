@@ -35,7 +35,7 @@ struct CarteView: View {
             }
         }
 
-                PlatGridView(filterByType: $filterByType , layout: layout, plats: Api.recettes!)
+                PlatGridView(filterByType: $filterByType , layout: layout, plats: Api.recettes)
             }
 }
     func filter(by label: String) {

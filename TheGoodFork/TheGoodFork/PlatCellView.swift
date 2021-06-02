@@ -20,7 +20,7 @@ struct PlatCellView: View {
                 Spacer()
                 Text("\(plat.price)€").font(.body).bold()
             }.padding(.vertical, 30)
-            .background(Image(uiImage: "http://3.134.79.46:8080/images/\(plat.image_path)".load()).resizable().blur(radius: 1).colorMultiply(Color(red: 1, green: 1, blue: 1, opacity: 0.4)))
+            .background(Image(uiImage: "http://3.134.79.46:8080/images/\(plat.image_path ?? "")".load()).resizable().blur(radius: 1).colorMultiply(Color(red: 1, green: 1, blue: 1, opacity: 0.4)))
             .foregroundColor(Color(.label))
     }
 }

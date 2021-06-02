@@ -32,8 +32,8 @@ struct Recette: Codable {
     var name: String
     var type: String
     var type_id: Int
-    var image_path: String
-    var description: String
+    var image_path: String?
+    var description: String?
     var price: Int
     var ingredients: [Ingredient]
 }
@@ -52,7 +52,7 @@ class Api: ObservableObject {
     @Published var base: Base?
     @Published var user: User?
     @Published var token: String?
-    @Published var recettes: [Recette]?
+    @Published var recettes: [Recette] = []
     
     init(){
         self.getCarte()

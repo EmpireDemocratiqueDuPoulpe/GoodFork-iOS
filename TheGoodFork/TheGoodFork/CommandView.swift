@@ -49,7 +49,7 @@ struct CommandView: View {
                 })
             }
         }
-                CommandPlatGridView(filterByType: $filterByType , layout: layout, plats: Api.recettes!)
+                CommandPlatGridView(filterByType: $filterByType , layout: layout, plats: Api.recettes)
                 }
 }
     func filter(by label: String) {

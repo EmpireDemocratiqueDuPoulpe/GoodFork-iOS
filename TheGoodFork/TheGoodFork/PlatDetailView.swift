@@ -16,7 +16,7 @@ struct PlatDetailView: View {
     var body: some View {
         VStack {
             HStack {
-                Image(uiImage: "http://3.134.79.46:8080/images/\(plat.image_path)".load())
+                Image(uiImage: "http://3.134.79.46:8080/images/\(plat.image_path ?? "")".load())
                     .resizable()
                     .scaledToFill()
                     .frame(width: 200, height: 200)
@@ -30,7 +30,7 @@ struct PlatDetailView: View {
             VStack(alignment: .leading,  spacing: 10){
                 Spacer()
                 Text("Description")
-                Text("\(plat.description)").font(.footnote)
+                Text("\(plat.description ?? "Pas de description")").font(.footnote)
                 Spacer()
                 List {
                     Section(header: Text("Composition")) {
