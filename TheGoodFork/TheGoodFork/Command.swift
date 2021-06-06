@@ -12,7 +12,8 @@ struct ContentCommand: Codable{
     var menus: [Plat]
     var  is_take_away: Bool
 }
-struct Plat: Codable{
+
+struct Plat: Codable {
     var menu_id: Int
     var price: Int
 }
@@ -43,7 +44,6 @@ class Command: ObservableObject {
     func addPlat(id: Int, name: String, price: Int, type: String ){
         self.platList.menus.append(Plat(menu_id: id, price: price))
         self.total += Float(price)
-        print(self.platList)
         var newCount: Int
         if self.commandPlat[id] != nil{
             newCount = self.commandPlat[id]!.count + 1
@@ -52,7 +52,6 @@ class Command: ObservableObject {
             newCount = 1
         }
         self.commandPlat.updateValue(PlatInfos(name: name, price: price, type: type, count: newCount), forKey: id)
-        print(commandPlat)
     }
     func deletePlat(id: Int, name: String, price: Int, type: String ){
         self.total -= Float(price)
@@ -62,7 +61,6 @@ class Command: ObservableObject {
         else {
             self.commandPlat.updateValue(PlatInfos(name: name, price: price, type: type, count: self.commandPlat[id]!.count-1), forKey: id)
         }
-        print(commandPlat)
     }
     
 }

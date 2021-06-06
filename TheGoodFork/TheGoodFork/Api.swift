@@ -7,6 +7,14 @@
 
 import Foundation
 
+struct AlexisTMort: Codable{
+    var booking_id: Int?
+    var user_id: Int
+    var additional_info: String?
+    var menus: [Plat]
+    var is_take_away: Bool
+}
+
 struct User: Codable{
     var user_id: Int
     var role: String
@@ -182,13 +190,11 @@ class Api: ObservableObject {
     
     func addBooking(userId: Int, time: Date, clientsNb: Int){
         guard let url = URL(string: "http://3.134.79.46:8080/api/bookings") else { return }
-        print(time)
         let format = DateFormatter()
         format.dateFormat = "YYYY-MM-dd hh:mm"
         let body: [String: Any] = ["user_id": userId, "time": format.string(from: time), "clients_nb": clientsNb]
                 
         let finalBody = try! JSONSerialization.data(withJSONObject: body)
-        print("ICI", body)
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.httpBody = finalBody
@@ -205,10 +211,43 @@ class Api: ObservableObject {
             }
         }.resume()
                 }
+
     
-    func addCommand(com: [Int]){
-        print(com)
+    func addCommand(comm: ContentCommand){
+        var test: [[String: Int]] = []
+        for item in comm.menus {
+            var lol = ["menu_id": item.menu_id, "price": item.price]
+            print(type(of: lol))
+            print(type(of: test))
+            print(lol)
+            test.append(lol)
+            print(test)
+        }
+            guard let url = URL(string: "http://3.134.79.46:8080/api/orders") else { return }
+        let body: [String: Any] = ["user_id": comm.user_id, "menus": test, "is_take_away": comm.is_take_away ]
+
+        let finalBody = try! JSONSerialization.data(withJSONObject: body)
+        let jsonString = String(data: finalBody, encoding: String.Encoding.ascii)!
+        print (jsonString)
+        
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.httpBody = finalBody
+            
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            URLSession.shared.dataTask(with: request) {(data, response, error) in
+                do {
+                    if let data = data {
+                        print(response)
+                    }
+                } catch {
+                    print(error)
+                }
+            }.resume()
     }
+    
+    
     func saveUser(){
         self.defaults.set(self.token, forKey: "Token")
     }

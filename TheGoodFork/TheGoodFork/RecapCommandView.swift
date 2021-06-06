@@ -12,7 +12,7 @@ import UIKit
 struct RecapCommandView: View {
 
     @EnvironmentObject var Command: Command
-    
+    @EnvironmentObject var Api: Api
     
     var body: some View {
         ScrollView {
@@ -53,15 +53,24 @@ struct RecapCommandView: View {
                 Section(header: Text("Boisson").font(.headline)) {
                 ForEach(Array(Command.commandPlat.filter({ $0.value.type == "boisson"})), id: \.key) { value in
                         HStack{
-                            Text("\(value.value.name)")
-                            Text("x \(value.value.count)")
+                            Text("\(value.value.count)x \(value.value.name)")
                             Text(" - \(value.value.price)€")
                         }
                     }
                     }
                 Text("Total : \(String(format: "%.2f", Command.total))€")
             }.padding(.horizontal,  50)
-
+            
+            NavigationLink(destination: Text("Payer")){
+                Button(action: {
+                    Api.addCommand(comm: Command.platList)
+                }){
+                    HStack{
+                        Text("Payer").font(.system(size: 20)).foregroundColor(.white)
+                    }.padding(.vertical, 10)
+                    .background(Color.blue)
+                }.padding(.horizontal,  30)
+            }
     }
 }
 }
