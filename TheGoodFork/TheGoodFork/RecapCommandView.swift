@@ -16,60 +16,67 @@ struct RecapCommandView: View {
     
     var body: some View {
         ScrollView {
-        HStack (alignment: .center, spacing: 10) {
-            Image("logo-white")
-                .resizable()
-                .frame(width: 150, height: 150)
-            }
             VStack(alignment: .leading, spacing: 10){
-                Section(header: Text("Entrée").font(.headline)) {
+                Text("Récapitulatid de la commande").font(.headline)
+                Section(header: Text("Entrées").font(.headline)) {
                     ForEach(Array(Command.commandPlat.filter({ $0.value.type == "entrée"})), id: \.key) { value in
                             HStack{
-                                Text("\(value.value.name)")
-                                Text("x \(value.value.count)")
-                                Text(" - \(value.value.price)€")
+                                Text("\(value.value.count)x").foregroundColor(.orange)
+                                Text("\(value.value.name)").foregroundColor(.green)
+                                Spacer()
+                                Text("\(value.value.price)€")
                             }
                         }
                         }
-                Section(header: Text("Plat").font(.headline)) {
+                Section(header: Text("Plats").font(.headline)) {
                 ForEach(Array(Command.commandPlat.filter({ $0.value.type == "plat"})), id: \.key) { value in
                         HStack{
-                            Text("\(value.value.name)")
-                            Text("x \(value.value.count)")
-                            Text(" - \(value.value.price)€")
+                            Text("\(value.value.count)x").foregroundColor(.orange)
+                            Text("\(value.value.name)").foregroundColor(.green)
+                            Spacer()
+                            Text("\(value.value.price)€")
                         }
                     }
                     }
                 
-                Section(header: Text("Dessert").font(.headline)) {
+                Section(header: Text("Desserts").font(.headline)) {
                 ForEach(Array(Command.commandPlat.filter({ $0.value.type == "dessert"})), id: \.key) { value in
                         HStack{
-                            Text("\(value.value.name)")
-                            Text("x \(value.value.count)")
-                            Text(" - \(value.value.price)€")
+                            Text("\(value.value.count)x").foregroundColor(.orange)
+                            Text("\(value.value.name)").foregroundColor(.green)
+                            Spacer()
+                            Text("\(value.value.price)€")
                         }
                     }
                     }
-                Section(header: Text("Boisson").font(.headline)) {
+                Section(header: Text("Boissons").font(.headline)) {
                 ForEach(Array(Command.commandPlat.filter({ $0.value.type == "boisson"})), id: \.key) { value in
                         HStack{
-                            Text("\(value.value.count)x \(value.value.name)")
-                            Text(" - \(value.value.price)€")
+                            Text("\(value.value.count)x").foregroundColor(.orange)
+                            Text("\(value.value.name)").foregroundColor(.green)
+                            Spacer()
+                            Text("\(value.value.price)€")
                         }
                     }
                     }
-                Text("Total : \(String(format: "%.2f", Command.total))€")
-            }.padding(.horizontal,  50)
+                HStack{
+                    Spacer()
+                    Text("Total : \(String(format: "%.2f", Command.total))€")
+                    Spacer()
+                }
+            }.padding(.horizontal,  10)
             
             NavigationLink(destination: Text("Payer")){
                 Button(action: {
                     Api.addCommand(comm: Command.platList)
                 }){
                     HStack{
+                        Spacer()
                         Text("Payer").font(.system(size: 20)).foregroundColor(.white)
-                    }.padding(.vertical, 10)
+                        Spacer()
+                    }.padding(.vertical, 15)
                     .background(Color.blue)
-                }.padding(.horizontal,  30)
+                }
             }
     }
 }

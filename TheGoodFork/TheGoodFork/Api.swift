@@ -239,7 +239,7 @@ class Api: ObservableObject {
             URLSession.shared.dataTask(with: request) {(data, response, error) in
                 do {
                     if let data = data {
-                        print(response)
+                        print(data)
                     }
                 } catch {
                     print(error)
