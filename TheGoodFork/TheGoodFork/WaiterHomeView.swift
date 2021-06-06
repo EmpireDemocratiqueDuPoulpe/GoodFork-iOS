@@ -10,6 +10,7 @@ import UIKit
 
 struct WaiterHomeView: View {
     
+    @EnvironmentObject var Api: Api
     @StateObject var router: Router
     @State var user: User
     @State var selection: Int? = nil
@@ -56,8 +57,9 @@ struct WaiterHomeView: View {
                     }.padding(.horizontal,  30)
                 }
                 
-                NavigationLink(destination: ReservationView(), tag: 3, selection: $selection){
+                NavigationLink(destination: AllReservationsView(), tag: 3, selection: $selection){
                     Button(action: {
+                        Api.getBooking()
                         self.selection = 3
                     }){
                         HStack{

@@ -7,14 +7,6 @@
 
 import Foundation
 
-struct AlexisTMort: Codable{
-    var booking_id: Int?
-    var user_id: Int
-    var additional_info: String?
-    var menus: [Plat]
-    var is_take_away: Bool
-}
-
 struct User: Codable{
     var user_id: Int
     var role: String
@@ -54,6 +46,25 @@ struct Ingredient: Codable {
     var units_unit: String
     var units_unit_id: Int
 }
+struct Bookings: Codable{
+    var code: Int
+    var bookings: [Booking]
+}
+struct Booking: Codable{
+    var booking_id: Int
+    var user: User
+    var table: Table
+    var time: String
+    var clients_nb: Int
+    var is_client_on_place: Int
+    var can_client_pay: Int
+}
+
+struct Table: Codable{
+    var table_id: Int
+    var name: String
+    var capacity: Int
+}
 
 
 class Api: ObservableObject {
@@ -61,6 +72,7 @@ class Api: ObservableObject {
     @Published var user: User?
     @Published var token: String?
     @Published var recettes: [Recette] = []
+    @Published var bookings: [Booking] = []
     
     init(){
         self.getCarte()
@@ -187,6 +199,31 @@ class Api: ObservableObject {
             }.resume()
         }
     
+    func getBooking(){
+        guard let url = URL(string: "http://3.134.79.46:8080/api/bookings/today/all") else { return }
+
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+            URLSession.shared.dataTask(with: request) {(data, response, error) in
+                do {
+                    if let data = data {
+                        
+                        let book = try JSONDecoder().decode(Bookings.self, from: data)
+                        print("Bookings")
+                        DispatchQueue.main.async {
+                            self.bookings = book.bookings
+                        }
+
+                    }
+                } catch {
+                    print(error)
+                }
+
+            }.resume()
+        }
     
     func addBooking(userId: Int, time: Date, clientsNb: Int){
         guard let url = URL(string: "http://3.134.79.46:8080/api/bookings") else { return }

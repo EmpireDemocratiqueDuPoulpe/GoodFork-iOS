@@ -16,6 +16,7 @@
 		8418706E2654042A0090D4CF /* CommandPlatCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418706D2654042A0090D4CF /* CommandPlatCellView.swift */; };
 		841D6F1226528FFB005D87BC /* WaiterHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D6F1126528FFB005D87BC /* WaiterHomeView.swift */; };
 		8420931B266283EE00CB9A47 /* RecapCommandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420931A266283EE00CB9A47 /* RecapCommandView.swift */; };
+		842B8B29266D3633000EEC1F /* AllReservationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B8B28266D3633000EEC1F /* AllReservationsView.swift */; };
 		843DBEEE2627096E007B152E /* InscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DBEED2627096E007B152E /* InscriptionView.swift */; };
 		843DBEF326271906007B152E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DBEF226271906007B152E /* Helper.swift */; };
 		843DBEF826271C0A007B152E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DBEF726271C0A007B152E /* Router.swift */; };
@@ -60,6 +61,7 @@
 		8418706D2654042A0090D4CF /* CommandPlatCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandPlatCellView.swift; sourceTree = "<group>"; };
 		841D6F1126528FFB005D87BC /* WaiterHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaiterHomeView.swift; sourceTree = "<group>"; };
 		8420931A266283EE00CB9A47 /* RecapCommandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecapCommandView.swift; sourceTree = "<group>"; };
+		842B8B28266D3633000EEC1F /* AllReservationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllReservationsView.swift; sourceTree = "<group>"; };
 		843DBEED2627096E007B152E /* InscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InscriptionView.swift; sourceTree = "<group>"; };
 		843DBEF226271906007B152E /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		843DBEF726271C0A007B152E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				84187064265400230090D4CF /* command */,
 				8418705C2653FEF80090D4CF /* home */,
 				84D1292626245FA800CF818D /* Preview Content */,
+				842B8B28266D3633000EEC1F /* AllReservationsView.swift */,
 			);
 			path = TheGoodFork;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				840E83802649332F00CC609C /* PlatGridView.swift in Sources */,
 				8450AC3126552F94006321C0 /* Command.swift in Sources */,
 				8420931B266283EE00CB9A47 /* RecapCommandView.swift in Sources */,
+				842B8B29266D3633000EEC1F /* AllReservationsView.swift in Sources */,
 				841870662654034C0090D4CF /* CommandPlatGridView.swift in Sources */,
 				840E8385264950A700CC609C /* Data.swift in Sources */,
 				848818332646C22E0043DCD9 /* HomeView.swift in Sources */,

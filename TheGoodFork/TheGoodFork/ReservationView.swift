@@ -71,14 +71,8 @@ struct ReservationView: View {
                 }.padding(.vertical, 10)
                 .background(Color.blue).cornerRadius(5.0).padding(.horizontal,  40)
             }
-
-            
         }
-        
-        
     }
-   
-    
 }
 
 struct ReservationView_Previews: PreviewProvider {
