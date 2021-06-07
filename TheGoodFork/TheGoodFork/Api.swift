@@ -11,7 +11,7 @@ struct User: Codable{
     var user_id: Int
     var role: String
     var first_name: String
-    var last_name: String
+    var last_name: String?
     var email: String
 }
 
@@ -47,7 +47,6 @@ struct Ingredient: Codable {
     var units_unit_id: Int
 }
 struct Bookings: Codable{
-    var code: Int
     var bookings: [Booking]
 }
 struct Booking: Codable{
@@ -62,7 +61,7 @@ struct Booking: Codable{
 
 struct Table: Codable{
     var table_id: Int
-    var name: String
+    var name: String?
     var capacity: Int
 }
 
@@ -212,9 +211,9 @@ class Api: ObservableObject {
                     if let data = data {
                         
                         let book = try JSONDecoder().decode(Bookings.self, from: data)
-                        print("Bookings")
                         DispatchQueue.main.async {
                             self.bookings = book.bookings
+                            print("Bookings", self.bookings)
                         }
 
                     }
@@ -248,7 +247,29 @@ class Api: ObservableObject {
             }
         }.resume()
                 }
-
+    func updateBokking(bookingId: Int, isClientOnPlace: Bool){
+        guard let url = URL(string: "http://3.134.79.46:8080/api/bookings") else { return }
+        
+        let body: [String: Any] = ["booking_id": bookingId, "is_client_on_place": isClientOnPlace]
+                
+        let finalBody = try! JSONSerialization.data(withJSONObject: body)
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.httpBody = finalBody
+        
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        URLSession.shared.dataTask(with: request) {(data, response, error) in
+            do {
+                if let data = data {
+                    print(response)
+                }
+            } catch {
+                print(error)
+            }
+        }.resume()
+                }
     
     func addCommand(comm: ContentCommand){
         var test: [[String: Int]] = []

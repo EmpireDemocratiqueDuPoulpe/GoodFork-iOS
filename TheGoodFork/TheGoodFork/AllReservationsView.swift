@@ -11,9 +11,15 @@ import UIKit
 struct AllReservationsView: View {
     
     @EnvironmentObject var Api: Api
-    
+    @State var checked = false
     var body: some View {
         Text("Réservations du")
+        ForEach(Api.bookings, id: \.booking_id) { reserv in
+                HStack{
+                    ToggleButtonView(name: reserv.user.first_name, id: reserv.booking_id)
+                    //Text("\(reserv.time)")
+                }
+        }.padding(.horizontal, 10)
         
         NavigationLink(destination: ReservationView()){
                 HStack{
