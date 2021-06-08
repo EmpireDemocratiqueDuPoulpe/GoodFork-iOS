@@ -14,7 +14,7 @@ struct TheGoodForkApp: App {
     
     var body: some Scene {
         WindowGroup {
-            AppView(router: router).environmentObject(Api())
+            AppView(router: router).environmentObject(Api()).environment(\.locale, Locale(identifier: "fr"))
         }
     }
 }

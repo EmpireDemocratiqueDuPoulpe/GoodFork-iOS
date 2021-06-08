@@ -9,7 +9,7 @@ import SwiftUI
 import UIKit
 
 struct ToggleButtonView: View {
-    @State private var showGreeting = false
+    @State var showGreeting: Bool
     @State var name: String
     @State var id: Int
     @EnvironmentObject var Api: Api
@@ -27,7 +27,7 @@ struct ToggleButtonView: View {
 
 struct ToggleButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ToggleButtonView(name: "test", id: 1)
+        ToggleButtonView(showGreeting: false, name: "test", id: 1)
     }
 }
 

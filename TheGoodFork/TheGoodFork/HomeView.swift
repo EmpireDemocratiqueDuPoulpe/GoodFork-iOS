@@ -11,6 +11,7 @@ import UIKit
 
 struct HomeView: View {
     
+    @EnvironmentObject var Api: Api
     @StateObject var router: Router
     @State var selection: Int? = nil
     
@@ -78,7 +79,17 @@ struct HomeView: View {
                     }.padding(.horizontal,  30)
                 }
 
-
+                Button(action: {
+                    Api.logout()
+                }){
+                    HStack{
+                        Spacer()
+                        Text("Déconnexion").font(.headline).foregroundColor(.white)
+                        Spacer()
+                    }.padding(.vertical, 10)
+                    .background(Color.blue).cornerRadius(5.0).padding(.horizontal,  40)
+                }
+                
             }
             }
         }

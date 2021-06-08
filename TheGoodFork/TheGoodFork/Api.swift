@@ -213,7 +213,6 @@ class Api: ObservableObject {
                         let book = try JSONDecoder().decode(Bookings.self, from: data)
                         DispatchQueue.main.async {
                             self.bookings = book.bookings
-                            print("Bookings", self.bookings)
                         }
 
                     }
@@ -272,17 +271,12 @@ class Api: ObservableObject {
                 }
     
     func addCommand(comm: ContentCommand){
-        var test: [[String: Int]] = []
+        var command: [[String: Int]] = []
         for item in comm.menus {
-            var lol = ["menu_id": item.menu_id, "price": item.price]
-            print(type(of: lol))
-            print(type(of: test))
-            print(lol)
-            test.append(lol)
-            print(test)
+            command.append(["menu_id": item.menu_id, "price": item.price])
         }
             guard let url = URL(string: "http://3.134.79.46:8080/api/orders") else { return }
-        let body: [String: Any] = ["user_id": comm.user_id, "menus": test, "is_take_away": comm.is_take_away ]
+        let body: [String: Any] = ["user_id": comm.user_id, "menus": command, "is_take_away": comm.is_take_away ]
 
         let finalBody = try! JSONSerialization.data(withJSONObject: body)
         let jsonString = String(data: finalBody, encoding: String.Encoding.ascii)!
@@ -305,6 +299,11 @@ class Api: ObservableObject {
             }.resume()
     }
     
+    func logout(){
+        self.defaults.set(nil, forKey: "Token")
+        self.token = nil
+        self.user = nil
+    }
     
     func saveUser(){
         self.defaults.set(self.token, forKey: "Token")
