@@ -11,6 +11,7 @@ import UIKit
 
 struct AllCommandsView: View {
     @EnvironmentObject var Api: Api
+    @State var selection: Int? = nil
     
     func dayDate() -> String{
         let formatter = DateFormatter()
@@ -21,21 +22,33 @@ struct AllCommandsView: View {
     var body: some View {
         ScrollView{
             ForEach(Api.orders, id: \.order_id) { order in
-                HStack{
-                    VStack(alignment: .leading, spacing: 5){
-                        Text("\(order.user.first_name)")
-                        Text("n°\(order.order_id) (\(order.is_take_away != 0 ? "A emporter" : "Sur place"))")
-                    }
-                    Spacer()
-                    if (order.is_finished != 0) {
-                        Text("Terminée").foregroundColor(.green)
-                    }else{
-                        Text("En cours").foregroundColor(.orange)
+                
+                NavigationLink(destination: TrackOrderView(), tag: order.order_id, selection: $selection){
+                    Button(action: {
+                        Api.getOrders(order_id: order.order_id)
+                        self.selection = order.order_id
+                    }){
+                        HStack{
+                            VStack(alignment: .leading, spacing: 5){
+                                Text("\(order.user.first_name)").font(.headline)
+                                Text("n°\(order.order_id) (\(order.is_take_away != 0 ? "A emporter" : "Sur place"))")
+                            }
+                            Spacer()
+                            if (order.is_finished != 0) {
+                                Text("Terminée").foregroundColor(.green)
+                            }else{
+                                Text("En cours").foregroundColor(.orange)
+                            }
+                        }
+                        Spacer()
+                        Spacer()
+                        Spacer()
+                        
                     }
                 }
-                Spacer()
-                Spacer()
-                Spacer()
+                
+
+                
             }.padding(.horizontal, 20)
         }.navigationTitle("Commandes du \(self.dayDate())")
     }

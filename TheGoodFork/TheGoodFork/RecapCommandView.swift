@@ -26,7 +26,7 @@ struct RecapCommandView: View {
                                 Text("\(value.value.price)€")
                             }
                         }
-                        }
+                    }
                 Section(header: Text("Plats").font(.headline)) {
                 ForEach(Array(Command.commandPlat.filter({ $0.value.type == "plat"})), id: \.key) { value in
                         HStack{
