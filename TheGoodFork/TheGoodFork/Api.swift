@@ -246,6 +246,7 @@ class Api: ObservableObject {
             }
         }.resume()
                 }
+    
     func updateBokking(bookingId: Int, isClientOnPlace: Bool){
         guard let url = URL(string: "http://3.134.79.46:8080/api/bookings") else { return }
         
@@ -262,6 +263,7 @@ class Api: ObservableObject {
         URLSession.shared.dataTask(with: request) {(data, response, error) in
             do {
                 if let data = data {
+                    self.getBooking()
                     print(response)
                 }
             } catch {

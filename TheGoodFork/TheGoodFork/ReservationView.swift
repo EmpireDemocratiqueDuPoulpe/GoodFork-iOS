@@ -31,47 +31,47 @@ struct ReservationView: View {
     @State private var date = Date()
     
     var body: some View {
-        ScrollView{
-            HStack (alignment: .center, spacing: 10) {
-                Image("logo-white")
-                    .resizable()
-                    .frame(width: 150, height: 150)
-            }
-            Text("Réservation").font(.headline)
-            VStack (spacing: 15){
-                HStack{
-                    Text("Nom : ")
-                    TextField("Nom", text : $name)
-                        .cornerRadius(3.0)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+            ScrollView{
+                HStack (alignment: .center, spacing: 10) {
+                    Image("logo-white")
+                        .resizable()
+                        .frame(width: 150, height: 150)
                 }
+                VStack (spacing: 15){
+                    HStack{
+                        Text("Nom : ")
+                        TextField("Nom", text : $name)
+                            .cornerRadius(3.0)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                    }
+                    
+                    VStack {
+                        DatePicker("Date : ", selection: $date, in: Date()..., displayedComponents: .date).environment(\.locale, Locale.init(identifier: "fr"))
+                    }
+                    VStack {
+                        DatePicker("Heure : ", selection: $date, displayedComponents: .hourAndMinute).environment(\.locale, Locale.init(identifier: "fr"))
+                    }
+                    VStack(alignment: .leading, spacing: 10){
+                        Text("Nombre de personnes : ")
+                        TextField("0", text: $numOfPeople)
+                            .keyboardType(.numberPad)
+                              .textFieldStyle(RoundedBorderTextFieldStyle())
+                    }
+                }.padding(.horizontal,  30)
                 
-                VStack {
-                    DatePicker("Date : ", selection: $date, in: Date()..., displayedComponents: .date).environment(\.locale, Locale.init(identifier: "fr"))
+                Button(action: {
+                    print("Bom: \(self.name) date: \(self.date) personnes: \(self.numOfPeople)")
+                    Api.addBooking(userId: Api.user?.user_id ?? 0, time: self.date, clientsNb: Int(self.numOfPeople) ?? 0)
+                }){
+                    HStack{
+                        Spacer()
+                        Text("Réserver").font(.headline).foregroundColor(.white)
+                        Spacer()
+                    }.padding(.vertical, 10)
+                    .background(Color.blue).cornerRadius(5.0).padding(.horizontal,  40)
                 }
-                VStack {
-                    DatePicker("Heure : ", selection: $date, displayedComponents: .hourAndMinute).environment(\.locale, Locale.init(identifier: "fr"))
-                }
-                VStack(alignment: .leading, spacing: 10){
-                    Text("Nombre de personnes : ")
-                    TextField("0", text: $numOfPeople)
-                        .keyboardType(.numberPad)
-                          .textFieldStyle(RoundedBorderTextFieldStyle())
-                }
-            }.padding(.horizontal,  30)
-            
-            Button(action: {
-                print("Bom: \(self.name) date: \(self.date) personnes: \(self.numOfPeople)")
-                Api.addBooking(userId: Api.user?.user_id ?? 0, time: self.date, clientsNb: Int(self.numOfPeople) ?? 0)
-            }){
-                HStack{
-                    Spacer()
-                    Text("Réserver").font(.headline).foregroundColor(.white)
-                    Spacer()
-                }.padding(.vertical, 10)
-                .background(Color.blue).cornerRadius(5.0).padding(.horizontal,  40)
-            }
-        }
+
+        }.navigationTitle("Réservation")
     }
 }
 
