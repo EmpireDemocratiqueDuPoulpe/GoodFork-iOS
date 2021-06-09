@@ -19,7 +19,8 @@ struct WaiterHomeView: View {
     
     var body: some View {
         NavigationView{
-            VStack{
+            ScrollView{
+                VStack{
                 HStack {
                     Image("logo-white")
                         .resizable()
@@ -27,15 +28,16 @@ struct WaiterHomeView: View {
                 }
                 Text("Bienvenue \(self.user.first_name)").font(.headline)
                 
-                NavigationLink(destination: CommandView(filterByType: $filterByType).environmentObject(Command(userId: self.user.user_id, isTakeAway: false)), tag: 1, selection: $selection){
+                NavigationLink(destination: AllCommandsView(), tag: 1, selection: $selection){
                     Button(action: {
+                        Api.getDayOrders()
                         self.selection = 1
                     }){
                         HStack{
                             Image("orders_w")
                                 .resizable()
                                 .frame(width: 50, height: 50).padding(.horizontal,  20)
-                            Text("Commande").font(.system(size: 20)).foregroundColor(.white)
+                            Text("Commandes").font(.system(size: 20)).foregroundColor(.white)
                             Spacer()
                         }.padding(.vertical, 10)
                         .background(Color.blue)
@@ -99,7 +101,7 @@ struct WaiterHomeView: View {
                     .background(Color.blue).cornerRadius(5.0).padding(.horizontal,  40)
                 }
 
-            }
+            }}
         }
         }
         

@@ -17,7 +17,6 @@ struct RecapCommandView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10){
-                Text("Récapitulatid de la commande").font(.headline)
                 Section(header: Text("Entrées").font(.headline)) {
                     ForEach(Array(Command.commandPlat.filter({ $0.value.type == "entrée"})), id: \.key) { value in
                             HStack{
@@ -78,7 +77,7 @@ struct RecapCommandView: View {
                     .background(Color.blue)
                 }
             }
-    }
+        }.navigationTitle("Récapitulatif de la commande")
 }
 }
 

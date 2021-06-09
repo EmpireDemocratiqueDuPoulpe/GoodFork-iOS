@@ -65,6 +65,20 @@ struct Table: Codable{
     var capacity: Int
 }
 
+struct Orders: Codable{
+    var orders: [Order]
+}
+struct Order: Codable{
+    var order_id: Int
+    var user: User
+    var booking: Booking?
+    var additional_infos: String?
+    var total_price: Int
+    var is_take_away: Int
+    var is_finished: Int
+    var time: String
+}
+
 
 class Api: ObservableObject {
     @Published var base: Base?
@@ -72,6 +86,7 @@ class Api: ObservableObject {
     @Published var token: String?
     @Published var recettes: [Recette] = []
     @Published var bookings: [Booking] = []
+    @Published var orders: [Order] = []
     
     init(){
         self.getCarte()
@@ -271,6 +286,30 @@ class Api: ObservableObject {
             }
         }.resume()
                 }
+    
+    func getDayOrders(){
+        guard let url = URL(string: "http://3.134.79.46:8080/api/orders/today/all") else { return }
+
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+            URLSession.shared.dataTask(with: request) {(data, response, error) in
+                do {
+                    if let data = data {
+                        
+                        let ord = try JSONDecoder().decode(Orders.self, from: data)
+                        DispatchQueue.main.async {
+                            self.orders = ord.orders
+                        }
+                    }
+                } catch {
+                    print(error)
+                }
+
+            }.resume()
+        }
     
     func addCommand(comm: ContentCommand){
         var command: [[String: Int]] = []
