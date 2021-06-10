@@ -15,7 +15,7 @@ struct ContentCommand: Codable{
 
 struct Plat: Codable {
     var menu_id: Int
-    var price: Int
+    var price: Float
 }
 
 struct PlatInfos: Codable, Identifiable{
@@ -24,7 +24,7 @@ struct PlatInfos: Codable, Identifiable{
             set { self.name = newValue }
         }
     var name: String
-    var price: Int
+    var price: Float
     var type: String
     var count: Int
 }
@@ -41,7 +41,7 @@ class Command: ObservableObject {
         self.total = 0
     }
     
-    func addPlat(id: Int, name: String, price: Int, type: String ){
+    func addPlat(id: Int, name: String, price: Float, type: String ){
         self.platList.menus.append(Plat(menu_id: id, price: price))
         self.total += Float(price)
         var newCount: Int
@@ -53,7 +53,7 @@ class Command: ObservableObject {
         }
         self.commandPlat.updateValue(PlatInfos(name: name, price: price, type: type, count: newCount), forKey: id)
     }
-    func deletePlat(id: Int, name: String, price: Int, type: String ){
+    func deletePlat(id: Int, name: String, price: Float, type: String ){
         self.total -= Float(price)
         if self.commandPlat[id]!.count == 1{
             self.commandPlat.removeValue(forKey: id)

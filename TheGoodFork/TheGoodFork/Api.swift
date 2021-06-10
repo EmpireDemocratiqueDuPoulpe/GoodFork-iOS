@@ -34,7 +34,7 @@ struct Recette: Codable {
     var type_id: Int
     var image_path: String?
     var description: String?
-    var price: Int
+    var price: Float
     var ingredients: [Ingredient]
 }
 
@@ -317,7 +317,6 @@ class Api: ObservableObject {
                         let ord = try JSONDecoder().decode(OrderMenus.self, from: data)
                         DispatchQueue.main.async {
                             self.viewOrder = ord.menus
-                            print("OCO")
                         }
                     }
                 } catch {
@@ -353,7 +352,7 @@ class Api: ObservableObject {
         }
     
     func addCommand(comm: ContentCommand){
-        var command: [[String: Int]] = []
+        var command: [[String: Any]] = []
         for item in comm.menus {
             command.append(["menu_id": item.menu_id, "price": item.price])
         }

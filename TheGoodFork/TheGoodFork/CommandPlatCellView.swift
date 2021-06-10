@@ -38,7 +38,7 @@ struct CommandPlatCellView: View {
                 Spacer()
                 Text(plat.name)
                 Spacer()
-                Text("\(plat.price)€").font(.body).bold()
+                Text("\(String(format: "%.2f", plat.price))€").font(.body).bold()
                 
 
                 if (Command.commandPlat[plat.menu_id] != nil) && Command.commandPlat[plat.menu_id]!.count > 0  {

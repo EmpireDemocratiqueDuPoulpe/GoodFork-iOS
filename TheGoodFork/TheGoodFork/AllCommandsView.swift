@@ -40,15 +40,9 @@ struct AllCommandsView: View {
                                 Text("En cours").foregroundColor(.orange)
                             }
                         }
-                        Spacer()
-                        Spacer()
-                        Spacer()
-                        
-                    }
-                }
-                
+                    }.padding(.vertical, 5)
 
-                
+                }
             }.padding(.horizontal, 20)
         }.navigationTitle("Commandes du \(self.dayDate())")
     }
