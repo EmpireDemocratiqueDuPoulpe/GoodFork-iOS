@@ -20,20 +20,20 @@ struct RecapCommandView: View {
                 Section(header: Text("Entrées").font(.headline)) {
                     ForEach(Array(Command.commandPlat.filter({ $0.value.type == "entrée"})), id: \.key) { value in
                             HStack{
-                                Text("\( String(format: "%.2f", value.value.count ))x")
+                                Text("\(value.value.count)x")
                                 Text("\(value.value.name)")
                                 Spacer()
-                                Text("\(value.value.price)€")
+                                Text("\(String(format: "%.2f", value.value.price))€")
                             }
                         }
                     }
                 Section(header: Text("Plats").font(.headline)) {
                 ForEach(Array(Command.commandPlat.filter({ $0.value.type == "plat"})), id: \.key) { value in
                         HStack{
-                            Text("\( String(format: "%.2f", value.value.count ))x")
+                            Text("\(value.value.count)x")
                             Text("\(value.value.name)")
                             Spacer()
-                            Text("\(value.value.price)€")
+                            Text("\(String(format: "%.2f", value.value.price))€")
                         }
                     }
                     }
@@ -41,20 +41,20 @@ struct RecapCommandView: View {
                 Section(header: Text("Desserts").font(.headline)) {
                 ForEach(Array(Command.commandPlat.filter({ $0.value.type == "dessert"})), id: \.key) { value in
                         HStack{
-                            Text("\( String(format: "%.2f", value.value.count ))x")
+                            Text("\(value.value.count)x")
                             Text("\(value.value.name)")
                             Spacer()
-                            Text("\(value.value.price)€")
+                            Text("\(String(format: "%.2f", value.value.price))€")
                         }
                     }
                     }
                 Section(header: Text("Boissons").font(.headline)) {
                 ForEach(Array(Command.commandPlat.filter({ $0.value.type == "boisson"})), id: \.key) { value in
                         HStack{
-                            Text("\(value.value.count)x").foregroundColor(.orange)
-                            Text("\(value.value.name)").foregroundColor(.green)
+                            Text("\(value.value.count)x")
+                            Text("\(value.value.name)")
                             Spacer()
-                            Text("\(value.value.price)€")
+                            Text("\(String(format: "%.2f", value.value.price))€")
                         }
                     }
                     }

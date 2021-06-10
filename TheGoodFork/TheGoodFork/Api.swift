@@ -68,12 +68,19 @@ struct Table: Codable{
 struct Orders: Codable{
     var orders: [Order]
 }
+struct Book: Codable{
+    var booking_id: Int
+    var user_id: Int
+    var table_id: Int
+    var time: String
+    var clients_nb: Int
+}
 struct Order: Codable{
     var order_id: Int
     var user: User
-    var booking: Booking?
+    var booking: Book?
     var additional_infos: String?
-    var total_price: Int
+    var total_price: Float
     var is_take_away: Int
     var is_finished: Int
     var time: String
@@ -89,7 +96,7 @@ struct OrderMenu: Codable{
     var name: String
     var type: String
     var type_id: Int
-    var price: Int
+    var price: Float
     var is_finished: Int
 }
 
