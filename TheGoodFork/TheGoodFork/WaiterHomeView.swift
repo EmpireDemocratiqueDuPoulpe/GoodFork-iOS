@@ -21,7 +21,7 @@ struct WaiterHomeView: View {
         NavigationView{
             ScrollView{
                 VStack{
-                HStack {
+                    HStack {
                     Image("logo-white")
                         .resizable()
                         .frame(width: 150, height: 150)

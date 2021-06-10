@@ -21,77 +21,92 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView{
-            VStack{
-                HStack {
-                    Spacer()
-                    Image("logo-white")
-                        .resizable()
-                        .frame(width: 150, height: 150)
-                    Spacer()
-                }
-                Text("Bienvenue \(self.user.first_name)").font(.headline)
+            ScrollView{
+                VStack{
+                    HStack {
+                        Spacer()
+                        Image("logo-white")
+                            .resizable()
+                            .frame(width: 150, height: 150)
+                        Spacer()
+                    }
+                    Text("Bienvenue \(self.user.first_name)").font(.headline)
 
-                HStack {
-                    NavigationLink(destination: CommandView(filterByType: $filterByType).environmentObject(Command(userId: self.user.user_id, isTakeAway: false)), tag: 3, selection: $selection){
-                    Button(action: {
-                        self.selection = 3
-                    }){
-                        VStack{
-                            Image("booking_w")
-                                .resizable()
-                                .frame(width: 80, height: 80)
-                            Text("Sur place").font(.system(size: 16)).foregroundColor(.white)
-                        }.padding(.horizontal,  22).padding(.vertical,  30)
-                        .background(Color.blue)
-                    }
-                    }
-                    
-                    NavigationLink(destination: CommandView(filterByType: $filterByType).environmentObject(Command(userId: self.user.user_id, isTakeAway: true)), tag: 2, selection: $selection){
-                        Button(action: {
-                            self.selection = 2
-                        }){
-                            VStack{
-                                Image("logo-white")
-                                    .resizable()
-                                    .frame(width: 80, height: 80)
-                                Text("A emporter").font(.system(size: 16)).foregroundColor(.white)
-                            }.padding(.horizontal,  22).padding(.vertical,  30)
-                            .background(Color.blue)
+                    HStack {
+                        if Api.isOn {
+                            NavigationLink(destination: CommandView(filterByType: $filterByType).environmentObject(Command(userId: self.user.user_id, isTakeAway: false)), tag: 3, selection: $selection){
+                            Button(action: {
+                                self.selection = 3
+                            }){
+                                VStack{
+                                    Image("booking_w")
+                                        .resizable()
+                                        .frame(width: 80, height: 80)
+                                    Text("Commander").font(.system(size: 16)).foregroundColor(.white)
+                                }.padding(.horizontal,  22).padding(.vertical,  30)
+                                .background(Color.blue)
+                            }
+                            }
+                        }else{
+                            NavigationLink(destination: ReservationView(), tag: 3, selection: $selection){
+                                Button(action: {
+                                    self.selection = 3
+                                }){
+                                    VStack{
+                                        Image("booking_w")
+                                            .resizable()
+                                            .frame(width: 80, height: 80)
+                                        Text("Réserver").font(.system(size: 16)).foregroundColor(.white)
+                                    }.padding(.horizontal,  22).padding(.vertical,  30)
+                                    .background(Color.blue)
+                                }
+                            }
                         }
+                        NavigationLink(destination: CommandView(filterByType: $filterByType).environmentObject(Command(userId: self.user.user_id, isTakeAway: true)), tag: 2, selection: $selection){
+                            Button(action: {
+                                self.selection = 2
+                            }){
+                                VStack{
+                                    Image("take_away_w")
+                                        .resizable()
+                                        .frame(width: 80, height: 80)
+                                    Text("A emporter").font(.system(size: 16)).foregroundColor(.white)
+                                }.padding(.horizontal,  22).padding(.vertical,  30)
+                                .background(Color.blue)
+                            }
+                        }
+                        
+                    }.padding(.horizontal,  30)
+                    
+                    NavigationLink(destination: CarteView(filterByType: $filterByType), tag: 1, selection: $selection){
+                        Button(action: {
+                            self.selection = 1
+                        }){
+                            HStack{
+                                Spacer()
+                                Image("menu_w")
+                                    .resizable()
+                                    .frame(width: 50, height: 50).padding(.horizontal,  20)
+                                Text("Carte").font(.system(size: 20)).foregroundColor(.white)
+                                Spacer()
+                            }.padding(.vertical, 20)
+                            .background(Color.blue)
+                        }.padding(.horizontal,  30)
                     }
 
-                    
-                    
-                }.padding(.horizontal,  30)
-                
-                NavigationLink(destination: CarteView(filterByType: $filterByType), tag: 1, selection: $selection){
                     Button(action: {
-                        self.selection = 1
+                        Api.logout()
                     }){
                         HStack{
-                            Image("menu_w")
-                                .resizable()
-                                .frame(width: 50, height: 50).padding(.horizontal,  20)
-                            Text("Carte").font(.system(size: 20)).foregroundColor(.white)
                             Spacer()
-                        }.padding(.vertical, 20)
-                        .background(Color.blue)
-                    }.padding(.horizontal,  30)
+                            Text("Déconnexion").font(.headline).foregroundColor(.white)
+                            Spacer()
+                        }.padding(.vertical, 10)
+                        .background(Color.blue).cornerRadius(5.0).padding(.horizontal,  40)
+                    }
                 }
-
-                Button(action: {
-                    Api.logout()
-                }){
-                    HStack{
-                        Spacer()
-                        Text("Déconnexion").font(.headline).foregroundColor(.white)
-                        Spacer()
-                    }.padding(.vertical, 10)
-                    .background(Color.blue).cornerRadius(5.0).padding(.horizontal,  40)
-                }
-                
             }
-            }
+        }
         }
         
 }

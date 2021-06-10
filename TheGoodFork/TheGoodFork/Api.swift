@@ -109,6 +109,8 @@ class Api: ObservableObject {
     @Published var bookings: [Booking] = []
     @Published var orders: [Order] = []
     @Published var viewOrder: [OrderMenu] = []
+    @Published var customerBooking: [Booking] = []
+    @Published var isOn: Bool = false
     
     init(){
         self.getCarte()
@@ -203,6 +205,7 @@ class Api: ObservableObject {
                         let base = try JSONDecoder().decode(Base.self, from: data)
                         DispatchQueue.main.async {
                             self.user = base.user
+                            self.getCustomerBooking(user_id: base.user!.user_id)
                         }
                     }
                 } catch {
@@ -250,6 +253,33 @@ class Api: ObservableObject {
                         let book = try JSONDecoder().decode(Bookings.self, from: data)
                         DispatchQueue.main.async {
                             self.bookings = book.bookings
+                        }
+
+                    }
+                } catch {
+                    print(error)
+                }
+
+            }.resume()
+        }
+    
+    func getCustomerBooking(user_id: Int){
+        guard let url = URL(string: "http://3.134.79.46:8080/api/bookings/user_id/\(user_id)") else { return }
+
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+            URLSession.shared.dataTask(with: request) {(data, response, error) in
+                do {
+                    if let data = data {
+                        
+                        let book = try JSONDecoder().decode(Bookings.self, from: data)
+                        DispatchQueue.main.async {
+                            self.customerBooking = book.bookings
+                            print(self.customerBooking)
+                            self.isOnPlace()
                         }
 
                     }
@@ -395,5 +425,14 @@ class Api: ObservableObject {
     
     func saveUser(){
         self.defaults.set(self.token, forKey: "Token")
+    }
+    
+    func isOnPlace(){
+        for booking in self.customerBooking {
+            if booking.is_client_on_place != 0 {
+                self.isOn = true
+            }
+        }
+        
     }
 }
