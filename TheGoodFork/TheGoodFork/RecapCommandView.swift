@@ -67,7 +67,11 @@ struct RecapCommandView: View {
             
             NavigationLink(destination: Text("Payer")){
                 Button(action: {
-                    Api.addCommand(comm: Command.platList)
+                    if Command.platList.is_take_away{
+                        
+                    }else{
+                        Api.addCommand(comm: Command.platList)
+                    }
                 }){
                     HStack{
                         Spacer()

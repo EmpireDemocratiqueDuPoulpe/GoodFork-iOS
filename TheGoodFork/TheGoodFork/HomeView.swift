@@ -42,7 +42,7 @@ struct HomeView: View {
                                     Image("booking_w")
                                         .resizable()
                                         .frame(width: 80, height: 80)
-                                    Text("Commander").font(.system(size: 16)).foregroundColor(.white)
+                                    Text("Sur place").font(.system(size: 16)).foregroundColor(.white)
                                 }.padding(.horizontal,  22).padding(.vertical,  30)
                                 .background(Color.blue)
                             }

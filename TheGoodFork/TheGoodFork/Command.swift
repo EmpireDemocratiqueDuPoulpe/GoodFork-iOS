@@ -10,12 +10,13 @@ import Foundation
 struct ContentCommand: Codable{
     var user_id: Int
     var menus: [Plat]
-    var  is_take_away: Bool
+    var is_take_away: Bool
 }
 
 struct Plat: Codable {
     var menu_id: Int
     var price: Float
+    var ingredients: [Ingredient]
 }
 
 struct PlatInfos: Codable, Identifiable{
@@ -41,8 +42,8 @@ class Command: ObservableObject {
         self.total = 0
     }
     
-    func addPlat(id: Int, name: String, price: Float, type: String ){
-        self.platList.menus.append(Plat(menu_id: id, price: price))
+    func addPlat(id: Int, name: String, price: Float, type: String, ingredients: [Ingredient] ){
+        self.platList.menus.append(Plat(menu_id: id, price: price, ingredients: ingredients))
         self.total += Float(price)
         var newCount: Int
         if self.commandPlat[id] != nil{

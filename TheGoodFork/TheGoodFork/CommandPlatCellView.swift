@@ -51,7 +51,7 @@ struct CommandPlatCellView: View {
                     Text("\(Command.commandPlat[plat.menu_id]!.count)")
                 }
                 Button(action: {
-                    Command.addPlat(id: plat.menu_id, name: plat.name, price: plat.price, type: plat.type)
+                    Command.addPlat(id: plat.menu_id, name: plat.name, price: plat.price, type: plat.type, ingredients: plat.ingredients)
                 }){
                     Image(systemName: "plus.circle.fill").resizable()
                         .frame(width: 32.0, height: 32.0).foregroundColor(.green)

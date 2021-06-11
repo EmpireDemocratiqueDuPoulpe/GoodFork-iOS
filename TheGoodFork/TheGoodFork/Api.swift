@@ -391,14 +391,17 @@ class Api: ObservableObject {
     func addCommand(comm: ContentCommand){
         var command: [[String: Any]] = []
         for item in comm.menus {
-            command.append(["menu_id": item.menu_id, "price": item.price])
+            var ingredientList: [[String: Any]] = []
+            for ingredient in item.ingredients{
+                ingredientList.append(["ingredient_id": ingredient.ingredient_id, "stock_id": ingredient.stock_id, "name": ingredient.name, "units": ingredient.units, "units_unit": ingredient.units_unit, "units_unit_id": ingredient.units_unit_id])
+            }
+            command.append(["menu_id": item.menu_id, "price": item.price, "ingredients": ingredientList])
         }
             guard let url = URL(string: "http://3.134.79.46:8080/api/orders") else { return }
         let body: [String: Any] = ["user_id": comm.user_id, "menus": command, "is_take_away": comm.is_take_away ]
 
         let finalBody = try! JSONSerialization.data(withJSONObject: body)
         let jsonString = String(data: finalBody, encoding: String.Encoding.ascii)!
-        print (jsonString)
         
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
