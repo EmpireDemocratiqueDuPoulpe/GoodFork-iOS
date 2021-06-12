@@ -68,7 +68,7 @@ struct RecapCommandView: View {
             NavigationLink(destination: Text("Payer")){
                 Button(action: {
                     if Command.platList.is_take_away{
-                        
+                        Api.addTakeAwayCommand(comm: Command.platList)
                     }else{
                         Api.addCommand(comm: Command.platList)
                     }

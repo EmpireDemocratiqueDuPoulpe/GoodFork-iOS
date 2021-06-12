@@ -23,9 +23,13 @@ struct AppView: View {
                 case .connection:
                     switch Api.user?.role {
                     case "customer":
-                        HomeView(router: router, user: Api.user ?? User(user_id: 0, role: "waiter", first_name: "test", last_name: "test", email: "test@gmail.com")).navigationBarHidden(true)
+                        HomeView(router: router, user: Api.user ?? User(user_id: 0, role: "customer", first_name: "test", last_name: "test", email: "test@gmail.com")).navigationBarHidden(true)
                     case "waiter":
                         WaiterHomeView(router: router, user: Api.user ?? User(user_id: 0, role: "waiter", first_name: "test", last_name: "test", email: "test@gmail.com")).navigationBarHidden(true)
+                    case "cook":
+                        CookHomeView(router: router, user: Api.user ?? User(user_id: 0, role: "cook", first_name: "test", last_name: "test", email: "test@gmail.com")).navigationBarHidden(true)
+                    case "barmen":
+                        CookHomeView(router: router, user: Api.user ?? User(user_id: 0, role: "barmen", first_name: "test", last_name: "test", email: "test@gmail.com")).navigationBarHidden(true)
                     default:
                         InscriptionView(router: router).navigationBarHidden(true)
                     }

@@ -100,6 +100,26 @@ struct OrderMenu: Codable{
     var is_finished: Int
 }
 
+struct AllWaiting: Codable{
+    var menus: [Waiting]
+}
+
+struct Waiting: Codable{
+    var menu_count: Int
+    var menu_id: Int
+    var order_id: Int
+    var asking_time: String?
+    var type: String
+    var type_id: Int
+    var name: String
+}
+
+struct Type: Codable{
+    var entree: [Waiting]
+    var plat: [Waiting]
+    var dessert: [Waiting]
+    var boisson: [Waiting]
+}
 
 class Api: ObservableObject {
     @Published var base: Base?
@@ -111,6 +131,8 @@ class Api: ObservableObject {
     @Published var viewOrder: [OrderMenu] = []
     @Published var customerBooking: [Booking] = []
     @Published var isOn: Bool = false
+    @Published var allWaiting: [Waiting] = []
+    @Published var allOrderId = [String: Type]()
     
     init(){
         self.getCarte()
@@ -249,7 +271,6 @@ class Api: ObservableObject {
             URLSession.shared.dataTask(with: request) {(data, response, error) in
                 do {
                     if let data = data {
-                        
                         let book = try JSONDecoder().decode(Bookings.self, from: data)
                         DispatchQueue.main.async {
                             self.bookings = book.bookings
@@ -278,7 +299,6 @@ class Api: ObservableObject {
                         let book = try JSONDecoder().decode(Bookings.self, from: data)
                         DispatchQueue.main.async {
                             self.customerBooking = book.bookings
-                            print(self.customerBooking)
                             self.isOnPlace()
                         }
 
@@ -419,6 +439,74 @@ class Api: ObservableObject {
                 }
             }.resume()
     }
+    
+    func addTakeAwayCommand(comm: ContentCommand){
+        var command: [[String: Any]] = []
+        for item in comm.menus {
+            var ingredientList: [[String: Any]] = []
+            for ingredient in item.ingredients{
+                ingredientList.append(["ingredient_id": ingredient.ingredient_id, "stock_id": ingredient.stock_id, "name": ingredient.name, "units": ingredient.units, "units_unit": ingredient.units_unit, "units_unit_id": ingredient.units_unit_id])
+            }
+            command.append(["menu_id": item.menu_id, "price": item.price, "ingredients": ingredientList])
+        }
+            guard let url = URL(string: "http://3.134.79.46:8080/api/payment/takeaway") else { return }
+        let body: [String: Any] = ["user_id": comm.user_id, "menus": command, "is_take_away": comm.is_take_away ]
+
+        let finalBody = try! JSONSerialization.data(withJSONObject: body)
+        let jsonString = String(data: finalBody, encoding: String.Encoding.ascii)!
+        
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.httpBody = finalBody
+            
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            URLSession.shared.dataTask(with: request) {(data, response, error) in
+                do {
+                    if let data = data {
+                        print(response)
+                    }
+                } catch {
+                    print(error)
+                }
+            }.resume()
+    }
+    
+    func getAllWaitings(){
+        guard let url = URL(string: "http://3.134.79.46:8080/api/orders/menus/waiting") else { return }
+
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+            URLSession.shared.dataTask(with: request) {(data, response, error) in
+                do {
+                    if let data = data {
+                        
+                        let wait = try JSONDecoder().decode(AllWaiting.self, from: data)
+                        DispatchQueue.main.async {
+                            self.allWaiting = wait.menus
+                        }
+                        for order in self.allWaiting {
+                            if self.allOrderId["\(order.order_id)"] != nil{
+                                var actual = self.allOrderId["\(order.order_id)"]
+                                actual!.entree.append(order)
+                                self.allOrderId.updateValue(actual!, forKey: "\(order.order_id)")
+                            }else{
+                                let toAdd = Type(entree: <#T##[Waiting]#>, plat: <#T##[Waiting]#>, dessert: <#T##[Waiting]#>, boisson: <#T##[Waiting]#>)
+                                self.allOrderId.updateValue(toAdd, forKey: "\(order.order_id)")
+                            }
+                            print(self.allOrderId)
+                        }
+                    
+                    }
+                } catch {
+                    print(error)
+                }
+
+            }.resume()
+        }
     
     func logout(){
         self.defaults.set(nil, forKey: "Token")

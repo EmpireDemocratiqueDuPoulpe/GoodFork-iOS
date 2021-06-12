@@ -10,6 +10,8 @@
 		840E837B2649301400CC609C /* PlatCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E837A2649301400CC609C /* PlatCellView.swift */; };
 		840E83802649332F00CC609C /* PlatGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E837F2649332F00CC609C /* PlatGridView.swift */; };
 		840E8385264950A700CC609C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E8384264950A700CC609C /* Data.swift */; };
+		8417BA382673C2D400A2A0F3 /* CookHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417BA372673C2D400A2A0F3 /* CookHomeView.swift */; };
+		8417BA3D2673D3F000A2A0F3 /* CookingMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417BA3C2673D3F000A2A0F3 /* CookingMenuView.swift */; };
 		8418704E2653DCB40090D4CF /* PlatDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418704D2653DCB40090D4CF /* PlatDetailView.swift */; };
 		841870532653F2950090D4CF /* CommandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841870522653F2950090D4CF /* CommandView.swift */; };
 		841870662654034C0090D4CF /* CommandPlatGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841870652654034C0090D4CF /* CommandPlatGridView.swift */; };
@@ -58,6 +60,8 @@
 		840E837A2649301400CC609C /* PlatCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatCellView.swift; sourceTree = "<group>"; };
 		840E837F2649332F00CC609C /* PlatGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatGridView.swift; sourceTree = "<group>"; };
 		840E8384264950A700CC609C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		8417BA372673C2D400A2A0F3 /* CookHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookHomeView.swift; sourceTree = "<group>"; };
+		8417BA3C2673D3F000A2A0F3 /* CookingMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingMenuView.swift; sourceTree = "<group>"; };
 		8418704D2653DCB40090D4CF /* PlatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatDetailView.swift; sourceTree = "<group>"; };
 		841870522653F2950090D4CF /* CommandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandView.swift; sourceTree = "<group>"; };
 		841870652654034C0090D4CF /* CommandPlatGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandPlatGridView.swift; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 			children = (
 				841D6F1126528FFB005D87BC /* WaiterHomeView.swift */,
 				848818322646C22E0043DCD9 /* HomeView.swift */,
+				8417BA372673C2D400A2A0F3 /* CookHomeView.swift */,
 			);
 			name = home;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				842B42E8266E235300254E95 /* ToggleButtonView.swift */,
 				84FEF8DB2671193600D068C0 /* AllCommandsView.swift */,
 				84FEF8E026712CDE00D068C0 /* TrackOrderView.swift */,
+				8417BA3C2673D3F000A2A0F3 /* CookingMenuView.swift */,
 			);
 			path = TheGoodFork;
 			sourceTree = "<group>";
@@ -353,11 +359,13 @@
 				842B42E9266E235300254E95 /* ToggleButtonView.swift in Sources */,
 				8418704E2653DCB40090D4CF /* PlatDetailView.swift in Sources */,
 				84D1292326245FA300CF818D /* ConnexionView.swift in Sources */,
+				8417BA3D2673D3F000A2A0F3 /* CookingMenuView.swift in Sources */,
 				8450AC36265536A3006321C0 /* ReservationView.swift in Sources */,
 				84D1292126245FA300CF818D /* TheGoodForkApp.swift in Sources */,
 				843DBEF826271C0A007B152E /* Router.swift in Sources */,
 				840E83802649332F00CC609C /* PlatGridView.swift in Sources */,
 				8450AC3126552F94006321C0 /* Command.swift in Sources */,
+				8417BA382673C2D400A2A0F3 /* CookHomeView.swift in Sources */,
 				8420931B266283EE00CB9A47 /* RecapCommandView.swift in Sources */,
 				842B8B29266D3633000EEC1F /* AllReservationsView.swift in Sources */,
 				841870662654034C0090D4CF /* CommandPlatGridView.swift in Sources */,
