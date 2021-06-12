@@ -36,15 +36,19 @@ struct Recette: Codable {
     var description: String?
     var price: Float
     var ingredients: [Ingredient]
+    var how_much: Int?
 }
 
 struct Ingredient: Codable {
     var ingredient_id: Int
     var stock_id: Int
     var name: String
-    var units: Int
+    var units: Float
     var units_unit: String
     var units_unit_id: Int
+    var stock_units_unit: String
+    var stock_units_unit_id: Int
+    var unit_price: Float
 }
 struct Bookings: Codable{
     var bookings: [Booking]
@@ -57,6 +61,7 @@ struct Booking: Codable{
     var clients_nb: Int
     var is_client_on_place: Int
     var can_client_pay: Int
+    var is_finished: Int
 }
 
 struct Table: Codable{
@@ -251,6 +256,7 @@ class Api: ObservableObject {
                         let menu = try JSONDecoder().decode(Menu.self, from: data)
                         DispatchQueue.main.async {
                             self.recettes = menu.menus
+                            print(self.recettes)
                         }
                     }
                 } catch {

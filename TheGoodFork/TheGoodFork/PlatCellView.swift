@@ -27,7 +27,7 @@ struct PlatCellView: View {
 }
 struct PlatCellView_Previews: PreviewProvider {
     static var previews: some View {
-        PlatCellView(plat: Recette(menu_id: 1, name: "Pizza", type: "dessert", type_id: 2, image_path: "xx", description: "ddd", price: 2, ingredients: [Ingredient(ingredient_id: 1, stock_id: 1, name: "saucisse", units: 1, units_unit: "g", units_unit_id: 1)]))
+        PlatCellView(plat: Recette(menu_id: 1, name: "Pizza", type: "dessert", type_id: 2, image_path: "xx", description: "ddd", price: 2, ingredients: [], how_much: 1))
     }
 }
 
