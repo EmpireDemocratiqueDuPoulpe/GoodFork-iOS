@@ -491,13 +491,31 @@ class Api: ObservableObject {
                         for order in self.allWaiting {
                             if self.allOrderId["\(order.order_id)"] != nil{
                                 var actual = self.allOrderId["\(order.order_id)"]
-                                actual!.entree.append(order)
+                                switch order.type {
+                                case "entrée":
+                                    actual!.entree.append(order)
+                                case "plat":
+                                    actual!.plat.append(order)
+                                case "dessert":
+                                    actual!.dessert.append(order)
+                                default:
+                                    actual!.boisson.append(order)
+                                }
                                 self.allOrderId.updateValue(actual!, forKey: "\(order.order_id)")
                             }else{
-                                let toAdd = Type(entree: <#T##[Waiting]#>, plat: <#T##[Waiting]#>, dessert: <#T##[Waiting]#>, boisson: <#T##[Waiting]#>)
+                                var toAdd = Type(entree: [], plat: [], dessert: [], boisson: [])
+                                switch order.type {
+                                case "entrée":
+                                    toAdd.entree.append(order)
+                                case "plat":
+                                    toAdd.plat.append(order)
+                                case "dessert":
+                                    toAdd.dessert.append(order)
+                                default:
+                                    toAdd.boisson.append(order)
+                                }
                                 self.allOrderId.updateValue(toAdd, forKey: "\(order.order_id)")
                             }
-                            print(self.allOrderId)
                         }
                     
                     }

@@ -32,7 +32,7 @@ struct CookHomeView: View {
                     }
                     Text("Bienvenue \(self.user.first_name)").font(.headline)
 
-                            NavigationLink(destination: Text("All waitings"), tag: 2, selection: $selection){
+                            NavigationLink(destination: CookingMenuView(), tag: 2, selection: $selection){
                                 Button(action: {
                                     Api.getAllWaitings()
                                     self.selection = 2
