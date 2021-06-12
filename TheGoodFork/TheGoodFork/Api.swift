@@ -104,7 +104,7 @@ struct AllWaiting: Codable{
     var menus: [Waiting]
 }
 
-struct Waiting: Codable{
+struct Waiting: Codable, Equatable{
     var menu_count: Int
     var menu_id: Int
     var order_id: Int
@@ -493,13 +493,21 @@ class Api: ObservableObject {
                                 var actual = self.allOrderId["\(order.order_id)"]
                                 switch order.type {
                                 case "entrée":
-                                    actual!.entree.append(order)
+                                    if !actual!.entree.contains(order){
+                                        actual!.entree.append(order)
+                                    }
                                 case "plat":
-                                    actual!.plat.append(order)
+                                    if !actual!.plat.contains(order){
+                                        actual!.plat.append(order)
+                                    }
                                 case "dessert":
-                                    actual!.dessert.append(order)
+                                    if !actual!.dessert.contains(order){
+                                        actual!.dessert.append(order)
+                                    }
                                 default:
-                                    actual!.boisson.append(order)
+                                    if !actual!.boisson.contains(order){
+                                        actual!.boisson.append(order)
+                                    }
                                 }
                                 self.allOrderId.updateValue(actual!, forKey: "\(order.order_id)")
                             }else{

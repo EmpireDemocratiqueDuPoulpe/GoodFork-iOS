@@ -20,6 +20,7 @@
 		8420931B266283EE00CB9A47 /* RecapCommandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420931A266283EE00CB9A47 /* RecapCommandView.swift */; };
 		842B42E9266E235300254E95 /* ToggleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B42E8266E235300254E95 /* ToggleButtonView.swift */; };
 		842B8B29266D3633000EEC1F /* AllReservationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B8B28266D3633000EEC1F /* AllReservationsView.swift */; };
+		843935212674676F0033F1D0 /* ToggleIsFinishedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843935202674676F0033F1D0 /* ToggleIsFinishedView.swift */; };
 		843DBEEE2627096E007B152E /* InscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DBEED2627096E007B152E /* InscriptionView.swift */; };
 		843DBEF326271906007B152E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DBEF226271906007B152E /* Helper.swift */; };
 		843DBEF826271C0A007B152E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DBEF726271C0A007B152E /* Router.swift */; };
@@ -70,6 +71,7 @@
 		8420931A266283EE00CB9A47 /* RecapCommandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecapCommandView.swift; sourceTree = "<group>"; };
 		842B42E8266E235300254E95 /* ToggleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButtonView.swift; sourceTree = "<group>"; };
 		842B8B28266D3633000EEC1F /* AllReservationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllReservationsView.swift; sourceTree = "<group>"; };
+		843935202674676F0033F1D0 /* ToggleIsFinishedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleIsFinishedView.swift; sourceTree = "<group>"; };
 		843DBEED2627096E007B152E /* InscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InscriptionView.swift; sourceTree = "<group>"; };
 		843DBEF226271906007B152E /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		843DBEF726271C0A007B152E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				84FEF8DB2671193600D068C0 /* AllCommandsView.swift */,
 				84FEF8E026712CDE00D068C0 /* TrackOrderView.swift */,
 				8417BA3C2673D3F000A2A0F3 /* CookingMenuView.swift */,
+				843935202674676F0033F1D0 /* ToggleIsFinishedView.swift */,
 			);
 			path = TheGoodFork;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				843DBEF826271C0A007B152E /* Router.swift in Sources */,
 				840E83802649332F00CC609C /* PlatGridView.swift in Sources */,
 				8450AC3126552F94006321C0 /* Command.swift in Sources */,
+				843935212674676F0033F1D0 /* ToggleIsFinishedView.swift in Sources */,
 				8417BA382673C2D400A2A0F3 /* CookHomeView.swift in Sources */,
 				8420931B266283EE00CB9A47 /* RecapCommandView.swift in Sources */,
 				842B8B29266D3633000EEC1F /* AllReservationsView.swift in Sources */,
