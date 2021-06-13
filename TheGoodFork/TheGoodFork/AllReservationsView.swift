@@ -54,10 +54,10 @@ struct AllReservationsView: View {
                 NavigationLink(destination: ReservationView()){
                         HStack{
                             Spacer()
-                            Text("Nouvelle réservation").font(.system(size: 20)).foregroundColor(.white)
+                            Text("Nouvelle réservation").font(.system(size: 20)).foregroundColor(Color("DarkerPrimaryLight"))
                             Spacer()
                         }.padding(.vertical, 10).padding(.horizontal,  30)
-                        .background(Color.blue)
+                        .background(Color("Secondary"))
                 }
             }.navigationTitle("Réservations du \(self.dayDate())").navigationBarHidden(false)
 

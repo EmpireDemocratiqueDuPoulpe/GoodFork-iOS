@@ -115,10 +115,10 @@ struct HomeView: View {
                     }){
                         HStack{
                             Spacer()
-                            Text("Déconnexion").font(.headline).foregroundColor(Color("Secondary"))
+                            Text("Déconnexion").font(.headline).foregroundColor(Color("DarkerPrimaryLight"))
                             Spacer()
                         }.padding(.vertical, 10)
-                        .background(Color("DarkerPrimaryLight")).cornerRadius(5.0).padding(.horizontal,  40)
+                        .background(Color("Secondary")).cornerRadius(5.0).padding(.horizontal,  40)
                     }
                 }
             }

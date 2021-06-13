@@ -21,7 +21,7 @@ struct ConnexionView: View {
             VStack(alignment: .leading, spacing: 10) {
                 HStack (alignment: .center, spacing: 10) {
                     Spacer()
-                    Image("logo-white")
+                    Image("logo_full_g")
                         .resizable()
                         .frame(width: 150, height: 150)
                     Spacer()
@@ -54,10 +54,10 @@ struct ConnexionView: View {
                 }){
                     HStack{
                         Spacer()
-                        Text("Connexion").font(.headline).foregroundColor(.white)
+                        Text("Connexion").font(.headline).foregroundColor(Color("DarkerPrimaryLight"))
                         Spacer()
                     }.padding(.vertical, 10)
-                    .background(Color.blue).cornerRadius(5.0).padding(.horizontal,  40)
+                    .background(Color("Secondary")).cornerRadius(5.0).padding(.horizontal,  40)
                 }
                 
                 Button(action: {

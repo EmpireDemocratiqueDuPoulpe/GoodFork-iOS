@@ -61,10 +61,10 @@ struct TrackOrderView: View {
                     }){
                         HStack{
                             Spacer()
-                            Text("Payer").font(.system(size: 20)).foregroundColor(.white)
+                            Text("Payer").font(.system(size: 20)).foregroundColor(Color("DarkerPrimaryLight"))
                             Spacer()
                         }.padding(.vertical, 15)
-                        .background(Color.blue)
+                        .background(Color("Secondary"))
                 }
                     
                 }

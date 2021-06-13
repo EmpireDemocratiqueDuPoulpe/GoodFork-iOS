@@ -33,7 +33,7 @@ struct ReservationView: View {
     var body: some View {
             ScrollView{
                 HStack (alignment: .center, spacing: 10) {
-                    Image("logo-white")
+                    Image("logo_full_g")
                         .resizable()
                         .frame(width: 150, height: 150)
                 }
@@ -65,10 +65,10 @@ struct ReservationView: View {
                 }){
                     HStack{
                         Spacer()
-                        Text("Réserver").font(.headline).foregroundColor(.white)
+                        Text("Réserver").font(.headline).foregroundColor(Color("DarkerPrimaryLight"))
                         Spacer()
                     }.padding(.vertical, 10)
-                    .background(Color.blue).cornerRadius(5.0).padding(.horizontal,  40)
+                    .background(Color("Secondary")).cornerRadius(5.0).padding(.horizontal,  40)
                 }
 
         }.navigationTitle("Réservation")

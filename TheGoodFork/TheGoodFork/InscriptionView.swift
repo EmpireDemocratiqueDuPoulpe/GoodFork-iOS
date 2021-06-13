@@ -23,7 +23,7 @@ struct InscriptionView: View {
     var body: some View {
         HStack (alignment: .center, spacing: 10) {
             Spacer()
-            Image("logo-white")
+            Image("logo_full_g")
                 .resizable()
                 .frame(width: 150, height: 150)
             Spacer()
@@ -79,10 +79,10 @@ struct InscriptionView: View {
             }){
                 HStack{
                     Spacer()
-                    Text("Inscription").font(.headline).foregroundColor(.white)
+                    Text("Inscription").font(.headline).foregroundColor(Color("DarkerPrimaryLight"))
                     Spacer()
                 }.padding(.vertical, 10)
-                .background(Color.blue).cornerRadius(5.0).padding(.horizontal,  40)
+                .background(Color("Secondary")).cornerRadius(5.0).padding(.horizontal,  40)
             }
             
             

@@ -25,7 +25,7 @@ struct PlatDetailView: View {
             HStack {
                 Text(plat.name).font(.headline)
                 Spacer()
-                Text("\(plat.price)€").font(.body).bold()
+                Text("\(String(format: "%.2f", plat.price))€").font(.body).bold()
             }
             VStack(alignment: .leading,  spacing: 10){
                 Spacer()

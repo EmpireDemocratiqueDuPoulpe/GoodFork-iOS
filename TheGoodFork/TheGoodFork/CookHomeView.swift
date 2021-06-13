@@ -25,7 +25,7 @@ struct CookHomeView: View {
                 VStack{
                     HStack {
                         Spacer()
-                        Image("logo-white")
+                        Image("logo_full_g")
                             .resizable()
                             .frame(width: 150, height: 150)
                         Spacer()
@@ -42,10 +42,10 @@ struct CookHomeView: View {
                                         Image("booking_w")
                                             .resizable()
                                             .frame(width: 80, height: 80)
-                                        Text("Commandes").font(.system(size: 16)).foregroundColor(.white)
+                                        Text("Commandes").font(.system(size: 16)).foregroundColor(Color("Secondary"))
                                         Spacer()
                                     }.padding(.vertical, 20)
-                                    .background(Color.blue)
+                                    .background(Color("DarkerPrimaryLight"))
                                 }.padding(.horizontal,  30)
                             }
 
@@ -58,10 +58,10 @@ struct CookHomeView: View {
                                 Image("menu_w")
                                     .resizable()
                                     .frame(width: 80, height: 80).padding(.horizontal,  20)
-                                Text("Carte").font(.system(size: 20)).foregroundColor(.white)
+                                Text("Carte").font(.system(size: 20)).foregroundColor(Color("Secondary"))
                                 Spacer()
                             }.padding(.vertical, 20)
-                            .background(Color.blue)
+                            .background(Color("DarkerPrimaryLight"))
                         }.padding(.horizontal,  30)
                     }
 
@@ -70,10 +70,10 @@ struct CookHomeView: View {
                     }){
                         HStack{
                             Spacer()
-                            Text("Déconnexion").font(.headline).foregroundColor(.white)
+                            Text("Déconnexion").font(.headline).foregroundColor(Color("DarkerPrimaryLight"))
                             Spacer()
                         }.padding(.vertical, 10)
-                        .background(Color.blue).cornerRadius(5.0).padding(.horizontal,  40)
+                        .background(Color("Secondary")).cornerRadius(5.0).padding(.horizontal,  40)
                     }
                 }
             }

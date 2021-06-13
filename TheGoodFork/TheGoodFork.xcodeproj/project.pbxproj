@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		840E837B2649301400CC609C /* PlatCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E837A2649301400CC609C /* PlatCellView.swift */; };
 		840E83802649332F00CC609C /* PlatGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E837F2649332F00CC609C /* PlatGridView.swift */; };
-		840E8385264950A700CC609C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E8384264950A700CC609C /* Data.swift */; };
 		8417BA382673C2D400A2A0F3 /* CookHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417BA372673C2D400A2A0F3 /* CookHomeView.swift */; };
 		8417BA3D2673D3F000A2A0F3 /* CookingMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417BA3C2673D3F000A2A0F3 /* CookingMenuView.swift */; };
 		8418704E2653DCB40090D4CF /* PlatDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418704D2653DCB40090D4CF /* PlatDetailView.swift */; };
@@ -60,7 +59,6 @@
 /* Begin PBXFileReference section */
 		840E837A2649301400CC609C /* PlatCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatCellView.swift; sourceTree = "<group>"; };
 		840E837F2649332F00CC609C /* PlatGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatGridView.swift; sourceTree = "<group>"; };
-		840E8384264950A700CC609C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		8417BA372673C2D400A2A0F3 /* CookHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookHomeView.swift; sourceTree = "<group>"; };
 		8417BA3C2673D3F000A2A0F3 /* CookingMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingMenuView.swift; sourceTree = "<group>"; };
 		8418704D2653DCB40090D4CF /* PlatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatDetailView.swift; sourceTree = "<group>"; };
@@ -182,7 +180,6 @@
 				84B562B0264A9DD90051E0E5 /* Api.swift */,
 				848818372646C8240043DCD9 /* AppView.swift */,
 				84D1292226245FA300CF818D /* ConnexionView.swift */,
-				840E8384264950A700CC609C /* Data.swift */,
 				843DBEF226271906007B152E /* Helper.swift */,
 				843DBEED2627096E007B152E /* InscriptionView.swift */,
 				8450AC35265536A3006321C0 /* ReservationView.swift */,
@@ -373,7 +370,6 @@
 				8420931B266283EE00CB9A47 /* RecapCommandView.swift in Sources */,
 				842B8B29266D3633000EEC1F /* AllReservationsView.swift in Sources */,
 				841870662654034C0090D4CF /* CommandPlatGridView.swift in Sources */,
-				840E8385264950A700CC609C /* Data.swift in Sources */,
 				848818332646C22E0043DCD9 /* HomeView.swift in Sources */,
 				84B562B1264A9DD90051E0E5 /* Api.swift in Sources */,
 				841870532653F2950090D4CF /* CommandView.swift in Sources */,
