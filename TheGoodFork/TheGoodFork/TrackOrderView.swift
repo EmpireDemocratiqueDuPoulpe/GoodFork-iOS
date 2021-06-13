@@ -67,6 +67,19 @@ struct TrackOrderView: View {
                             }
                         }
                     }
+                if Api.pay{
+                    Button(action: {
+                        Api.payCommand(booking_id: Api.currentBookingId)
+                    }){
+                        HStack{
+                            Spacer()
+                            Text("Payer").font(.system(size: 20)).foregroundColor(.white)
+                            Spacer()
+                        }.padding(.vertical, 15)
+                        .background(Color.blue)
+                }
+                    
+                }
             }.padding(.horizontal,  10)
         }.navigationTitle("Suivi de commande")
 }

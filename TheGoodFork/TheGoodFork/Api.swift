@@ -136,6 +136,9 @@ class Api: ObservableObject {
     @Published var viewOrder: [OrderMenu] = []
     @Published var customerBooking: [Booking] = []
     @Published var isOn: Bool = false
+    @Published var pay: Bool = false
+    @Published var commanded: Bool = false
+    @Published var currentBookingId: Int = -1
     @Published var allWaiting: [Waiting] = []
     @Published var allOrderId = [String: Type]()
     
@@ -256,7 +259,6 @@ class Api: ObservableObject {
                         let menu = try JSONDecoder().decode(Menu.self, from: data)
                         DispatchQueue.main.async {
                             self.recettes = menu.menus
-                            print(self.recettes)
                         }
                     }
                 } catch {
@@ -306,6 +308,9 @@ class Api: ObservableObject {
                         DispatchQueue.main.async {
                             self.customerBooking = book.bookings
                             self.isOnPlace()
+                            if self.isOn {
+                                self.getOrdersByUserId(user_id: user_id)
+                            }
                         }
 
                     }
@@ -438,6 +443,7 @@ class Api: ObservableObject {
             URLSession.shared.dataTask(with: request) {(data, response, error) in
                 do {
                     if let data = data {
+                        self.commanded = true
                         print(data)
                     }
                 } catch {
@@ -540,6 +546,57 @@ class Api: ObservableObject {
             }.resume()
         }
     
+    func getOrdersByUserId(user_id: Int){
+        guard let url = URL(string: "http://3.134.79.46:8080/api/orders/user_id/\(user_id)") else { return }
+
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+            URLSession.shared.dataTask(with: request) {(data, response, error) in
+                do {
+                    if let data = data {
+                        
+                        let ord = try JSONDecoder().decode(Orders.self, from: data)
+                        DispatchQueue.main.async {
+                            if ord.orders.count > 0 {
+                                self.commanded = true
+                                self.getOrders(order_id: ord.orders[0].order_id)
+                            }
+                            self.canPay(ord: ord.orders)
+                        }
+                    }
+                } catch {
+                    print(error)
+                }
+            }.resume()
+        }
+    
+    func payCommand(booking_id: Int){
+            guard let url = URL(string: "http://3.134.79.46:8080/api/payment/booking") else { return }
+        let body: [String: Any] = ["booking_id": booking_id]
+
+        let finalBody = try! JSONSerialization.data(withJSONObject: body)
+        let jsonString = String(data: finalBody, encoding: String.Encoding.ascii)!
+        
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.httpBody = finalBody
+            
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            URLSession.shared.dataTask(with: request) {(data, response, error) in
+                do {
+                    if let data = data {
+                        print(response)
+                    }
+                } catch {
+                    print(error)
+                }
+            }.resume()
+    }
+    
     func logout(){
         self.defaults.set(nil, forKey: "Token")
         self.token = nil
@@ -553,9 +610,19 @@ class Api: ObservableObject {
     func isOnPlace(){
         for booking in self.customerBooking {
             if booking.is_client_on_place != 0 {
+                self.currentBookingId = booking.booking_id
                 self.isOn = true
             }
         }
         
     }
+    
+    func canPay(ord: [Order]){
+        for order in ord {
+            if order.is_finished != 0 {
+                self.pay = true
+            }
+        }
+    }
+        
 }

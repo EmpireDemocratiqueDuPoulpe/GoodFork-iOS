@@ -75,7 +75,7 @@ struct RecapCommandView: View {
                 }){
                     HStack{
                         Spacer()
-                        Text("Payer").font(.system(size: 20)).foregroundColor(.white)
+                        Text("Commander").font(.system(size: 20)).foregroundColor(.white)
                         Spacer()
                     }.padding(.vertical, 15)
                     .background(Color.blue)

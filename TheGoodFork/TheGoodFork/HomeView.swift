@@ -34,17 +34,33 @@ struct HomeView: View {
 
                     HStack {
                         if Api.isOn {
-                            NavigationLink(destination: CommandView(filterByType: $filterByType).environmentObject(Command(userId: self.user.user_id, isTakeAway: false)), tag: 3, selection: $selection){
-                            Button(action: {
-                                self.selection = 3
-                            }){
-                                VStack{
-                                    Image("booking_w")
-                                        .resizable()
-                                        .frame(width: 80, height: 80)
-                                    Text("Sur place").font(.system(size: 16)).foregroundColor(.white)
-                                }.padding(.horizontal,  22).padding(.vertical,  30)
-                                .background(Color.blue)
+                            if Api.commanded {
+                                NavigationLink(destination: TrackOrderView(), tag: 3, selection: $selection){
+                                Button(action: {
+                                    self.selection = 3
+                                }){
+                                    VStack{
+                                        Image("booking_w")
+                                            .resizable()
+                                            .frame(width: 80, height: 80)
+                                        Text("Suivi").font(.system(size: 16)).foregroundColor(.white)
+                                    }.padding(.horizontal,  22).padding(.vertical,  30)
+                                    .background(Color.blue)
+                            }
+                            }
+                            }else{
+                                NavigationLink(destination: CommandView(filterByType: $filterByType).environmentObject(Command(userId: self.user.user_id, isTakeAway: false)), tag: 3, selection: $selection){
+                                Button(action: {
+                                    self.selection = 3
+                                }){
+                                    VStack{
+                                        Image("booking_w")
+                                            .resizable()
+                                            .frame(width: 80, height: 80)
+                                        Text("Sur place").font(.system(size: 16)).foregroundColor(.white)
+                                    }.padding(.horizontal,  22).padding(.vertical,  30)
+                                    .background(Color.blue)
+                            }
                             }
                             }
                         }else{
