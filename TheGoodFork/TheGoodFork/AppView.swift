@@ -25,7 +25,7 @@ struct AppView: View {
                     case "customer":
                         HomeView(router: router, user: Api.user ?? User(user_id: 0, role: "customer", first_name: "test", last_name: "test", email: "test@gmail.com")).navigationBarHidden(true)
                     case "waiter":
-                        WaiterHomeView(router: router, user: Api.user ?? User(user_id: 0, role: "waiter", first_name: "test", last_name: "test", email: "test@gmail.com")).navigationBarHidden(true)
+                        WaiterHomeView(router: router, user: Api.user ?? User(user_id: 0, role: "waiter", first_name: "test", last_name: "test", email: "test@gmail.com"))
                     case "cook":
                         CookHomeView(router: router, user: Api.user ?? User(user_id: 0, role: "cook", first_name: "test", last_name: "test", email: "test@gmail.com")).navigationBarHidden(true)
                     case "barmen":

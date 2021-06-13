@@ -29,7 +29,7 @@ struct AllReservationsView: View {
 
         let date = format.date(from: string)!
         format.dateFormat = "HH:mm"
-        format.locale = tempLocale // reset the locale
+        format.locale = tempLocale
         let dateString = format.string(from: date)
         return dateString
     }
@@ -59,7 +59,7 @@ struct AllReservationsView: View {
                         }.padding(.vertical, 10).padding(.horizontal,  30)
                         .background(Color.blue)
                 }
-            }.navigationTitle("Réservations du \(self.dayDate())")
+            }.navigationTitle("Réservations du \(self.dayDate())").navigationBarHidden(false)
 
     }
 }

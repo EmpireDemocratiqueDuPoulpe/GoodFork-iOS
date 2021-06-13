@@ -25,7 +25,7 @@ struct HomeView: View {
                 VStack{
                     HStack {
                         Spacer()
-                        Image("logo-white")
+                        Image("logo_full_g")
                             .resizable()
                             .frame(width: 150, height: 150)
                         Spacer()
@@ -43,9 +43,9 @@ struct HomeView: View {
                                         Image("booking_w")
                                             .resizable()
                                             .frame(width: 80, height: 80)
-                                        Text("Suivi").font(.system(size: 16)).foregroundColor(.white)
+                                        Text("Suivi").font(.system(size: 16)).foregroundColor(Color("Secondary"))
                                     }.padding(.horizontal,  22).padding(.vertical,  30)
-                                    .background(Color.blue)
+                                    .background(Color("DarkerPrimaryLight"))
                             }
                             }
                             }else{
@@ -57,9 +57,9 @@ struct HomeView: View {
                                         Image("booking_w")
                                             .resizable()
                                             .frame(width: 80, height: 80)
-                                        Text("Sur place").font(.system(size: 16)).foregroundColor(.white)
+                                        Text("Sur place").font(.system(size: 16)).foregroundColor(Color("Secondary"))
                                     }.padding(.horizontal,  22).padding(.vertical,  30)
-                                    .background(Color.blue)
+                                    .background(Color("DarkerPrimaryLight"))
                             }
                             }
                             }
@@ -72,9 +72,9 @@ struct HomeView: View {
                                         Image("booking_w")
                                             .resizable()
                                             .frame(width: 80, height: 80)
-                                        Text("Réserver").font(.system(size: 16)).foregroundColor(.white)
+                                        Text("Réserver").font(.system(size: 16)).foregroundColor(Color("Secondary"))
                                     }.padding(.horizontal,  22).padding(.vertical,  30)
-                                    .background(Color.blue)
+                                    .background(Color("DarkerPrimaryLight"))
                                 }
                             }
                         }
@@ -86,9 +86,9 @@ struct HomeView: View {
                                     Image("take_away_w")
                                         .resizable()
                                         .frame(width: 80, height: 80)
-                                    Text("A emporter").font(.system(size: 16)).foregroundColor(.white)
+                                    Text("A emporter").font(.system(size: 16)).foregroundColor(Color("Secondary"))
                                 }.padding(.horizontal,  22).padding(.vertical,  30)
-                                .background(Color.blue)
+                                .background(Color("DarkerPrimaryLight"))
                             }
                         }
                         
@@ -103,10 +103,10 @@ struct HomeView: View {
                                 Image("menu_w")
                                     .resizable()
                                     .frame(width: 50, height: 50).padding(.horizontal,  20)
-                                Text("Carte").font(.system(size: 20)).foregroundColor(.white)
+                                Text("Carte").font(.system(size: 20)).foregroundColor(Color("Secondary"))
                                 Spacer()
                             }.padding(.vertical, 20)
-                            .background(Color.blue)
+                            .background(Color("DarkerPrimaryLight"))
                         }.padding(.horizontal,  30)
                     }
 
@@ -115,10 +115,10 @@ struct HomeView: View {
                     }){
                         HStack{
                             Spacer()
-                            Text("Déconnexion").font(.headline).foregroundColor(.white)
+                            Text("Déconnexion").font(.headline).foregroundColor(Color("Secondary"))
                             Spacer()
                         }.padding(.vertical, 10)
-                        .background(Color.blue).cornerRadius(5.0).padding(.horizontal,  40)
+                        .background(Color("DarkerPrimaryLight")).cornerRadius(5.0).padding(.horizontal,  40)
                     }
                 }
             }

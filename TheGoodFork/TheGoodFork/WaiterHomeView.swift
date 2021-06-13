@@ -22,11 +22,11 @@ struct WaiterHomeView: View {
             ScrollView{
                 VStack{
                     HStack {
-                    Image("logo-white")
+                    Image("logo_full_g")
                         .resizable()
                         .frame(width: 150, height: 150)
                 }
-                Text("Bienvenue \(self.user.first_name)").font(.headline)
+                    Text("Bienvenue \(self.user.first_name)").font(.headline)
                 
                 NavigationLink(destination: AllCommandsView(), tag: 1, selection: $selection){
                     Button(action: {
@@ -37,10 +37,10 @@ struct WaiterHomeView: View {
                             Image("orders_w")
                                 .resizable()
                                 .frame(width: 50, height: 50).padding(.horizontal,  20)
-                            Text("Commandes").font(.system(size: 20)).foregroundColor(.white)
+                            Text("Commandes").font(.system(size: 20)).foregroundColor(Color("Secondary"))
                             Spacer()
                         }.padding(.vertical, 10)
-                        .background(Color.blue)
+                        .background(Color("DarkerPrimaryLight"))
                     }.padding(.horizontal,  30)
                 }
                 
@@ -52,10 +52,10 @@ struct WaiterHomeView: View {
                             Image("menu_w")
                                 .resizable()
                                 .frame(width: 50, height: 50).padding(.horizontal,  20)
-                            Text("Carte").font(.system(size: 20)).foregroundColor(.white)
+                            Text("Carte").font(.system(size: 20)).foregroundColor(Color("Secondary"))
                             Spacer()
                         }.padding(.vertical, 10)
-                        .background(Color.blue)
+                        .background(Color("DarkerPrimaryLight"))
                     }.padding(.horizontal,  30)
                 }
                 
@@ -68,10 +68,10 @@ struct WaiterHomeView: View {
                             Image("on_the_spot_w")
                                 .resizable()
                                 .frame(width: 50, height: 50).padding(.horizontal,  20)
-                            Text("Réservations").font(.system(size: 20)).foregroundColor(.white)
+                            Text("Réservations").font(.system(size: 20)).foregroundColor(Color("Secondary"))
                             Spacer()
                         }.padding(.vertical, 10)
-                        .background(Color.blue)
+                        .background(Color("DarkerPrimaryLight"))
                     }.padding(.horizontal,  30)
                 }
                 
@@ -83,10 +83,10 @@ struct WaiterHomeView: View {
                             Image("alert_w")
                                 .resizable()
                                 .frame(width: 50, height: 50).padding(.horizontal,  20)
-                            Text("Alerte").font(.system(size: 20)).foregroundColor(.white)
+                            Text("Alerte").font(.system(size: 20)).foregroundColor(Color("Secondary"))
                             Spacer()
                         }.padding(.vertical, 5)
-                        .background(Color.blue)
+                        .background(Color("DarkerPrimaryLight"))
                     }.padding(.horizontal,  30)
                 }
                 
@@ -95,10 +95,10 @@ struct WaiterHomeView: View {
                 }){
                     HStack{
                         Spacer()
-                        Text("Déconnexion").font(.headline).foregroundColor(.white)
+                        Text("Déconnexion").font(.headline).foregroundColor(Color("DarkerPrimaryLight"))
                         Spacer()
                     }.padding(.vertical, 10)
-                    .background(Color.blue).cornerRadius(5.0).padding(.horizontal,  40)
+                    .background(Color("Secondary")).cornerRadius(5.0).padding(.horizontal,  40)
                 }
 
             }}

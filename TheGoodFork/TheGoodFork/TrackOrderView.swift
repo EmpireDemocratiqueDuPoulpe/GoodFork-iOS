@@ -54,19 +54,7 @@ struct TrackOrderView: View {
                             }
                         }
                     }
-                Section(header: Text("Boissons").font(.headline)) {
-                    ForEach(Array(Api.viewOrder.filter({ $0.type == "boisson"})), id: \.menu_id) { value in
-                            HStack{
-                                if (value.is_finished != 0) {
-                                    Text("\(value.name)").foregroundColor(.green)
-                                }else{
-                                    Text("\(value.name)").foregroundColor(.orange)
-                                }
-                                Spacer()
-                                Text("\(String(format: "%.2f", value.price))€")
-                            }
-                        }
-                    }
+
                 if Api.pay{
                     Button(action: {
                         Api.payCommand(booking_id: Api.currentBookingId)
