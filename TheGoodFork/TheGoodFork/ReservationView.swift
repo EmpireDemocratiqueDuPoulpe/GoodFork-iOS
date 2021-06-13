@@ -13,8 +13,9 @@ struct ReservationView: View {
     @EnvironmentObject var Api: Api
     
     @State private var name: String = ""
-    
+    @StateObject var router: Router
     @State private var numOfPeople = "0"
+    @State var selection: Int? = nil
     
     let formatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -59,9 +60,10 @@ struct ReservationView: View {
                     }
                 }.padding(.horizontal,  30)
                 
+                NavigationLink(destination:HomeView(router: router, user: Api.user ?? User(user_id: 0, role: "waiter", first_name: "test", last_name: "test", email: "test@gmail.com")).navigationBarHidden(true), tag: 1, selection: $selection){
                 Button(action: {
-                    print("Bom: \(self.name) date: \(self.date) personnes: \(self.numOfPeople)")
                     Api.addBooking(userId: Api.user?.user_id ?? 0, time: self.date, clientsNb: Int(self.numOfPeople) ?? 0)
+                    self.selection = 1
                 }){
                     HStack{
                         Spacer()
@@ -69,7 +71,7 @@ struct ReservationView: View {
                         Spacer()
                     }.padding(.vertical, 10)
                     .background(Color("Secondary")).cornerRadius(5.0).padding(.horizontal,  40)
-                }
+                }}
 
         }.navigationTitle("Réservation")
     }
@@ -77,6 +79,6 @@ struct ReservationView: View {
 
 struct ReservationView_Previews: PreviewProvider {
     static var previews: some View {
-        ReservationView()
+        ReservationView(router: Router())
     }
 }

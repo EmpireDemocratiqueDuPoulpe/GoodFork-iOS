@@ -64,7 +64,7 @@ struct HomeView: View {
                             }
                             }
                         }else{
-                            NavigationLink(destination: ReservationView(), tag: 3, selection: $selection){
+                            NavigationLink(destination: ReservationView(router: Router()), tag: 3, selection: $selection){
                                 Button(action: {
                                     self.selection = 3
                                 }){

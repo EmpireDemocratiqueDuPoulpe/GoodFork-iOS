@@ -25,14 +25,14 @@ struct CommandView: View {
     var body: some View {
             ScrollView {
                 if Command.commandPlat.count > 0 {
-                    NavigationLink(destination: RecapCommandView().environmentObject(self.Command), tag: 1, selection: $selection){
+                    NavigationLink(destination: RecapCommandView(router: Router()).environmentObject(self.Command), tag: 1, selection: $selection){
                         Button(action: {
                             self.selection = 1
                         }){
                             HStack {
-                                Text("Commander").font(.system(size: 16)).foregroundColor(.white)
+                                Text("Commander").font(.system(size: 16)).foregroundColor(Color("DarkerPrimaryLight"))
                             }.padding()
-                            .background(Color.blue)
+                            .background(Color("Secondary"))
                         }
                         }
                 }

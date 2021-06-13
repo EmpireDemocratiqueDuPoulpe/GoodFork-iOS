@@ -51,7 +51,7 @@ struct AllReservationsView: View {
                             }
                 }.padding(.horizontal, 10)
                 
-                NavigationLink(destination: ReservationView()){
+                NavigationLink(destination: ReservationView(router: Router())){
                         HStack{
                             Spacer()
                             Text("Nouvelle réservation").font(.system(size: 20)).foregroundColor(Color("DarkerPrimaryLight"))

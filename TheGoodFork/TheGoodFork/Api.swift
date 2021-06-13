@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Data class servant à la recuperation des donnees
 struct User: Codable{
     var user_id: Int
     var role: String
@@ -126,6 +127,7 @@ struct Type: Codable{
     var boisson: [Waiting]
 }
 
+//Class Api contenant toutes les fonctions servant aux requetes Api
 class Api: ObservableObject {
     @Published var base: Base?
     @Published var user: User?

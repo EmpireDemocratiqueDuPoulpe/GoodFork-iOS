@@ -9,10 +9,13 @@
 import SwiftUI
 import UIKit
 
+//Recapitulatif de la commande
 struct RecapCommandView: View {
 
+    @StateObject var router: Router
     @EnvironmentObject var Command: Command
     @EnvironmentObject var Api: Api
+    @State var selection: Int? = nil
     
     var body: some View {
         ScrollView {
@@ -65,20 +68,21 @@ struct RecapCommandView: View {
                 }
             }.padding(.horizontal,  10)
             
-            NavigationLink(destination: Text("Payer")){
+            NavigationLink(destination:HomeView(router: router, user: Api.user ?? User(user_id: 0, role: "waiter", first_name: "test", last_name: "test", email: "test@gmail.com")).navigationBarHidden(true), tag: 1, selection: $selection){
                 Button(action: {
                     if Command.platList.is_take_away{
                         Api.addTakeAwayCommand(comm: Command.platList)
                     }else{
                         Api.addCommand(comm: Command.platList)
                     }
+                    self.selection = 1
                 }){
                     HStack{
                         Spacer()
-                        Text("Commander").font(.system(size: 20)).foregroundColor(.white)
+                        Text("Commander").font(.system(size: 20)).foregroundColor(Color("DarkerPrimaryLight"))
                         Spacer()
                     }.padding(.vertical, 15)
-                    .background(Color.blue)
+                    .background(Color("Secondary"))
                 }
             }
         }.navigationTitle("Récapitulatif de la commande")
@@ -87,6 +91,6 @@ struct RecapCommandView: View {
 
 struct RecapCommandView_Previews: PreviewProvider {
     static var previews: some View {
-        RecapCommandView()
+        RecapCommandView(router: Router())
     }
 }
