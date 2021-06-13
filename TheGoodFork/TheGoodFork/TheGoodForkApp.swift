@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct TheGoodForkApp: App {
+    
+    @StateObject var router = Router()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppView(router: router).environmentObject(Api()).environment(\.locale, Locale(identifier: "fr"))
         }
     }
 }

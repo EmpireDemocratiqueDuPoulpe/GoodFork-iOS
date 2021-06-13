@@ -7,12 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840E837B2649301400CC609C /* PlatCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E837A2649301400CC609C /* PlatCellView.swift */; };
+		840E83802649332F00CC609C /* PlatGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E837F2649332F00CC609C /* PlatGridView.swift */; };
+		8417BA382673C2D400A2A0F3 /* CookHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417BA372673C2D400A2A0F3 /* CookHomeView.swift */; };
+		8417BA3D2673D3F000A2A0F3 /* CookingMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417BA3C2673D3F000A2A0F3 /* CookingMenuView.swift */; };
+		8418704E2653DCB40090D4CF /* PlatDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418704D2653DCB40090D4CF /* PlatDetailView.swift */; };
+		841870532653F2950090D4CF /* CommandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841870522653F2950090D4CF /* CommandView.swift */; };
+		841870662654034C0090D4CF /* CommandPlatGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841870652654034C0090D4CF /* CommandPlatGridView.swift */; };
+		8418706E2654042A0090D4CF /* CommandPlatCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418706D2654042A0090D4CF /* CommandPlatCellView.swift */; };
+		841D6F1226528FFB005D87BC /* WaiterHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D6F1126528FFB005D87BC /* WaiterHomeView.swift */; };
+		8420931B266283EE00CB9A47 /* RecapCommandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420931A266283EE00CB9A47 /* RecapCommandView.swift */; };
+		842B42E9266E235300254E95 /* ToggleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B42E8266E235300254E95 /* ToggleButtonView.swift */; };
+		842B8B29266D3633000EEC1F /* AllReservationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B8B28266D3633000EEC1F /* AllReservationsView.swift */; };
+		843935212674676F0033F1D0 /* ToggleIsFinishedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843935202674676F0033F1D0 /* ToggleIsFinishedView.swift */; };
+		843DBEEE2627096E007B152E /* InscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DBEED2627096E007B152E /* InscriptionView.swift */; };
+		843DBEF326271906007B152E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DBEF226271906007B152E /* Helper.swift */; };
+		843DBEF826271C0A007B152E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DBEF726271C0A007B152E /* Router.swift */; };
+		8450AC3126552F94006321C0 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AC3026552F94006321C0 /* Command.swift */; };
+		8450AC36265536A3006321C0 /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AC35265536A3006321C0 /* ReservationView.swift */; };
+		848818332646C22E0043DCD9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848818322646C22E0043DCD9 /* HomeView.swift */; };
+		848818382646C8240043DCD9 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848818372646C8240043DCD9 /* AppView.swift */; };
+		848818432646E7370043DCD9 /* CarteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848818422646E7360043DCD9 /* CarteView.swift */; };
+		84B562B1264A9DD90051E0E5 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B562B0264A9DD90051E0E5 /* Api.swift */; };
 		84D1292126245FA300CF818D /* TheGoodForkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1292026245FA300CF818D /* TheGoodForkApp.swift */; };
-		84D1292326245FA300CF818D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1292226245FA300CF818D /* ContentView.swift */; };
+		84D1292326245FA300CF818D /* ConnexionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1292226245FA300CF818D /* ConnexionView.swift */; };
 		84D1292526245FA800CF818D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D1292426245FA800CF818D /* Assets.xcassets */; };
 		84D1292826245FA800CF818D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D1292726245FA800CF818D /* Preview Assets.xcassets */; };
 		84D1293326245FA900CF818D /* TheGoodForkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1293226245FA900CF818D /* TheGoodForkTests.swift */; };
 		84D1293E26245FA900CF818D /* TheGoodForkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1293D26245FA900CF818D /* TheGoodForkUITests.swift */; };
+		84FEF8DC2671193600D068C0 /* AllCommandsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEF8DB2671193600D068C0 /* AllCommandsView.swift */; };
+		84FEF8E126712CDE00D068C0 /* TrackOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEF8E026712CDE00D068C0 /* TrackOrderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,9 +57,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		840E837A2649301400CC609C /* PlatCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatCellView.swift; sourceTree = "<group>"; };
+		840E837F2649332F00CC609C /* PlatGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatGridView.swift; sourceTree = "<group>"; };
+		8417BA372673C2D400A2A0F3 /* CookHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookHomeView.swift; sourceTree = "<group>"; };
+		8417BA3C2673D3F000A2A0F3 /* CookingMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingMenuView.swift; sourceTree = "<group>"; };
+		8418704D2653DCB40090D4CF /* PlatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatDetailView.swift; sourceTree = "<group>"; };
+		841870522653F2950090D4CF /* CommandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandView.swift; sourceTree = "<group>"; };
+		841870652654034C0090D4CF /* CommandPlatGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandPlatGridView.swift; sourceTree = "<group>"; };
+		8418706D2654042A0090D4CF /* CommandPlatCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandPlatCellView.swift; sourceTree = "<group>"; };
+		841D6F1126528FFB005D87BC /* WaiterHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaiterHomeView.swift; sourceTree = "<group>"; };
+		8420931A266283EE00CB9A47 /* RecapCommandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecapCommandView.swift; sourceTree = "<group>"; };
+		842B42E8266E235300254E95 /* ToggleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButtonView.swift; sourceTree = "<group>"; };
+		842B8B28266D3633000EEC1F /* AllReservationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllReservationsView.swift; sourceTree = "<group>"; };
+		843935202674676F0033F1D0 /* ToggleIsFinishedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleIsFinishedView.swift; sourceTree = "<group>"; };
+		843DBEED2627096E007B152E /* InscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InscriptionView.swift; sourceTree = "<group>"; };
+		843DBEF226271906007B152E /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		843DBEF726271C0A007B152E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		8450AC3026552F94006321C0 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		8450AC35265536A3006321C0 /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
+		848818322646C22E0043DCD9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		848818372646C8240043DCD9 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		848818422646E7360043DCD9 /* CarteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarteView.swift; sourceTree = "<group>"; };
+		84B562B0264A9DD90051E0E5 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		84D1291D26245FA200CF818D /* TheGoodFork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheGoodFork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D1292026245FA300CF818D /* TheGoodForkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGoodForkApp.swift; sourceTree = "<group>"; };
-		84D1292226245FA300CF818D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		84D1292226245FA300CF818D /* ConnexionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnexionView.swift; sourceTree = "<group>"; };
 		84D1292426245FA800CF818D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84D1292726245FA800CF818D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		84D1292926245FA800CF818D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +91,8 @@
 		84D1293926245FA900CF818D /* TheGoodForkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheGoodForkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D1293D26245FA900CF818D /* TheGoodForkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGoodForkUITests.swift; sourceTree = "<group>"; };
 		84D1293F26245FA900CF818D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84FEF8DB2671193600D068C0 /* AllCommandsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCommandsView.swift; sourceTree = "<group>"; };
+		84FEF8E026712CDE00D068C0 /* TrackOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackOrderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +120,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		841870582653FE6B0090D4CF /* carte */ = {
+			isa = PBXGroup;
+			children = (
+				8418704D2653DCB40090D4CF /* PlatDetailView.swift */,
+				848818422646E7360043DCD9 /* CarteView.swift */,
+				840E837A2649301400CC609C /* PlatCellView.swift */,
+				840E837F2649332F00CC609C /* PlatGridView.swift */,
+			);
+			name = carte;
+			sourceTree = "<group>";
+		};
+		8418705C2653FEF80090D4CF /* home */ = {
+			isa = PBXGroup;
+			children = (
+				841D6F1126528FFB005D87BC /* WaiterHomeView.swift */,
+				848818322646C22E0043DCD9 /* HomeView.swift */,
+				8417BA372673C2D400A2A0F3 /* CookHomeView.swift */,
+			);
+			name = home;
+			sourceTree = "<group>";
+		};
+		84187064265400230090D4CF /* command */ = {
+			isa = PBXGroup;
+			children = (
+				841870522653F2950090D4CF /* CommandView.swift */,
+				8450AC3026552F94006321C0 /* Command.swift */,
+				841870652654034C0090D4CF /* CommandPlatGridView.swift */,
+				8418706D2654042A0090D4CF /* CommandPlatCellView.swift */,
+			);
+			name = command;
+			sourceTree = "<group>";
+		};
 		84D1291426245FA200CF818D = {
 			isa = PBXGroup;
 			children = (
@@ -95,11 +175,27 @@
 		84D1291F26245FA300CF818D /* TheGoodFork */ = {
 			isa = PBXGroup;
 			children = (
-				84D1292026245FA300CF818D /* TheGoodForkApp.swift */,
-				84D1292226245FA300CF818D /* ContentView.swift */,
-				84D1292426245FA800CF818D /* Assets.xcassets */,
+				8420931A266283EE00CB9A47 /* RecapCommandView.swift */,
 				84D1292926245FA800CF818D /* Info.plist */,
+				84B562B0264A9DD90051E0E5 /* Api.swift */,
+				848818372646C8240043DCD9 /* AppView.swift */,
+				84D1292226245FA300CF818D /* ConnexionView.swift */,
+				843DBEF226271906007B152E /* Helper.swift */,
+				843DBEED2627096E007B152E /* InscriptionView.swift */,
+				8450AC35265536A3006321C0 /* ReservationView.swift */,
+				843DBEF726271C0A007B152E /* Router.swift */,
+				84D1292026245FA300CF818D /* TheGoodForkApp.swift */,
+				84D1292426245FA800CF818D /* Assets.xcassets */,
+				841870582653FE6B0090D4CF /* carte */,
+				84187064265400230090D4CF /* command */,
+				8418705C2653FEF80090D4CF /* home */,
 				84D1292626245FA800CF818D /* Preview Content */,
+				842B8B28266D3633000EEC1F /* AllReservationsView.swift */,
+				842B42E8266E235300254E95 /* ToggleButtonView.swift */,
+				84FEF8DB2671193600D068C0 /* AllCommandsView.swift */,
+				84FEF8E026712CDE00D068C0 /* TrackOrderView.swift */,
+				8417BA3C2673D3F000A2A0F3 /* CookingMenuView.swift */,
+				843935202674676F0033F1D0 /* ToggleIsFinishedView.swift */,
 			);
 			path = TheGoodFork;
 			sourceTree = "<group>";
@@ -259,8 +355,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84D1292326245FA300CF818D /* ContentView.swift in Sources */,
+				84FEF8DC2671193600D068C0 /* AllCommandsView.swift in Sources */,
+				842B42E9266E235300254E95 /* ToggleButtonView.swift in Sources */,
+				8418704E2653DCB40090D4CF /* PlatDetailView.swift in Sources */,
+				84D1292326245FA300CF818D /* ConnexionView.swift in Sources */,
+				8417BA3D2673D3F000A2A0F3 /* CookingMenuView.swift in Sources */,
+				8450AC36265536A3006321C0 /* ReservationView.swift in Sources */,
 				84D1292126245FA300CF818D /* TheGoodForkApp.swift in Sources */,
+				843DBEF826271C0A007B152E /* Router.swift in Sources */,
+				840E83802649332F00CC609C /* PlatGridView.swift in Sources */,
+				8450AC3126552F94006321C0 /* Command.swift in Sources */,
+				843935212674676F0033F1D0 /* ToggleIsFinishedView.swift in Sources */,
+				8417BA382673C2D400A2A0F3 /* CookHomeView.swift in Sources */,
+				8420931B266283EE00CB9A47 /* RecapCommandView.swift in Sources */,
+				842B8B29266D3633000EEC1F /* AllReservationsView.swift in Sources */,
+				841870662654034C0090D4CF /* CommandPlatGridView.swift in Sources */,
+				848818332646C22E0043DCD9 /* HomeView.swift in Sources */,
+				84B562B1264A9DD90051E0E5 /* Api.swift in Sources */,
+				841870532653F2950090D4CF /* CommandView.swift in Sources */,
+				848818432646E7370043DCD9 /* CarteView.swift in Sources */,
+				8418706E2654042A0090D4CF /* CommandPlatCellView.swift in Sources */,
+				840E837B2649301400CC609C /* PlatCellView.swift in Sources */,
+				84FEF8E126712CDE00D068C0 /* TrackOrderView.swift in Sources */,
+				841D6F1226528FFB005D87BC /* WaiterHomeView.swift in Sources */,
+				843DBEEE2627096E007B152E /* InscriptionView.swift in Sources */,
+				848818382646C8240043DCD9 /* AppView.swift in Sources */,
+				843DBEF326271906007B152E /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,7 +542,7 @@
 				DEVELOPMENT_TEAM = WKF44CB24U;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TheGoodFork/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -444,7 +564,7 @@
 				DEVELOPMENT_TEAM = WKF44CB24U;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TheGoodFork/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
