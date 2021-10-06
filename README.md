@@ -4,7 +4,7 @@ The Good Fork est un restaurant imaginaire (bien que ce nom ai réellement déj�
 ***[Eng]** The Good Fork is an imaginary restaurant (although the name has been used before) that wants to make its management easier. The owner can then use this interface to manage his staff, the available tables, the menus and the stock.*
 
 ## Installation
-Ce projet fonctionne conjointement avec [une API](https://github.com/Breadator258/3PROJ-WEB_API) et une [interface web](https://github.com/EmpireDemocratiqueDuPoulpe/goodfork-web) pour le gérant. L'application Android [est disponible ici](https://github.com/GuillaumeHlx/TheGoodFork).
+Ce projet fonctionne conjointement avec [une API](https://github.com/Breadator258/3PROJ-WEB_API) et une [interface web](https://github.com/EmpireDemocratiqueDuPoulpe/GoodFork-Web) pour le gérant. L'application Android [est disponible ici](https://github.com/GuillaumeHlx/TheGoodFork).
 Aucun fichier .ipa est disponible, vous pouvez néanmoins ouvrir le projet avec XCode après avoir exécuté `pod install`.
 
 ***[Eng]** This project works with [an API](https://github.com/Breadator258/3PROJ-WEB_API) and a [web interface](https://github.com/EmpireDemocratiqueDuPoulpe/goodfork-web) for the manager. The Android app is [available here](https://github.com/GuillaumeHlx/TheGoodFork).*
